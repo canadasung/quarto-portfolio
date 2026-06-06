@@ -133,11 +133,39 @@
     "text": "Skills\n\n\n\nCategory\nTools\n\n\n\n\nLanguages\nPython, R, SQL\n\n\nML / stats\nscikit-learn, statsmodels, tidymodels\n\n\nData\npandas, DuckDB, PostgreSQL, dbt\n\n\nViz\nggplot2, matplotlib, Plotly, Quarto\n\n\nInfra\nGit, Docker, GitHub Actions"
   },
   {
+    "objectID": "index-zh.html",
+    "href": "index-zh.html",
+    "title": "Data with Will",
+    "section": "",
+    "text": "English\n您好！我叫宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI（尤其是大型語言模型）已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及提升效率，但隨之而來的也有風險與挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
+  },
+  {
+    "objectID": "index-zh.html#資料分析數據科學職涯歷程",
+    "href": "index-zh.html#資料分析數據科學職涯歷程",
+    "title": "Data with Will",
+    "section": "資料分析／數據科學職涯歷程",
+    "text": "資料分析／數據科學職涯歷程\n\n??? | 待發掘中……\nKABAM | 數據分析師 | 2023.12 - 2025.08\nIGG | 資深數據分析師 | 2021.07 - 2023.08\nBlastworks Technology | 遊戲數據分析師 | 2018.09 - 2021.07"
+  },
+  {
+    "objectID": "index-zh.html#資料分析前的職涯歷程",
+    "href": "index-zh.html#資料分析前的職涯歷程",
+    "title": "Data with Will",
+    "section": "資料分析前的職涯歷程",
+    "text": "資料分析前的職涯歷程\n\nRiver Rock Casino Resort | 賭場荷官 | 2011.09 - 2014.07\nMcDonald’s | 麥當勞餐廳員工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 東森購物客服專員 / 產品分析師 | 2003.09 - 2009.05"
+  },
+  {
+    "objectID": "index-zh.html#學歷",
+    "href": "index-zh.html#學歷",
+    "title": "Data with Will",
+    "section": "學歷",
+    "text": "學歷\n英屬哥倫比亞大學（UBC）｜加拿大英屬哥倫比亞省溫哥華\n\n資料科學碩士（MDS）｜2025 - 2026\n\n西門菲沙大學（SFU）｜加拿大英屬哥倫比亞省本拿比\n\n商學及電腦科學雙主修（BBA）｜2012 - 2018"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Data with Will",
     "section": "",
-    "text": "Greetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.\nMy work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.\nLike many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I’m excited about the possibilities it opens up for data professionals. That said, I also have a deep love for writing raw SQL and Python code to solve problems from the ground up."
+    "text": "繁體中文\nGreetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.\nMy work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.\nLike many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I’m excited about the possibilities it opens up for data professionals. That said, I also have a deep love for writing raw SQL and Python code to solve problems from the ground up."
   },
   {
     "objectID": "index.html#career-journey-in-dads",
