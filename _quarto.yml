@@ -22,7 +22,9 @@ website:
         href: https://linkedin.com/in/williamwnsong
 
   page-footer:
-    center: "Built with [Quarto](https://quarto.org). Source on [GitHub](https://github.com/YOUR_USERNAME/YOUR_REPO)."
+    left: "© 2026 William Song"
+    center: "Built with [Quarto](https://quarto.org)"
+    right: "[GitHub](https://github.com/canadasung/quarto-portfolio)"
 
 format:
   html:
