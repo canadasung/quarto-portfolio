@@ -3,8 +3,8 @@ project:
   output-dir: _site
 
 website:
-  title: "William's Data Science Portfolio"
-  description: "Data scientist and analyst. MDS graduate from UBC."
+  title: "Data with Will"
+  description: "William Song's Storytelling Portfolio"
   navbar:
     left:
       - href: index.qmd
