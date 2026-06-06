@@ -1,6 +1,6 @@
 ---
-title: "William Song"
-subtitle: "Data scientist and analyst"
+title: "Data with Will"
+subtitle: "The Data Songbook"
 image: assets/profile.jpg
 about:
   template: trestles
@@ -16,26 +16,36 @@ about:
       href: mailto:canadasung@gmail.com
 ---
 
-## About me
+Greetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.
 
-I am a data scientist and analyst with an MDS degree from UBC. My work sits at the intersection of statistical modeling, data engineering, and visualization.
+My work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.
 
-I am most comfortable in Python and SQL for production pipelines, and R for statistical analysis and reporting. I am actively looking for roles where I can apply these skills to real data problems.
+Like many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I'm excited about the possibilities it opens up for data professionals. That said, I also have a deep love for writing raw SQL and Python code to solve problems from the ground up.
 
-## Skills
+## Career Journey in DA/DS
 
-**Languages:** Python, R, SQL
+- **???** | To be discovered.....
 
-**Libraries:** pandas, scikit-learn, tidyverse, ggplot2, FastAPI, SQLAlchemy
+- **KABAM** | Data Analyst | 2023.12 - 2025.08
 
-**Tools:** Git, Docker, Quarto, Jupyter, DuckDB, PostgreSQL
+- **IGG** | Senior Data Analyst | 2021.07 - 2023.08
 
-**Methods:** Regression, classification, clustering, time series, A/B testing, data visualization
+- **Blastworks Technology** | Game Data Analyst | 2018.09 - 2021.07
+
+## Career Journey before DA
+
+- **River Rock Casino Resort** | Table Game Dealer | 2011.09 - 2014.07
+
+- **McDonald's** | Crew | 2009.07 - 2011.02
+
+- **EHSN Taiwan CS & E-Commerce** | CS Agent / Product Analyst | 2003.09 - 2009.05
 
 ## Education
 
-**Master of Data Science** -- University of British Columbia, 2026
+University of British Columbia | Vancouver, BC, Canada
 
+- Master of Data Science (MDS) | 2025 - 2026
 
-**Bachelor of Business** -- Simon Fraser University, 2018
-Joint major in Business and Computer Science
+Simon Fraser University | Burnaby, BC, Canada
+
+- Joint major in Business and Computer Science (BBA) | 2012 - 2018
