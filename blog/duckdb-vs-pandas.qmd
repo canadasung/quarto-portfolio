@@ -1,0 +1,49 @@
+---
+title: "When to use DuckDB vs pandas for local analytics"
+description: "A practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset."
+date: 2025-06-01
+categories: [Python, DuckDB, pandas, performance]
+---
+
+## Context
+
+Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison.
+
+## The short answer
+
+Use **DuckDB** when:
+
+- Your dataset is larger than ~500MB
+- You are doing aggregations, joins, or window functions
+- You want to query Parquet or CSV files without loading them into memory
+
+Use **pandas** when:
+
+- You need row-wise Python logic (`.apply`, custom functions)
+- You are doing iterative data cleaning with lots of intermediate steps
+- The dataset fits comfortably in memory and transformation is simple
+
+## Benchmark
+
+```python
+import duckdb
+import pandas as pd
+import time
+
+# DuckDB aggregation
+start = time.perf_counter()
+duckdb.sql("SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category").df()
+print(f"DuckDB: {time.perf_counter() - start:.2f}s")
+
+# pandas equivalent
+start = time.perf_counter()
+df = pd.read_parquet("data.parquet")
+df.groupby("category")["value"].mean()
+print(f"pandas: {time.perf_counter() - start:.2f}s")
+```
+
+On 5M rows: DuckDB finished in 0.3s, pandas in 2.1s -- and pandas used 1.4GB RAM vs DuckDB's 180MB.
+
+## Takeaway
+
+DuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations.

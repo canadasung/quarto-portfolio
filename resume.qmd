@@ -1,0 +1,40 @@
+---
+title: "Resume"
+toc: false
+---
+
+[Download PDF](assets/william-chen-resume.pdf){.btn .btn-outline-primary}
+
+---
+
+## Experience
+
+### [Job Title] -- [Company]
+*[Start date] -- [End date]*
+
+- Bullet describing what you did and the impact
+- Quantify where possible (e.g. reduced query runtime by 40%)
+
+---
+
+## Education
+
+### Master of Data Science -- UBC
+*2024 -- 2025*
+
+Coursework: statistical inference, machine learning, data visualization, databases, cloud computing, collaborative software development.
+
+### [Bachelor's degree] -- [Institution]
+*[Years]*
+
+---
+
+## Skills
+
+| Category | Tools |
+|---|---|
+| Languages | Python, R, SQL |
+| ML / stats | scikit-learn, statsmodels, tidymodels |
+| Data | pandas, DuckDB, PostgreSQL, dbt |
+| Viz | ggplot2, matplotlib, Plotly, Quarto |
+| Infra | Git, Docker, GitHub Actions |

@@ -1,0 +1,41 @@
+---
+title: "William Song"
+subtitle: "Data scientist and analyst"
+image: assets/profile.jpg
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/canadasung
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/williamwnsong
+    - icon: envelope
+      text: Email
+      href: mailto:canadasung@gmail.com
+---
+
+## About me
+
+I am a data scientist and analyst with an MDS degree from UBC. My work sits at the intersection of statistical modeling, data engineering, and visualization.
+
+I am most comfortable in Python and SQL for production pipelines, and R for statistical analysis and reporting. I am actively looking for roles where I can apply these skills to real data problems.
+
+## Skills
+
+**Languages:** Python, R, SQL
+
+**Libraries:** pandas, scikit-learn, tidyverse, ggplot2, FastAPI, SQLAlchemy
+
+**Tools:** Git, Docker, Quarto, Jupyter, DuckDB, PostgreSQL
+
+**Methods:** Regression, classification, clustering, time series, A/B testing, data visualization
+
+## Education
+
+**Master of Data Science** -- University of British Columbia, 2026
+
+
+**Bachelor of Business** -- Simon Fraser University, 2018
+Joint major in Business and Computer Science
