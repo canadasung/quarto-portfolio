@@ -1,0 +1,15 @@
+[
+  {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/species-search.html",
+      "/projects/query-optimization.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/duckdb-vs-pandas.html"
+    ]
+  }
+]

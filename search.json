@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "blog/duckdb-vs-pandas.html",
+    "href": "blog/duckdb-vs-pandas.html",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "",
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
+  },
+  {
+    "objectID": "blog/duckdb-vs-pandas.html#context",
+    "href": "blog/duckdb-vs-pandas.html#context",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "",
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
+  },
+  {
+    "objectID": "blog/duckdb-vs-pandas.html#the-short-answer",
+    "href": "blog/duckdb-vs-pandas.html#the-short-answer",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "The short answer",
+    "text": "The short answer\nUse DuckDB when:\n\nYour dataset is larger than ~500MB\nYou are doing aggregations, joins, or window functions\nYou want to query Parquet or CSV files without loading them into memory\n\nUse pandas when:\n\nYou need row-wise Python logic (.apply, custom functions)\nYou are doing iterative data cleaning with lots of intermediate steps\nThe dataset fits comfortably in memory and transformation is simple"
+  },
+  {
+    "objectID": "blog/duckdb-vs-pandas.html#benchmark",
+    "href": "blog/duckdb-vs-pandas.html#benchmark",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Benchmark",
+    "text": "Benchmark\nimport duckdb\nimport pandas as pd\nimport time\n\n# DuckDB aggregation\nstart = time.perf_counter()\nduckdb.sql(\"SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category\").df()\nprint(f\"DuckDB: {time.perf_counter() - start:.2f}s\")\n\n# pandas equivalent\nstart = time.perf_counter()\ndf = pd.read_parquet(\"data.parquet\")\ndf.groupby(\"category\")[\"value\"].mean()\nprint(f\"pandas: {time.perf_counter() - start:.2f}s\")\nOn 5M rows: DuckDB finished in 0.3s, pandas in 2.1s – and pandas used 1.4GB RAM vs DuckDB’s 180MB."
+  },
+  {
+    "objectID": "blog/duckdb-vs-pandas.html#takeaway",
+    "href": "blog/duckdb-vs-pandas.html#takeaway",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Takeaway",
+    "text": "Takeaway\nDuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "William Song",
+    "section": "",
+    "text": "I am a data scientist and analyst with an MDS degree from UBC. My work sits at the intersection of statistical modeling, data engineering, and visualization.\nI am most comfortable in Python and SQL for production pipelines, and R for statistical analysis and reporting. I am actively looking for roles where I can apply these skills to real data problems."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "William Song",
+    "section": "",
+    "text": "I am a data scientist and analyst with an MDS degree from UBC. My work sits at the intersection of statistical modeling, data engineering, and visualization.\nI am most comfortable in Python and SQL for production pipelines, and R for statistical analysis and reporting. I am actively looking for roles where I can apply these skills to real data problems."
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "William Song",
+    "section": "Skills",
+    "text": "Skills\nLanguages: Python, R, SQL\nLibraries: pandas, scikit-learn, tidyverse, ggplot2, FastAPI, SQLAlchemy\nTools: Git, Docker, Quarto, Jupyter, DuckDB, PostgreSQL\nMethods: Regression, classification, clustering, time series, A/B testing, data visualization"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "William Song",
+    "section": "Education",
+    "text": "Education\nMaster of Data Science – University of British Columbia, 2026\nBachelor of Business – Simon Fraser University, 2018 Joint major in Business and Computer Science"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Species name search\n\n\n\nPython\n\nFastAPI\n\nAPIs\n\nasync\n\n\n\nA FastAPI backend that fans out across 15+ biodiversity APIs asynchronously, with Redis caching and a Next.js frontend.\n\n\n\nJun 1, 2025\n\n\n\n\n\n\n\n\n\n\nSQL query optimization study\n\n\n\nSQL\n\nPostgreSQL\n\nBigQuery\n\nperformance\n\n\n\nBenchmarking window functions and CTE patterns across PostgreSQL and BigQuery on 10M-row datasets.\n\n\n\nApr 15, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download PDF"
+  },
+  {
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "Resume",
+    "section": "Experience",
+    "text": "Experience\n\n[Job Title] – [Company]\n[Start date] – [End date]\n\nBullet describing what you did and the impact\nQuantify where possible (e.g. reduced query runtime by 40%)"
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Resume",
+    "section": "Education",
+    "text": "Education\n\nMaster of Data Science – UBC\n2024 – 2025\nCoursework: statistical inference, machine learning, data visualization, databases, cloud computing, collaborative software development.\n\n\n[Bachelor’s degree] – [Institution]\n[Years]"
+  },
+  {
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "Resume",
+    "section": "Skills",
+    "text": "Skills\n\n\n\nCategory\nTools\n\n\n\n\nLanguages\nPython, R, SQL\n\n\nML / stats\nscikit-learn, statsmodels, tidymodels\n\n\nData\npandas, DuckDB, PostgreSQL, dbt\n\n\nViz\nggplot2, matplotlib, Plotly, Quarto\n\n\nInfra\nGit, Docker, GitHub Actions"
+  },
+  {
+    "objectID": "projects/species-search.html",
+    "href": "projects/species-search.html",
+    "title": "Species name search",
+    "section": "",
+    "text": "This project builds a production-grade species name search tool that aggregates results from over 15 external biodiversity databases including GBIF and Symbiota portals."
+  },
+  {
+    "objectID": "projects/species-search.html#overview",
+    "href": "projects/species-search.html#overview",
+    "title": "Species name search",
+    "section": "",
+    "text": "This project builds a production-grade species name search tool that aggregates results from over 15 external biodiversity databases including GBIF and Symbiota portals."
+  },
+  {
+    "objectID": "projects/species-search.html#problem",
+    "href": "projects/species-search.html#problem",
+    "title": "Species name search",
+    "section": "Problem",
+    "text": "Problem\nBiodiversity researchers often need to reconcile species names across multiple taxonomic authorities. No single API covers all databases, and sequential requests are too slow for interactive use."
+  },
+  {
+    "objectID": "projects/species-search.html#approach",
+    "href": "projects/species-search.html#approach",
+    "title": "Species name search",
+    "section": "Approach",
+    "text": "Approach\n\nAsync fan-out: Used httpx with asyncio.gather to query all APIs concurrently, reducing median latency from ~8s sequential to ~1.2s.\nRedis caching: Common species names are cached with a 24-hour TTL, cutting repeat query cost to near zero.\nPostgreSQL: Stores canonical name mappings and user search history.\nNext.js frontend: Displays ranked results with source attribution and fuzzy match scores."
+  },
+  {
+    "objectID": "projects/species-search.html#key-code",
+    "href": "projects/species-search.html#key-code",
+    "title": "Species name search",
+    "section": "Key code",
+    "text": "Key code\nimport asyncio\nimport httpx\n\nasync def fan_out(name: str, sources: list[str]) -&gt; dict:\n    async with httpx.AsyncClient(timeout=5.0) as client:\n        tasks = [query_source(client, name, src) for src in sources]\n        results = await asyncio.gather(*tasks, return_exceptions=True)\n    return {src: r for src, r in zip(sources, results) if not isinstance(r, Exception)}"
+  },
+  {
+    "objectID": "projects/species-search.html#results",
+    "href": "projects/species-search.html#results",
+    "title": "Species name search",
+    "section": "Results",
+    "text": "Results\n\nSub-2s response time across 15 sources\n94% cache hit rate on common queries after first week\nDeployed on a single $6/month VPS with no downtime in 3 months"
+  },
+  {
+    "objectID": "projects/species-search.html#links",
+    "href": "projects/species-search.html#links",
+    "title": "Species name search",
+    "section": "Links",
+    "text": "Links\n\nGitHub repo\nLive demo"
+  },
+  {
+    "objectID": "projects/query-optimization.html",
+    "href": "projects/query-optimization.html",
+    "title": "SQL query optimization study",
+    "section": "",
+    "text": "A structured benchmarking study comparing common SQL patterns – CTEs vs subqueries, window functions vs GROUP BY aggregations – on large datasets in both PostgreSQL 16 and BigQuery."
+  },
+  {
+    "objectID": "projects/query-optimization.html#overview",
+    "href": "projects/query-optimization.html#overview",
+    "title": "SQL query optimization study",
+    "section": "",
+    "text": "A structured benchmarking study comparing common SQL patterns – CTEs vs subqueries, window functions vs GROUP BY aggregations – on large datasets in both PostgreSQL 16 and BigQuery."
+  },
+  {
+    "objectID": "projects/query-optimization.html#motivation",
+    "href": "projects/query-optimization.html#motivation",
+    "title": "SQL query optimization study",
+    "section": "Motivation",
+    "text": "Motivation\nMuch SQL advice online is untested or dialect-specific. I wanted concrete, reproducible numbers for the patterns I use most often."
+  },
+  {
+    "objectID": "projects/query-optimization.html#method",
+    "href": "projects/query-optimization.html#method",
+    "title": "SQL query optimization study",
+    "section": "Method",
+    "text": "Method\n\nGenerated synthetic datasets of 10M rows using Python’s faker library\nRan each query 10 times and recorded median wall time\nControlled for caching by running DISCARD ALL between trials in Postgres"
+  },
+  {
+    "objectID": "projects/query-optimization.html#selected-findings",
+    "href": "projects/query-optimization.html#selected-findings",
+    "title": "SQL query optimization study",
+    "section": "Selected findings",
+    "text": "Selected findings\n\n\n\nPattern\nPostgreSQL\nBigQuery\n\n\n\n\nCTE (non-recursive)\n1.2s\n0.8s\n\n\nEquivalent subquery\n1.1s\n0.9s\n\n\nWindow ROW_NUMBER()\n0.7s\n0.4s\n\n\nGROUP BY + join\n1.4s\n0.6s\n\n\n\nCTEs in PostgreSQL are not optimization fences as of v12+, which surprised many colleagues who avoided them for performance reasons."
+  },
+  {
+    "objectID": "projects/query-optimization.html#code",
+    "href": "projects/query-optimization.html#code",
+    "title": "SQL query optimization study",
+    "section": "Code",
+    "text": "Code\nSELECT\n  user_id,\n  event_date,\n  SUM(revenue) OVER (\n    PARTITION BY user_id\n    ORDER BY event_date\n    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n  ) AS cumulative_revenue\nFROM events;"
+  },
+  {
+    "objectID": "projects/query-optimization.html#links",
+    "href": "projects/query-optimization.html#links",
+    "title": "SQL query optimization study",
+    "section": "Links",
+    "text": "Links\n\nGitHub repo"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nWhen to use DuckDB vs pandas for local analytics\n\n\nA practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset.\n\n\nPython, DuckDB, pandas, performance\n\n\n\n\n\n\nNo matching items"
+  }
+]
