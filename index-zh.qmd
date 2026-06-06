@@ -1,0 +1,53 @@
+---
+title: "Data with Will"
+subtitle: "The Data Songbook"
+image: assets/profile.jpg
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/canadasung
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/williamwnsong
+    - icon: envelope
+      text: Email
+      href: mailto:canadasung@gmail.com
+---
+
+[English](index.html)
+
+您好！我叫宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞省溫哥華的數據科學家與分析師。
+
+我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。
+
+與許多人一樣，AI（尤其是大型語言模型）已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及提升效率，但隨之而來的也有風險與挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。
+
+## 資料分析／數據科學職涯歷程
+
+- **???** | 待發掘中……
+
+- **KABAM** | 數據分析師 | 2023.12 - 2025.08
+
+- **IGG** | 資深數據分析師 | 2021.07 - 2023.08
+
+- **Blastworks Technology** | 遊戲數據分析師 | 2018.09 - 2021.07
+
+## 資料分析前的職涯歷程
+
+- **River Rock Casino Resort** | 賭場荷官 | 2011.09 - 2014.07
+
+- **McDonald's** | 麥當勞餐廳員工 | 2009.07 - 2011.02
+
+- **EHSN Taiwan CS & E-Commerce** | 東森購物客服專員 / 產品分析師 | 2003.09 - 2009.05
+
+## 學歷
+
+英屬哥倫比亞大學（UBC）｜加拿大英屬哥倫比亞省溫哥華
+
+- 資料科學碩士（MDS）｜2025 - 2026
+
+西門菲沙大學（SFU）｜加拿大英屬哥倫比亞省本拿比
+
+- 商學及電腦科學雙主修（BBA）｜2012 - 2018

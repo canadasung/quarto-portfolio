@@ -16,6 +16,8 @@ about:
       href: mailto:canadasung@gmail.com
 ---
 
+[繁體中文](index-zh.html)
+
 Greetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.
 
 My work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.
