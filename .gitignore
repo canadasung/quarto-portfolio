@@ -1,6 +1,5 @@
 /.quarto/
 /_site/
-_freeze/
 .DS_Store
 .ipynb_checkpoints
 Thumbs.db
