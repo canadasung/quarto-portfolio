@@ -135,30 +135,30 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "William Song",
+    "title": "Data with Will",
     "section": "",
-    "text": "I am a data scientist and analyst with an MDS degree from UBC. My work sits at the intersection of statistical modeling, data engineering, and visualization.\nI am most comfortable in Python and SQL for production pipelines, and R for statistical analysis and reporting. I am actively looking for roles where I can apply these skills to real data problems."
+    "text": "Greetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.\nMy work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.\nLike many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I’m excited about the possibilities it opens up for data professionals. That said, I also have a deep love for writing raw SQL and Python code to solve problems from the ground up."
   },
   {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "William Song",
-    "section": "",
-    "text": "I am a data scientist and analyst with an MDS degree from UBC. My work sits at the intersection of statistical modeling, data engineering, and visualization.\nI am most comfortable in Python and SQL for production pipelines, and R for statistical analysis and reporting. I am actively looking for roles where I can apply these skills to real data problems."
+    "objectID": "index.html#career-journey-in-dads",
+    "href": "index.html#career-journey-in-dads",
+    "title": "Data with Will",
+    "section": "Career Journey in DA/DS",
+    "text": "Career Journey in DA/DS\n\n??? | To be discovered…..\nKABAM | Data Analyst | 2023.12 - 2025.08\nIGG | Senior Data Analyst | 2021.07 - 2023.08\nBlastworks Technology | Game Data Analyst | 2018.09 - 2021.07"
   },
   {
-    "objectID": "index.html#skills",
-    "href": "index.html#skills",
-    "title": "William Song",
-    "section": "Skills",
-    "text": "Skills\nLanguages: Python, R, SQL\nLibraries: pandas, scikit-learn, tidyverse, ggplot2, FastAPI, SQLAlchemy\nTools: Git, Docker, Quarto, Jupyter, DuckDB, PostgreSQL\nMethods: Regression, classification, clustering, time series, A/B testing, data visualization"
+    "objectID": "index.html#career-journey-before-da",
+    "href": "index.html#career-journey-before-da",
+    "title": "Data with Will",
+    "section": "Career Journey before DA",
+    "text": "Career Journey before DA\n\nRiver Rock Casino Resort | Table Game Dealer | 2011.09 - 2014.07\nMcDonald’s | Crew | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | CS Agent / Product Analyst | 2003.09 - 2009.05"
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
-    "title": "William Song",
+    "title": "Data with Will",
     "section": "Education",
-    "text": "Education\nMaster of Data Science – University of British Columbia, 2026\nBachelor of Business – Simon Fraser University, 2018 Joint major in Business and Computer Science"
+    "text": "Education\nUniversity of British Columbia | Vancouver, BC, Canada\n\nMaster of Data Science (MDS) | 2025 - 2026\n\nSimon Fraser University | Burnaby, BC, Canada\n\nJoint major in Business and Computer Science (BBA) | 2012 - 2018"
   },
   {
     "objectID": "blog/duckdb-vs-pandas.html",
