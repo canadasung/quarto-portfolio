@@ -22,7 +22,7 @@ Greetings! My name is William Song, a data scientist and analyst based in Vancou
 
 My work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.
 
-Like many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I am excited about the possibilities it opens up for data professionals. Also, I am aware of the potential risks it poses, technical-wise (security risk) and skill-wise (skill atrophy). That said, I also continue to write raw SQL and Python code to practice and to solve problems from the ground up.
+Like many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I am excited about the possibilities it opens up for data professionals. Also, I am aware of the potential risks it poses, technical-wise (security risk) and skill-wise (skill atrophy). That said, I also continue to write raw SQL and Python code from time to time to practice and to solve problems from the ground up.
 
 ## Career Journey in DA/DS
 
