@@ -11,10 +11,10 @@ website:
         text: About
       - href: projects/index.qmd
         text: Projects
-      - href: blog/index.qmd
-        text: Blog
-      - href: resume.qmd
-        text: Resume
+      # - href: blog/index.qmd
+      #   text: Blog
+      # - href: resume.qmd
+      #   text: Resume
     right:
       - icon: github
         href: https://github.com/canadasung
