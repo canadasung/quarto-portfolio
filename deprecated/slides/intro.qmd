@@ -1,0 +1,83 @@
+---
+title: "Data Science with Python & SQL"
+subtitle: "Tools, Techniques, and Best Practices"
+author: "William Song"
+format:
+  revealjs:
+    theme: moon
+    slide-number: true
+    scrollable: true
+    incremental: true
+    transition: slide
+---
+
+## About Me
+
+- MDS graduate from UBC
+- Python, R, and SQL for data science
+- Focus on statistical modeling, data engineering, and visualization
+
+## Agenda
+
+1. Why Python & SQL together?
+2. Data wrangling with pandas
+3. Query optimization basics
+4. Visualization tips
+5. Q&A
+
+## Why Python & SQL Together?
+
+- SQL handles **where the data lives**
+- Python handles **what you do with it**
+- Together they cover the full pipeline: extract → transform → analyze → visualize
+
+## Data Wrangling with pandas
+
+```python
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# Filter, group, aggregate
+result = (
+    df[df["year"] == 2024]
+    .groupby("category")["revenue"]
+    .sum()
+    .reset_index()
+)
+```
+
+## Query Optimization Basics
+
+- Use indexes on columns you filter or join on
+- Avoid `SELECT *` — only fetch what you need
+- Push filters early, before joins
+- Use `EXPLAIN` to inspect query plans
+
+```sql
+-- Before
+SELECT * FROM orders JOIN customers ON orders.customer_id = customers.id;
+
+-- After
+SELECT orders.id, customers.name
+FROM orders
+JOIN customers ON orders.customer_id = customers.id
+WHERE orders.status = 'completed';
+```
+
+## Visualization Tips
+
+- Match chart type to your question
+  - Distribution → histogram or boxplot
+  - Trend → line chart
+  - Comparison → bar chart
+- Label axes clearly
+- Avoid chartjunk
+
+## Q&A
+
+**Thank you!**
+
+- GitHub: [canadasung](https://github.com/canadasung)
+- LinkedIn: [williamwnsong](https://linkedin.com/in/williamwnsong)
+- Email: canadasung@gmail.com

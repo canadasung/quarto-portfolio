@@ -1,0 +1,29 @@
+---
+title: "Module 5: Visualization Best Practices"
+toc: true
+toc-location: left
+---
+
+How to choose the right chart and communicate data clearly.
+
+## Match Chart to Question
+
+| Question | Chart type |
+|----------|------------|
+| Distribution | Histogram, boxplot |
+| Trend over time | Line chart |
+| Comparison | Bar chart |
+| Relationship | Scatter plot |
+| Composition | Stacked bar, pie (sparingly) |
+
+## Labeling and Annotation
+
+- Always label axes with units
+- Add a clear title that states the insight, not just the variable
+- Annotate outliers or key events directly on the chart
+
+## Tools
+
+- **Python:** matplotlib, seaborn, Altair, Plotly
+- **R:** ggplot2
+- **Quarto:** renders all of the above inline

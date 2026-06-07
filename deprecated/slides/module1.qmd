@@ -1,0 +1,24 @@
+---
+title: "Module 1: Introduction to Data Science Tools"
+toc: true
+toc-location: left
+---
+
+An overview of the modern data science stack and how the tools fit together across the pipeline.
+
+## Topics
+
+- What is the data science pipeline?
+- Where Python, R, and SQL each shine
+- Setting up your local environment
+
+## The Data Science Pipeline
+
+Each tool has its place:
+
+| Stage | Tool |
+|-------|------|
+| Store & query | SQL |
+| Wrangle & model | Python / R |
+| Visualize | Python / R / Quarto |
+| Communicate | Quarto |

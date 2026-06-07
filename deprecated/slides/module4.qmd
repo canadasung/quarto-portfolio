@@ -1,0 +1,38 @@
+---
+title: "Module 4: Query Optimization"
+toc: true
+toc-location: left
+---
+
+Practical techniques for writing faster, more efficient SQL queries.
+
+## Use Indexes
+
+- Add indexes on columns you frequently filter or join on
+- Avoid full table scans on large datasets
+
+```sql
+CREATE INDEX idx_orders_status ON orders(status);
+```
+
+## Push Filters Early
+
+```sql
+-- Slow: joins first, then filters
+SELECT * FROM orders
+JOIN customers ON orders.customer_id = customers.id
+WHERE orders.status = 'completed';
+
+-- Fast: filter before join
+SELECT o.id, c.name
+FROM (SELECT * FROM orders WHERE status = 'completed') o
+JOIN customers c ON o.customer_id = c.id;
+```
+
+## Read Query Plans
+
+```sql
+EXPLAIN SELECT * FROM orders WHERE status = 'completed';
+```
+
+Look for: `Seq Scan` (slow) vs `Index Scan` (fast).

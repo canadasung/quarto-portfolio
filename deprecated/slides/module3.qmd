@@ -1,0 +1,41 @@
+---
+title: "Module 3: Data Wrangling with pandas"
+toc: true
+toc-location: left
+---
+
+Hands-on walkthrough of common data cleaning and transformation patterns.
+
+## Reading and Inspecting Data
+
+```python
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+df.head()
+df.info()
+df.describe()
+```
+
+## Filtering and Aggregating
+
+```python
+result = (
+    df[df["year"] == 2024]
+    .groupby("category")["revenue"]
+    .sum()
+    .reset_index()
+    .sort_values("revenue", ascending=False)
+)
+```
+
+## Handling Missing Values
+
+```python
+# Check
+df.isnull().sum()
+
+# Drop or fill
+df.dropna(subset=["critical_column"])
+df["optional_col"].fillna(0)
+```

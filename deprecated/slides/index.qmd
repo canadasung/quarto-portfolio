@@ -1,0 +1,23 @@
+---
+title: "Overview"
+toc: true
+toc-location: left
+toc-depth: 2
+---
+
+**Presenter:** William Song
+
+## Schedule
+
+| Time | Duration | Module |
+|------|----------|--------|
+| [10:00 AM](module1.html) | 30 min | **Module 1:** Introduction to Data Science Tools |
+| [10:30 AM](module2.html) | 45 min | **Module 2:** Python and SQL Together |
+| 11:15 AM | 10 min | *Morning Break* |
+| [11:25 AM](module3.html) | 60 min | **Module 3:** Data Wrangling with pandas |
+| 12:25 PM | 45 min | *Lunch* |
+| [1:10 PM](module4.html) | 60 min | **Module 4:** Query Optimization |
+| 2:10 PM | 10 min | *Afternoon Break* |
+| [2:20 PM](module5.html) | 45 min | **Module 5:** Visualization Best Practices |
+| 3:05 PM | | *End of session* |
+

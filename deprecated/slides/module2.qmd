@@ -1,0 +1,19 @@
+---
+title: "Module 2: Python and SQL Together"
+toc: true
+toc-location: left
+---
+
+SQL handles where the data lives; Python handles what you do with it.
+
+## Slides
+
+[View slides in full screen](intro.html){target="_blank"}
+
+<iframe src="intro.html" width="100%" height="500px" style="border:1px solid #ddd; border-radius:4px;"></iframe>
+
+## Key Takeaways
+
+- Use SQL to filter and aggregate **before** loading into Python
+- Avoid pulling entire tables into memory unnecessarily
+- SQLAlchemy and DuckDB bridge the two seamlessly
