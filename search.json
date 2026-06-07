@@ -98,67 +98,298 @@
     "text": "Links\n\nGitHub repo\nLive demo"
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog",
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html",
+    "href": "deprecated/blog/duckdb-vs-pandas.html",
+    "title": "When to use DuckDB vs pandas for local analytics",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nWhen to use DuckDB vs pandas for local analytics\n\n\nA practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset.\n\n\nPython, DuckDB, pandas, performance\n\n\n\n\n\n\nNo matching items"
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
   },
   {
-    "objectID": "resume.html",
-    "href": "resume.html",
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#context",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#context",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "",
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "The short answer",
+    "text": "The short answer\nUse DuckDB when:\n\nYour dataset is larger than ~500MB\nYou are doing aggregations, joins, or window functions\nYou want to query Parquet or CSV files without loading them into memory\n\nUse pandas when:\n\nYou need row-wise Python logic (.apply, custom functions)\nYou are doing iterative data cleaning with lots of intermediate steps\nThe dataset fits comfortably in memory and transformation is simple"
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Benchmark",
+    "text": "Benchmark\nimport duckdb\nimport pandas as pd\nimport time\n\n# DuckDB aggregation\nstart = time.perf_counter()\nduckdb.sql(\"SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category\").df()\nprint(f\"DuckDB: {time.perf_counter() - start:.2f}s\")\n\n# pandas equivalent\nstart = time.perf_counter()\ndf = pd.read_parquet(\"data.parquet\")\ndf.groupby(\"category\")[\"value\"].mean()\nprint(f\"pandas: {time.perf_counter() - start:.2f}s\")\nOn 5M rows: DuckDB finished in 0.3s, pandas in 2.1s – and pandas used 1.4GB RAM vs DuckDB’s 180MB."
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Takeaway",
+    "text": "Takeaway\nDuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations."
+  },
+  {
+    "objectID": "deprecated/resume.html",
+    "href": "deprecated/resume.html",
     "title": "Resume",
     "section": "",
     "text": "Download PDF"
   },
   {
-    "objectID": "resume.html#experience",
-    "href": "resume.html#experience",
+    "objectID": "deprecated/resume.html#experience",
+    "href": "deprecated/resume.html#experience",
     "title": "Resume",
     "section": "Experience",
     "text": "Experience\n\n[Job Title] – [Company]\n[Start date] – [End date]\n\nBullet describing what you did and the impact\nQuantify where possible (e.g. reduced query runtime by 40%)"
   },
   {
-    "objectID": "resume.html#education",
-    "href": "resume.html#education",
+    "objectID": "deprecated/resume.html#education",
+    "href": "deprecated/resume.html#education",
     "title": "Resume",
     "section": "Education",
     "text": "Education\n\nMaster of Data Science – UBC\n2024 – 2025\nCoursework: statistical inference, machine learning, data visualization, databases, cloud computing, collaborative software development.\n\n\n[Bachelor’s degree] – [Institution]\n[Years]"
   },
   {
-    "objectID": "resume.html#skills",
-    "href": "resume.html#skills",
+    "objectID": "deprecated/resume.html#skills",
+    "href": "deprecated/resume.html#skills",
     "title": "Resume",
     "section": "Skills",
     "text": "Skills\n\n\n\nCategory\nTools\n\n\n\n\nLanguages\nPython, R, SQL\n\n\nML / stats\nscikit-learn, statsmodels, tidymodels\n\n\nData\npandas, DuckDB, PostgreSQL, dbt\n\n\nViz\nggplot2, matplotlib, Plotly, Quarto\n\n\nInfra\nGit, Docker, GitHub Actions"
+  },
+  {
+    "objectID": "deprecated/slides/module5.html",
+    "href": "deprecated/slides/module5.html",
+    "title": "Module 5: Visualization Best Practices",
+    "section": "",
+    "text": "How to choose the right chart and communicate data clearly."
+  },
+  {
+    "objectID": "deprecated/slides/module5.html#match-chart-to-question",
+    "href": "deprecated/slides/module5.html#match-chart-to-question",
+    "title": "Module 5: Visualization Best Practices",
+    "section": "Match Chart to Question",
+    "text": "Match Chart to Question\n\n\n\nQuestion\nChart type\n\n\n\n\nDistribution\nHistogram, boxplot\n\n\nTrend over time\nLine chart\n\n\nComparison\nBar chart\n\n\nRelationship\nScatter plot\n\n\nComposition\nStacked bar, pie (sparingly)"
+  },
+  {
+    "objectID": "deprecated/slides/module5.html#labeling-and-annotation",
+    "href": "deprecated/slides/module5.html#labeling-and-annotation",
+    "title": "Module 5: Visualization Best Practices",
+    "section": "Labeling and Annotation",
+    "text": "Labeling and Annotation\n\nAlways label axes with units\nAdd a clear title that states the insight, not just the variable\nAnnotate outliers or key events directly on the chart"
+  },
+  {
+    "objectID": "deprecated/slides/module5.html#tools",
+    "href": "deprecated/slides/module5.html#tools",
+    "title": "Module 5: Visualization Best Practices",
+    "section": "Tools",
+    "text": "Tools\n\nPython: matplotlib, seaborn, Altair, Plotly\nR: ggplot2\nQuarto: renders all of the above inline"
+  },
+  {
+    "objectID": "deprecated/slides/module1.html",
+    "href": "deprecated/slides/module1.html",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "",
+    "text": "An overview of the modern data science stack and how the tools fit together across the pipeline."
+  },
+  {
+    "objectID": "deprecated/slides/module1.html#topics",
+    "href": "deprecated/slides/module1.html#topics",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "Topics",
+    "text": "Topics\n\nWhat is the data science pipeline?\nWhere Python, R, and SQL each shine\nSetting up your local environment"
+  },
+  {
+    "objectID": "deprecated/slides/module1.html#the-data-science-pipeline",
+    "href": "deprecated/slides/module1.html#the-data-science-pipeline",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "The Data Science Pipeline",
+    "text": "The Data Science Pipeline\nEach tool has its place:\n\n\n\nStage\nTool\n\n\n\n\nStore & query\nSQL\n\n\nWrangle & model\nPython / R\n\n\nVisualize\nPython / R / Quarto\n\n\nCommunicate\nQuarto"
+  },
+  {
+    "objectID": "deprecated/slides/module2.html",
+    "href": "deprecated/slides/module2.html",
+    "title": "Module 2: Python and SQL Together",
+    "section": "",
+    "text": "SQL handles where the data lives; Python handles what you do with it."
+  },
+  {
+    "objectID": "deprecated/slides/module2.html#slides",
+    "href": "deprecated/slides/module2.html#slides",
+    "title": "Module 2: Python and SQL Together",
+    "section": "Slides",
+    "text": "Slides\nView slides in full screen"
+  },
+  {
+    "objectID": "deprecated/slides/module2.html#key-takeaways",
+    "href": "deprecated/slides/module2.html#key-takeaways",
+    "title": "Module 2: Python and SQL Together",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nUse SQL to filter and aggregate before loading into Python\nAvoid pulling entire tables into memory unnecessarily\nSQLAlchemy and DuckDB bridge the two seamlessly"
   },
   {
     "objectID": "index-zh.html",
     "href": "index-zh.html",
     "title": "Data with Will",
     "section": "",
-    "text": "English\n您好！我叫宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI（尤其是大型語言模型）已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及提升效率，但隨之而來的也有風險與挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
+    "text": "English\n您好！我的名字是宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI (尤其是大型語言模型) 也已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及效率提升，但隨之而來也有無法忽視的風險與挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
   },
   {
-    "objectID": "index-zh.html#資料分析數據科學職涯歷程",
-    "href": "index-zh.html#資料分析數據科學職涯歷程",
+    "objectID": "index-zh.html#數據分析資料科學職涯歷程",
+    "href": "index-zh.html#數據分析資料科學職涯歷程",
     "title": "Data with Will",
-    "section": "資料分析／數據科學職涯歷程",
-    "text": "資料分析／數據科學職涯歷程\n\n??? | 待發掘中……\nKABAM | 數據分析師 | 2023.12 - 2025.08\nIGG | 資深數據分析師 | 2021.07 - 2023.08\nBlastworks Technology | 遊戲數據分析師 | 2018.09 - 2021.07"
+    "section": "數據分析／資料科學職涯歷程",
+    "text": "數據分析／資料科學職涯歷程\n\n??? | 待發掘中……\nKABAM | 數據分析師 | 2023.12 - 2025.08\nIGG | 資深數據分析師 | 2021.07 - 2023.08\nBlastworks Technology | 遊戲數據分析師 | 2018.09 - 2021.07"
   },
   {
-    "objectID": "index-zh.html#資料分析前的職涯歷程",
-    "href": "index-zh.html#資料分析前的職涯歷程",
+    "objectID": "index-zh.html#數據分析以前的職涯歷程",
+    "href": "index-zh.html#數據分析以前的職涯歷程",
     "title": "Data with Will",
-    "section": "資料分析前的職涯歷程",
-    "text": "資料分析前的職涯歷程\n\nRiver Rock Casino Resort | 賭場荷官 | 2011.09 - 2014.07\nMcDonald’s | 麥當勞餐廳員工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 東森購物客服專員 / 產品分析師 | 2003.09 - 2009.05"
+    "section": "數據分析以前的職涯歷程",
+    "text": "數據分析以前的職涯歷程\n\nRiver Rock Casino Resort | 賭場荷官 | 2011.09 - 2014.07\nMcDonald’s | 麥當勞餐廳員工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 東森購物客服專員 / 產品分析師 | 2003.09 - 2009.05"
   },
   {
     "objectID": "index-zh.html#學歷",
     "href": "index-zh.html#學歷",
     "title": "Data with Will",
     "section": "學歷",
-    "text": "學歷\n英屬哥倫比亞大學（UBC）｜加拿大英屬哥倫比亞省溫哥華\n\n資料科學碩士（MDS）｜2025 - 2026\n\n西門菲沙大學（SFU）｜加拿大英屬哥倫比亞省本拿比\n\n商學及電腦科學雙主修（BBA）｜2012 - 2018"
+    "text": "學歷\n英屬哥倫比亞大學 (UBC) | 加拿大卑詩省溫哥華\n\n資料科學碩士 (MDS) | 2025 - 2026\n\n西門菲沙大學 (SFU) | 加拿大卑詩省本拿比\n\n商學及電腦科學雙主修 (BBA) | 2012 - 2018"
+  },
+  {
+    "objectID": "index-zh.html#英文履歷",
+    "href": "index-zh.html#英文履歷",
+    "title": "Data with Will",
+    "section": "英文履歷",
+    "text": "英文履歷\nDownload PDF"
+  },
+  {
+    "objectID": "deprecated/slides/module3.html",
+    "href": "deprecated/slides/module3.html",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "",
+    "text": "Hands-on walkthrough of common data cleaning and transformation patterns."
+  },
+  {
+    "objectID": "deprecated/slides/module3.html#reading-and-inspecting-data",
+    "href": "deprecated/slides/module3.html#reading-and-inspecting-data",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Reading and Inspecting Data",
+    "text": "Reading and Inspecting Data\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\ndf.head()\ndf.info()\ndf.describe()"
+  },
+  {
+    "objectID": "deprecated/slides/module3.html#filtering-and-aggregating",
+    "href": "deprecated/slides/module3.html#filtering-and-aggregating",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Filtering and Aggregating",
+    "text": "Filtering and Aggregating\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n    .sort_values(\"revenue\", ascending=False)\n)"
+  },
+  {
+    "objectID": "deprecated/slides/module3.html#handling-missing-values",
+    "href": "deprecated/slides/module3.html#handling-missing-values",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Handling Missing Values",
+    "text": "Handling Missing Values\n# Check\ndf.isnull().sum()\n\n# Drop or fill\ndf.dropna(subset=[\"critical_column\"])\ndf[\"optional_col\"].fillna(0)"
+  },
+  {
+    "objectID": "deprecated/slides/module4.html",
+    "href": "deprecated/slides/module4.html",
+    "title": "Module 4: Query Optimization",
+    "section": "",
+    "text": "Practical techniques for writing faster, more efficient SQL queries."
+  },
+  {
+    "objectID": "deprecated/slides/module4.html#use-indexes",
+    "href": "deprecated/slides/module4.html#use-indexes",
+    "title": "Module 4: Query Optimization",
+    "section": "Use Indexes",
+    "text": "Use Indexes\n\nAdd indexes on columns you frequently filter or join on\nAvoid full table scans on large datasets\n\nCREATE INDEX idx_orders_status ON orders(status);"
+  },
+  {
+    "objectID": "deprecated/slides/module4.html#push-filters-early",
+    "href": "deprecated/slides/module4.html#push-filters-early",
+    "title": "Module 4: Query Optimization",
+    "section": "Push Filters Early",
+    "text": "Push Filters Early\n-- Slow: joins first, then filters\nSELECT * FROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';\n\n-- Fast: filter before join\nSELECT o.id, c.name\nFROM (SELECT * FROM orders WHERE status = 'completed') o\nJOIN customers c ON o.customer_id = c.id;"
+  },
+  {
+    "objectID": "deprecated/slides/module4.html#read-query-plans",
+    "href": "deprecated/slides/module4.html#read-query-plans",
+    "title": "Module 4: Query Optimization",
+    "section": "Read Query Plans",
+    "text": "Read Query Plans\nEXPLAIN SELECT * FROM orders WHERE status = 'completed';\nLook for: Seq Scan (slow) vs Index Scan (fast)."
+  },
+  {
+    "objectID": "deprecated/slides/index.html",
+    "href": "deprecated/slides/index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Presenter: William Song"
+  },
+  {
+    "objectID": "deprecated/slides/index.html#schedule",
+    "href": "deprecated/slides/index.html#schedule",
+    "title": "Overview",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nDuration\nModule\n\n\n\n\n10:00 AM\n30 min\nModule 1: Introduction to Data Science Tools\n\n\n10:30 AM\n45 min\nModule 2: Python and SQL Together\n\n\n11:15 AM\n10 min\nMorning Break\n\n\n11:25 AM\n60 min\nModule 3: Data Wrangling with pandas\n\n\n12:25 PM\n45 min\nLunch\n\n\n1:10 PM\n60 min\nModule 4: Query Optimization\n\n\n2:10 PM\n10 min\nAfternoon Break\n\n\n2:20 PM\n45 min\nModule 5: Visualization Best Practices\n\n\n3:05 PM\n\nEnd of session"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#about-me",
+    "href": "deprecated/slides/intro.html#about-me",
+    "title": "Data Science with Python & SQL",
+    "section": "About Me",
+    "text": "About Me\n\nMDS graduate from UBC\nPython, R, and SQL for data science\nFocus on statistical modeling, data engineering, and visualization"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#agenda",
+    "href": "deprecated/slides/intro.html#agenda",
+    "title": "Data Science with Python & SQL",
+    "section": "Agenda",
+    "text": "Agenda\n\nWhy Python & SQL together?\nData wrangling with pandas\nQuery optimization basics\nVisualization tips\nQ&A"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#why-python-sql-together",
+    "href": "deprecated/slides/intro.html#why-python-sql-together",
+    "title": "Data Science with Python & SQL",
+    "section": "Why Python & SQL Together?",
+    "text": "Why Python & SQL Together?\n\nSQL handles where the data lives\nPython handles what you do with it\nTogether they cover the full pipeline: extract → transform → analyze → visualize"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#data-wrangling-with-pandas",
+    "href": "deprecated/slides/intro.html#data-wrangling-with-pandas",
+    "title": "Data Science with Python & SQL",
+    "section": "Data Wrangling with pandas",
+    "text": "Data Wrangling with pandas\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\n\n# Filter, group, aggregate\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n)"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#query-optimization-basics",
+    "href": "deprecated/slides/intro.html#query-optimization-basics",
+    "title": "Data Science with Python & SQL",
+    "section": "Query Optimization Basics",
+    "text": "Query Optimization Basics\n\nUse indexes on columns you filter or join on\nAvoid SELECT * — only fetch what you need\nPush filters early, before joins\nUse EXPLAIN to inspect query plans\n\n-- Before\nSELECT * FROM orders JOIN customers ON orders.customer_id = customers.id;\n\n-- After\nSELECT orders.id, customers.name\nFROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#visualization-tips",
+    "href": "deprecated/slides/intro.html#visualization-tips",
+    "title": "Data Science with Python & SQL",
+    "section": "Visualization Tips",
+    "text": "Visualization Tips\n\nMatch chart type to your question\n\nDistribution → histogram or boxplot\nTrend → line chart\nComparison → bar chart\n\nLabel axes clearly\nAvoid chartjunk"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#qa",
+    "href": "deprecated/slides/intro.html#qa",
+    "title": "Data Science with Python & SQL",
+    "section": "Q&A",
+    "text": "Q&A\nThank you!\n\nGitHub: canadasung\nLinkedIn: williamwnsong\nEmail: canadasung@gmail.com"
+  },
+  {
+    "objectID": "deprecated/blog/index.html",
+    "href": "deprecated/blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nWhen to use DuckDB vs pandas for local analytics\n\n\nA practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset.\n\n\nPython, DuckDB, pandas, performance\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -189,39 +420,11 @@
     "text": "Education\nUniversity of British Columbia | Vancouver, BC, Canada\n\nMaster of Data Science (MDS) | 2025 - 2026\n\nSimon Fraser University | Burnaby, BC, Canada\n\nJoint major in Business and Computer Science (BBA) | 2012 - 2018"
   },
   {
-    "objectID": "blog/duckdb-vs-pandas.html",
-    "href": "blog/duckdb-vs-pandas.html",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "",
-    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
-  },
-  {
-    "objectID": "blog/duckdb-vs-pandas.html#context",
-    "href": "blog/duckdb-vs-pandas.html#context",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "",
-    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
-  },
-  {
-    "objectID": "blog/duckdb-vs-pandas.html#the-short-answer",
-    "href": "blog/duckdb-vs-pandas.html#the-short-answer",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "The short answer",
-    "text": "The short answer\nUse DuckDB when:\n\nYour dataset is larger than ~500MB\nYou are doing aggregations, joins, or window functions\nYou want to query Parquet or CSV files without loading them into memory\n\nUse pandas when:\n\nYou need row-wise Python logic (.apply, custom functions)\nYou are doing iterative data cleaning with lots of intermediate steps\nThe dataset fits comfortably in memory and transformation is simple"
-  },
-  {
-    "objectID": "blog/duckdb-vs-pandas.html#benchmark",
-    "href": "blog/duckdb-vs-pandas.html#benchmark",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "Benchmark",
-    "text": "Benchmark\nimport duckdb\nimport pandas as pd\nimport time\n\n# DuckDB aggregation\nstart = time.perf_counter()\nduckdb.sql(\"SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category\").df()\nprint(f\"DuckDB: {time.perf_counter() - start:.2f}s\")\n\n# pandas equivalent\nstart = time.perf_counter()\ndf = pd.read_parquet(\"data.parquet\")\ndf.groupby(\"category\")[\"value\"].mean()\nprint(f\"pandas: {time.perf_counter() - start:.2f}s\")\nOn 5M rows: DuckDB finished in 0.3s, pandas in 2.1s – and pandas used 1.4GB RAM vs DuckDB’s 180MB."
-  },
-  {
-    "objectID": "blog/duckdb-vs-pandas.html#takeaway",
-    "href": "blog/duckdb-vs-pandas.html#takeaway",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "Takeaway",
-    "text": "Takeaway\nDuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations."
+    "objectID": "index.html#resume",
+    "href": "index.html#resume",
+    "title": "Data with Will",
+    "section": "Resume",
+    "text": "Resume\nDownload PDF"
   },
   {
     "objectID": "projects/index.html",

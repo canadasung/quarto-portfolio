@@ -1,8 +1,8 @@
 [
   {
-    "listing": "/blog/index.html",
+    "listing": "/deprecated/blog/index.html",
     "items": [
-      "/blog/duckdb-vs-pandas.html"
+      "/deprecated/blog/duckdb-vs-pandas.html"
     ]
   },
   {
