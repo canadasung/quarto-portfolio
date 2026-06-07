@@ -235,7 +235,7 @@
     "href": "index-zh.html",
     "title": "Data with Will",
     "section": "",
-    "text": "English\n您好！我的名字是宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI (尤其是大型語言模型) 也已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及效率提升，但隨之而來也有無法忽視的風險與挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
+    "text": "English\n您好！我的名字是宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI (尤其是大型語言模型) 也已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及效率提升，但隨之而來也有無法忽視的資料安全風險與技術流失的挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
   },
   {
     "objectID": "index-zh.html#數據分析資料科學職涯歷程",
@@ -396,7 +396,7 @@
     "href": "index.html",
     "title": "Data with Will",
     "section": "",
-    "text": "繁體中文\nGreetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.\nMy work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.\nLike many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I’m excited about the possibilities it opens up for data professionals. That said, I also have a deep love for writing raw SQL and Python code to solve problems from the ground up."
+    "text": "繁體中文\nGreetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.\nMy work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.\nLike many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I am excited about the possibilities it opens up for data professionals. Also, I am aware of the potential risks it poses, technical-wise (security risk) and skill-wise (skill atrophy). That said, I also continue to write raw SQL and Python code to practice and to solve problems from the ground up."
   },
   {
     "objectID": "index.html#career-journey-in-dads",
