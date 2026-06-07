@@ -1,4 +1,4 @@
-# William Song — Data Science Portfolio
+# William Song's Data Science Portfolio
 
 Personal portfolio showcasing data science projects, and experience. Built with Quarto and deployed via GitHub Pages.
 
@@ -7,14 +7,12 @@ Personal portfolio showcasing data science projects, and experience. Built with 
 ## Contents
 
 - **About Me** - brief introduction about myself
-- **Projects** — end-to-end data science projects in Python, R, and SQL
-- **Resume** — background and experience
+- **Projects** — under construction, more projects to be added in the near future
 
 ## Stack
 
-- [Quarto](https://quarto.org) — site framework
-- GitHub Pages — hosting
-- Python, R, SQL — project work
+- [Quarto](https://quarto.org) (site framework)
+- GitHub Pages (hosting)
 
 ## Local development
 
