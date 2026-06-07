@@ -3,7 +3,7 @@ title: "Resume"
 toc: false
 ---
 
-[Download PDF](assets/william-chen-resume.pdf){.btn .btn-outline-primary}
+[Download PDF](assets/william_song_resume_2p.pdf){.btn .btn-outline-primary target="_blank"}
 
 ---
 
