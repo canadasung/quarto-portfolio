@@ -13,7 +13,7 @@ format:
 ### The value of this group project to me
 
 - **Technical skills**:
-    - deploying a Shiny dashboard to share insights interactively on [Posit Cloud](https://posit.cloud/){target="_blank"}, a great substitute if Tableau or Power BI are not available..
+    - deploying a Shiny dashboard to share insights interactively on [Posit Cloud](https://posit.cloud/){target="_blank"}, a great substitute if Tableau or Power BI are not available.
     - applying data cleaning, EDA, visualization, and dashboarding techniques. 
 
 - **Collaboration**: 
