@@ -8,6 +8,8 @@
   {
     "listing": "/projects/index.html",
     "items": [
+      "/projects/world-education.html",
+      "/projects/washrooms-vancouver-parks.html",
       "/projects/species-search.html",
       "/projects/query-optimization.html"
     ]
