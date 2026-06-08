@@ -57,6 +57,8 @@ This project analyzes global education indicators to explore patterns in enrollm
 
 ### Dashboard
 
+[Link to the dashboard](https://sapolraadnui-worldeducation.share.connect.posit.cloud/){target="_blank"}
+
 We built an interactive dashboard using [Shiny app](https://shiny.posit.co/){target="_blank"} to allow users to explore the data and insights dynamically. The dashboard includes: World map views with metric selector, bar charts comparing average education level by region, and completion rate gap by region, scatter plot comparing male and female literacy rate by region, and a chatbot interface for querying the data using natural language.
 
 - Landing page ![Default Overview Map](images/world-education-map.png){fig-alt="Map View" width="100%"}
