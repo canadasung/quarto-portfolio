@@ -1,8 +1,8 @@
 ---
 title: "World Education Project"
 date: 2026-03-15
-author: "William Song"
-thumbnail: "images/world-education-thumb.png"
+author: "William Song, Michael Eirikson, Sapol (Paul) Raadnui, Harpreet (Harry) Singh"
+thumbnail: "images/world-education-map.png"
 format:
   html:
     toc: true
