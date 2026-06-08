@@ -15,13 +15,13 @@ website:
         text: Certifications
       # - href: blog/index.qmd
       #   text: Blog
-      # - href: resume.qmd
-      #   text: Resume
     right:
       - icon: github
         href: https://github.com/canadasung
       - icon: linkedin
         href: https://linkedin.com/in/williamwnsong
+      - icon: instagram
+        href: https://instagram.com/song.great.serenity
 
   page-footer:
     center: "© 2026 William Song"
