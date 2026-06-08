@@ -27,11 +27,11 @@ format:
 
 ### Overview
 
-This project analyzes global education indicators to explore patterns in enrollment, attainment, and inequality across countries. The analysis was completed as part of **UBC Master of Data Science, Data Visualization course** and demonstrates data cleaning, exploratory analysis, visualization, and basic modeling to surface insights relevant to education gaps between genders and international regions. Then finally, deploy the insights in an interactive dashboard built with Shiny, and a chatbot interface using a large language model to query the data.
+This project analyzes global education indicators to explore patterns in enrollment, attainment, and inequality across countries. The analysis was completed as part of **UBC Master of Data Science, DSCI 532 Data Visualization course** and demonstrates data cleaning, exploratory analysis, visualization, and basic modeling to surface insights relevant to education gaps between genders and international regions. Then finally, deploy the insights in an interactive dashboard built with Shiny, and a chatbot interface using a large language model to query the data.
 
 ### Project repository
 
-**Forked full project:** [World Education Project](https://github.com/canadasung/DSCI-532_2026_15_WorldEducation){target="_blank"}
+**Forked project repo:** [World Education Project](https://github.com/canadasung/DSCI-532_2026_15_WorldEducation){target="_blank"}
 
 ---
 
