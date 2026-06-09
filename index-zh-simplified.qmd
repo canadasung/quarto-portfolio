@@ -1,0 +1,57 @@
+---
+title: "Data with Will"
+subtitle: "The Data Songbook"
+image: assets/profile.jpg
+about:
+  template: trestles
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/canadasung
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/williamwnsong
+    - icon: envelope
+      text: Email
+      href: mailto:canadasung@gmail.com
+---
+
+[English](index.html) | [繁體中文](index-zh.html)
+
+您好！我的名字是宋伟宁（William Song），一位居住于加拿大不列颠哥伦比亚(卑诗)省温哥华的数据科学家与分析师。
+
+我的工作横跨商业分析、统计建模、数据工程与可视化等领域。
+
+与许多人一样，AI（尤其是大型语言模型）也已深刻影响了我的工作流程，它为未来的世界带来许多可能以及效率提升，但随之而来也有无法忽视的数据安全风险与技术流失的挑战，比如说降低写代码的能力与记忆。尽管如此，我仍然时不时地砥砺自己手写原始 SQL 和 Python 的代码来解决问题。
+
+## 数据分析／数据科学职业历程
+
+- **???** | 待发掘中……
+
+- **[KABAM](https://www.kabam.com){target="_blank"}** | 数据分析师 | 2023.12 - 2025.08
+
+- **[IGG](https://www.igg.com){target="_blank"}** | 高级数据分析师 | 2021.07 - 2023.08
+
+- **[Blastworks Technology](https://www.blastworksinc.com/){target="_blank"}** | 游戏数据分析师 | 2018.09 - 2021.07
+
+## 数据分析之前的职业历程
+
+- **[River Rock Casino Resort](https://www.riverrockcasino.com){target="_blank"}** | 赌场荷官 | 2011.09 - 2014.07
+
+- **[McDonald's](https://www.mcdonalds.com/ca/en-ca.html){target="_blank"}** | 麦当劳餐厅员工 | 2009.07 - 2011.02
+
+- **[EHSN Taiwan CS & E-Commerce](https://www.ehsn.com.tw){target="_blank"}** | 东森购物客服专员 / 网络部商品营销策划专员 | 2003.09 - 2009.05
+
+## 学历
+
+英属哥伦比亚大学 (UBC) | 加拿大不列颠哥伦比亚省温哥华
+
+- 数据科学硕士 (MDS) | 2025 - 2026
+
+西蒙菲莎大学 (SFU) | 加拿大不列颠哥伦比亚省本拿比
+
+- 商学及计算机科学双主修 (BBA) | 2012 - 2018
+
+## 英文简历
+
+[Download PDF](assets/william_song_resume_2p.pdf){.btn .btn-outline-primary target="_blank"}
