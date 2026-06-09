@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-04-15">
-<meta name="description" content="Benchmarking window functions and CTE patterns across PostgreSQL and BigQuery on 10M-row datasets.">
+<meta name="dcterms.date" content="2025-06-01">
+<meta name="description" content="A FastAPI backend that fans out across 15+ biodiversity APIs asynchronously, with Redis caching and a Next.js frontend.">
 
-<title>SQL query optimization study – Data with Will</title>
+<title>Species name search – Data with Will</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -63,25 +63,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-00c9af38664fdbcd17515e33851bf1e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-302a28f62a29dd586fcee17213d54bce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-537c5db0bf2ca486e49babb010bb035e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-f73f8694cd8a9ddfde05848c169d0539.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -290,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Data with Will</span>
     </a>
   </div>
@@ -301,15 +301,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../projects/index.html"> 
+    <a class="nav-link" href="../../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../certifications.html"> 
+    <a class="nav-link" href="../../certifications.html"> 
 <span class="menu-text">Certifications</span></a>
   </li>  
 </ul>
@@ -347,10 +347,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul class="collapse">
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
-  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
-  <li><a href="#selected-findings" id="toc-selected-findings" class="nav-link" data-scroll-target="#selected-findings">Selected findings</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
+  <li><a href="#key-code" id="toc-key-code" class="nav-link" data-scroll-target="#key-code">Key code</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   </ul>
 </nav>
@@ -361,18 +361,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">SQL query optimization study</h1>
+<h1 class="title">Species name search</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">SQL</div>
-    <div class="quarto-category">PostgreSQL</div>
-    <div class="quarto-category">BigQuery</div>
-    <div class="quarto-category">performance</div>
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">FastAPI</div>
+    <div class="quarto-category">APIs</div>
+    <div class="quarto-category">async</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Benchmarking window functions and CTE patterns across PostgreSQL and BigQuery on 10M-row datasets.
+    A FastAPI backend that fans out across 15+ biodiversity APIs asynchronously, with Redis caching and a Next.js frontend.
   </div>
 </div>
 
@@ -383,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 15, 2025</p>
+      <p class="date">June 1, 2025</p>
     </div>
   </div>
   
@@ -397,71 +397,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>A structured benchmarking study comparing common SQL patterns – CTEs vs subqueries, window functions vs GROUP BY aggregations – on large datasets in both PostgreSQL 16 and BigQuery.</p>
+<p>This project builds a production-grade species name search tool that aggregates results from over 15 external biodiversity databases including GBIF and Symbiota portals.</p>
 </section>
-<section id="motivation" class="level2">
-<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>Much SQL advice online is untested or dialect-specific. I wanted concrete, reproducible numbers for the patterns I use most often.</p>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p>Biodiversity researchers often need to reconcile species names across multiple taxonomic authorities. No single API covers all databases, and sequential requests are too slow for interactive use.</p>
 </section>
-<section id="method" class="level2">
-<h2 class="anchored" data-anchor-id="method">Method</h2>
+<section id="approach" class="level2">
+<h2 class="anchored" data-anchor-id="approach">Approach</h2>
 <ul>
-<li>Generated synthetic datasets of 10M rows using Python’s <code>faker</code> library</li>
-<li>Ran each query 10 times and recorded median wall time</li>
-<li>Controlled for caching by running <code>DISCARD ALL</code> between trials in Postgres</li>
+<li><strong>Async fan-out:</strong> Used <code>httpx</code> with <code>asyncio.gather</code> to query all APIs concurrently, reducing median latency from ~8s sequential to ~1.2s.</li>
+<li><strong>Redis caching:</strong> Common species names are cached with a 24-hour TTL, cutting repeat query cost to near zero.</li>
+<li><strong>PostgreSQL:</strong> Stores canonical name mappings and user search history.</li>
+<li><strong>Next.js frontend:</strong> Displays ranked results with source attribution and fuzzy match scores.</li>
 </ul>
 </section>
-<section id="selected-findings" class="level2">
-<h2 class="anchored" data-anchor-id="selected-findings">Selected findings</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Pattern</th>
-<th>PostgreSQL</th>
-<th>BigQuery</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>CTE (non-recursive)</td>
-<td>1.2s</td>
-<td>0.8s</td>
-</tr>
-<tr class="even">
-<td>Equivalent subquery</td>
-<td>1.1s</td>
-<td>0.9s</td>
-</tr>
-<tr class="odd">
-<td>Window ROW_NUMBER()</td>
-<td>0.7s</td>
-<td>0.4s</td>
-</tr>
-<tr class="even">
-<td>GROUP BY + join</td>
-<td>1.4s</td>
-<td>0.6s</td>
-</tr>
-</tbody>
-</table>
-<p>CTEs in PostgreSQL are not optimization fences as of v12+, which surprised many colleagues who avoided them for performance reasons.</p>
+<section id="key-code" class="level2">
+<h2 class="anchored" data-anchor-id="key-code">Key code</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> asyncio</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> httpx</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span> <span class="kw">def</span> fan_out(name: <span class="bu">str</span>, sources: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">async</span> <span class="cf">with</span> httpx.AsyncClient(timeout<span class="op">=</span><span class="fl">5.0</span>) <span class="im">as</span> client:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        tasks <span class="op">=</span> [query_source(client, name, src) <span class="cf">for</span> src <span class="kw">in</span> sources]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        results <span class="op">=</span> <span class="cf">await</span> asyncio.gather(<span class="op">*</span>tasks, return_exceptions<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {src: r <span class="cf">for</span> src, r <span class="kw">in</span> <span class="bu">zip</span>(sources, results) <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(r, <span class="pp">Exception</span>)}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="code" class="level2">
-<h2 class="anchored" data-anchor-id="code">Code</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  user_id,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  event_date,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">SUM</span>(revenue) <span class="kw">OVER</span> (</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">PARTITION</span> <span class="kw">BY</span> user_id</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ORDER</span> <span class="kw">BY</span> event_date</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">CURRENT</span> <span class="kw">ROW</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="kw">AS</span> cumulative_revenue</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="kw">events</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<ul>
+<li>Sub-2s response time across 15 sources</li>
+<li>94% cache hit rate on common queries after first week</li>
+<li>Deployed on a single $6/month VPS with no downtime in 3 months</li>
+</ul>
 </section>
 <section id="links" class="level2">
 <h2 class="anchored" data-anchor-id="links">Links</h2>
 <ul>
-<li><a href="https://github.com/YOUR_USERNAME/sql-benchmarks">GitHub repo</a></li>
+<li><a href="https://github.com/YOUR_USERNAME/species-search">GitHub repo</a></li>
+<li><a href="https://your-demo-url.com">Live demo</a></li>
 </ul>
 
 
@@ -899,5 +873,5 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
