@@ -29,8 +29,12 @@ website:
 format:
   html:
     theme:
-      dark: darkly
-      light: cosmo
+      dark: 
+        - darkly
+        - assets/custom.scss
+      light: 
+        - cosmo
+        - assets/custom.scss
     respect-user-color-scheme: true
     highlight-style: github
     code-fold: true
