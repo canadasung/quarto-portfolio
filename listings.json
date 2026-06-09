@@ -1,15 +1,15 @@
 [
   {
+    "listing": "/deprecated/blog/index.html",
+    "items": [
+      "/deprecated/blog/duckdb-vs-pandas.html"
+    ]
+  },
+  {
     "listing": "/projects/index.html",
     "items": [
       "/projects/world-education.html",
       "/projects/washrooms-vancouver-parks.html"
-    ]
-  },
-  {
-    "listing": "/deprecated/blog/index.html",
-    "items": [
-      "/deprecated/blog/duckdb-vs-pandas.html"
     ]
   }
 ]

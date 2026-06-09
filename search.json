@@ -1,73 +1,150 @@
 [
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data with Will",
     "section": "",
-    "text": "World Education Project\n\n\n\nPython\n\nShiny\n\nData Visualization\n\nEDA\n\nLLM\n\n\n\nAnalyzing global education indicators to explore patterns in enrollment, attainment, and inequality across countries, with an interactive Shiny dashboard and LLM-powered…\n\n\n\nMar 15, 2026\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Parks\n\n\n\nPython\n\nScikit-learn\n\nClassification\n\nEDA\n\n\n\nPredicting the presence of washrooms in Vancouver parks using machine learning models based on park attributes and amenities.\n\n\n\nDec 6, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "繁體中文 | 简体中文\nGreetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.\nMy work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.\nLike many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I am excited about the possibilities it opens up for data professionals. Also, I am aware of the potential risks it poses, technical-wise (security risk) and skill-wise (skill atrophy). That said, I also continue to write raw SQL and Python code from time to time to practice and to solve problems from the ground up."
   },
   {
-    "objectID": "projects/world-education.html",
-    "href": "projects/world-education.html",
-    "title": "World Education Project",
+    "objectID": "index.html#career-journey-in-dads",
+    "href": "index.html#career-journey-in-dads",
+    "title": "Data with Will",
+    "section": "Career Journey in DA/DS",
+    "text": "Career Journey in DA/DS\n\n??? | To be discovered…..\nKABAM | Data Analyst | 2023.12 - 2025.08\nIGG | Senior Data Analyst | 2021.07 - 2023.08\nBlastworks Technology | Game Data Analyst | 2018.09 - 2021.07"
+  },
+  {
+    "objectID": "index.html#career-journey-before-da",
+    "href": "index.html#career-journey-before-da",
+    "title": "Data with Will",
+    "section": "Career Journey before DA",
+    "text": "Career Journey before DA\n\nRiver Rock Casino Resort | Table Game Dealer | 2011.09 - 2014.07\nMcDonald’s | Crew | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | CS Agent / Product Marketing Analyst | 2003.09 - 2009.05"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Data with Will",
+    "section": "Education",
+    "text": "Education\nUniversity of British Columbia | Vancouver, BC, Canada\n\nMaster of Data Science (MDS) | 2025 - 2026\n\nSimon Fraser University | Burnaby, BC, Canada\n\nJoint major in Business and Computer Science (BBA) | 2012 - 2018"
+  },
+  {
+    "objectID": "index.html#resume",
+    "href": "index.html#resume",
+    "title": "Data with Will",
+    "section": "Resume",
+    "text": "Resume\nDownload PDF"
+  },
+  {
+    "objectID": "projects/washrooms-vancouver-parks.html",
+    "href": "projects/washrooms-vancouver-parks.html",
+    "title": "Washrooms in Vancouver Parks",
     "section": "",
-    "text": "The value of this group project to me\n\nTechnical skills:\n\ndeploying a Shiny dashboard to share insights interactively on Posit Cloud, a great substitute if Tableau or Power BI are not available.\napplying data cleaning, EDA, visualization, and dashboarding techniques.\n\nCollaboration:\n\nworking with a team of 4 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\n\n\n\n\n\nOverview\nThis project analyzes global education indicators to explore patterns in enrollment, attainment, and inequality across countries. The analysis was completed as part of UBC Master of Data Science, DSCI 532 Data Visualization course and demonstrates data cleaning, exploratory analysis, visualization, and basic modeling to surface insights relevant to education gaps between genders and international regions. Then finally, deploy the insights in an interactive dashboard built with Shiny, and a chatbot interface using a large language model to query the data.\n\n\nProject repository\nForked project repo: World Education Project\n\n\n\nData\nPrimary files (from the repo)\n\ndata/processed/processed_global_education.csv: cleaned, merged dataset used for analysis.\n\ndata/raw/Global_Education.csv: raw source files sourced from Kaggle - World Educational Data, compiled from UNESCO Institute for Statistics, UNICEF, and UN Statistics Division.\nnotebooks/EDA.ipynb: analysis jupyter notebooks (Python) used to produce figures and tables.\n\n\n\n\nMethods & Analytics\n\nData cleaning & integration: harmonized country codes, handled missingness, merged multiple sources.\n\nExploratory data analysis: summary statistics, distributions, and correlation matrices.\nSegmentation: country clustering by region, gender, education outcomes and socioeconomic indicators.\nVisualization: maps, comparative bar charts, correlation scatter plot.\nChatbot using LLM: used a large language model to automatically filter and explore the data.\n\n\n\n\nDashboard\nLink to the dashboard\nWe built an interactive dashboard using Shiny app to allow users to explore the data and insights dynamically. The dashboard includes: World map views with metric selector, bar charts comparing average education level by region, and completion rate gap by region, scatter plot comparing male and female literacy rate by region, and a chatbot interface for querying the data using natural language.\n\nLanding page \nInteractive plots \nChatbot page"
+    "text": "The value of this group project to me\n\nTechnical skills:\n\ncreating a containerized environment using Docker to practice a reproducible workflow.\napplying data cleaning, EDA, machine learning models (baseline, KNN, SVM RBF), and visualization techniques.\n\nCollaboration:\n\nworking with a team of 3 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\n\n\n\n\n\nOverview\nThis project maps and analyzes public washroom availability in Vancouver parks. It combines spatial data, park metadata, and accessibility attributes to identify coverage gaps and inform planning decisions for park amenities. The analysis was completed as part of UBC Master of Data Science, DSCI 522 Data Science Workflow course.\n\n\nProject repository\nForked project repo: washrooms-in-vancouver-parks\n\n\n\nReport\nThe final report can be found here: Predicting the Presence of Washrooms in Vancouver Parks.\n\n\n\nData\n\nSource and scope\n\nCity of Vancouver Parks dataset (Vancouver 2025) covering 218 parks with facility attributes, locations, and sizes.\n\n\n\nKey variables used\n\nTarget: washrooms (presence/absence).\nPredictors: park size (hectares), neighbourhood, official park flag, advisories, counts of additional facilities, and special features.\n\n\n\nNotes and limitations\n\nThe dataset is cross‑sectional and may omit contextual features (visitor counts, funding cycles) that could improve predictive performance.\n\n\n\n\n\nMethods & Analytics\n\nExploratory analysis\n\nCompare distributions of binary amenities and park size between parks with and without washrooms (frequency plots, histograms).\n\n\n\nModeling approach\n\nBaseline: Dummy classifier to set a reference accuracy.\nModels tested: K‑Nearest Neighbors (KNN) and Support Vector Machine with RBF kernel (SVM RBF).\nValidation: 70/30 train/test split with 5‑fold cross‑validation on training data.\nPreprocessing: Standardize numeric features; encode categorical predictors (neighbourhood, flags); handle missingness prior to fitting.\n\n\n\nEvaluation metrics\n\nCross‑validation test score, training score, and confusion matrix on held‑out test set to assess generalization and class balance.\n\n\n\n\n\nKey Findings\n\nParks with washrooms tend to be larger: median hectare is higher for parks that include washrooms.\nWashroom presence correlates with other amenities: parks offering more facilities are more likely to have washrooms.\nSVM RBF outperformed KNN and the baseline: in cross‑validation, though the improvement over the dummy baseline was modest, indicating limited predictive signal in the chosen features.\nKNN showed signs of overfitting: (higher training score, lower test performance) and therefore generalized poorly.\nImplication: richer features (e.g., visitor counts, park usage, funding/prioritization data) or alternative modeling strategies are likely needed to produce stronger, actionable predictions.\n\n\n\n\nVisualizations\n\nModel comparison: \nConfusion matrix:"
   },
   {
-    "objectID": "deprecated/query-optimization.html",
-    "href": "deprecated/query-optimization.html",
-    "title": "SQL query optimization study",
+    "objectID": "index-zh.html",
+    "href": "index-zh.html",
+    "title": "Data with Will",
     "section": "",
-    "text": "A structured benchmarking study comparing common SQL patterns – CTEs vs subqueries, window functions vs GROUP BY aggregations – on large datasets in both PostgreSQL 16 and BigQuery."
+    "text": "English | 简体中文\n您好！我的名字是宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞(卑詩)省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI (尤其是大型語言模型) 也已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及效率提升，但隨之而來也有無法忽視的資料安全風險與技術流失的挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
   },
   {
-    "objectID": "deprecated/query-optimization.html#overview",
-    "href": "deprecated/query-optimization.html#overview",
-    "title": "SQL query optimization study",
+    "objectID": "index-zh.html#數據分析資料科學職涯歷程",
+    "href": "index-zh.html#數據分析資料科學職涯歷程",
+    "title": "Data with Will",
+    "section": "數據分析／資料科學職涯歷程",
+    "text": "數據分析／資料科學職涯歷程\n\n??? | 待發掘中……\nKABAM | 數據分析師 | 2023.12 - 2025.08\nIGG | 資深數據分析師 | 2021.07 - 2023.08\nBlastworks Technology | 遊戲數據分析師 | 2018.09 - 2021.07"
+  },
+  {
+    "objectID": "index-zh.html#數據分析以前的職涯歷程",
+    "href": "index-zh.html#數據分析以前的職涯歷程",
+    "title": "Data with Will",
+    "section": "數據分析以前的職涯歷程",
+    "text": "數據分析以前的職涯歷程\n\nRiver Rock Casino Resort | 賭場荷官 | 2011.09 - 2014.07\nMcDonald’s | 麥當勞餐廳員工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 東森購物客服專員 / 網路部商品行銷企劃專員 | 2003.09 - 2009.05"
+  },
+  {
+    "objectID": "index-zh.html#學歷",
+    "href": "index-zh.html#學歷",
+    "title": "Data with Will",
+    "section": "學歷",
+    "text": "學歷\n英屬哥倫比亞大學 (UBC) | 加拿大卑詩省溫哥華\n\n資料科學碩士 (MDS) | 2025 - 2026\n\n西門菲沙大學 (SFU) | 加拿大卑詩省本拿比\n\n商學及電腦科學雙主修 (BBA) | 2012 - 2018"
+  },
+  {
+    "objectID": "index-zh.html#英文履歷",
+    "href": "index-zh.html#英文履歷",
+    "title": "Data with Will",
+    "section": "英文履歷",
+    "text": "英文履歷\nDownload PDF"
+  },
+  {
+    "objectID": "index-zh-simplified.html",
+    "href": "index-zh-simplified.html",
+    "title": "Data with Will",
     "section": "",
-    "text": "A structured benchmarking study comparing common SQL patterns – CTEs vs subqueries, window functions vs GROUP BY aggregations – on large datasets in both PostgreSQL 16 and BigQuery."
+    "text": "English | 繁體中文\n您好！我的名字是宋伟宁（William Song），一位居住于加拿大不列颠哥伦比亚(卑诗)省温哥华的数据科学家与分析师。\n我的工作横跨商业分析、统计建模、数据工程与可视化等领域。\n与许多人一样，AI（尤其是大型语言模型）也已深刻影响了我的工作流程，它为未来的世界带来许多可能以及效率提升，但随之而来也有无法忽视的数据安全风险与技术流失的挑战，比如说降低写代码的能力与记忆。尽管如此，我仍然时不时地砥砺自己手写原始 SQL 和 Python 的代码来解决问题。"
   },
   {
-    "objectID": "deprecated/query-optimization.html#motivation",
-    "href": "deprecated/query-optimization.html#motivation",
-    "title": "SQL query optimization study",
-    "section": "Motivation",
-    "text": "Motivation\nMuch SQL advice online is untested or dialect-specific. I wanted concrete, reproducible numbers for the patterns I use most often."
+    "objectID": "index-zh-simplified.html#数据分析数据科学职业历程",
+    "href": "index-zh-simplified.html#数据分析数据科学职业历程",
+    "title": "Data with Will",
+    "section": "数据分析／数据科学职业历程",
+    "text": "数据分析／数据科学职业历程\n\n??? | 待发掘中……\nKABAM | 数据分析师 | 2023.12 - 2025.08\nIGG | 高级数据分析师 | 2021.07 - 2023.08\nBlastworks Technology | 游戏数据分析师 | 2018.09 - 2021.07"
   },
   {
-    "objectID": "deprecated/query-optimization.html#method",
-    "href": "deprecated/query-optimization.html#method",
-    "title": "SQL query optimization study",
-    "section": "Method",
-    "text": "Method\n\nGenerated synthetic datasets of 10M rows using Python’s faker library\nRan each query 10 times and recorded median wall time\nControlled for caching by running DISCARD ALL between trials in Postgres"
+    "objectID": "index-zh-simplified.html#数据分析之前的职业历程",
+    "href": "index-zh-simplified.html#数据分析之前的职业历程",
+    "title": "Data with Will",
+    "section": "数据分析之前的职业历程",
+    "text": "数据分析之前的职业历程\n\nRiver Rock Casino Resort | 赌场荷官 | 2011.09 - 2014.07\nMcDonald’s | 麦当劳餐厅员工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 东森购物客服专员 / 网络部商品营销策划专员 | 2003.09 - 2009.05"
   },
   {
-    "objectID": "deprecated/query-optimization.html#selected-findings",
-    "href": "deprecated/query-optimization.html#selected-findings",
-    "title": "SQL query optimization study",
-    "section": "Selected findings",
-    "text": "Selected findings\n\n\n\nPattern\nPostgreSQL\nBigQuery\n\n\n\n\nCTE (non-recursive)\n1.2s\n0.8s\n\n\nEquivalent subquery\n1.1s\n0.9s\n\n\nWindow ROW_NUMBER()\n0.7s\n0.4s\n\n\nGROUP BY + join\n1.4s\n0.6s\n\n\n\nCTEs in PostgreSQL are not optimization fences as of v12+, which surprised many colleagues who avoided them for performance reasons."
+    "objectID": "index-zh-simplified.html#学历",
+    "href": "index-zh-simplified.html#学历",
+    "title": "Data with Will",
+    "section": "学历",
+    "text": "学历\n英属哥伦比亚大学 (UBC) | 加拿大不列颠哥伦比亚省温哥华\n\n数据科学硕士 (MDS) | 2025 - 2026\n\n西蒙菲莎大学 (SFU) | 加拿大不列颠哥伦比亚省本拿比\n\n商学及计算机科学双主修 (BBA) | 2012 - 2018"
   },
   {
-    "objectID": "deprecated/query-optimization.html#code",
-    "href": "deprecated/query-optimization.html#code",
-    "title": "SQL query optimization study",
-    "section": "Code",
-    "text": "Code\nSELECT\n  user_id,\n  event_date,\n  SUM(revenue) OVER (\n    PARTITION BY user_id\n    ORDER BY event_date\n    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n  ) AS cumulative_revenue\nFROM events;"
+    "objectID": "index-zh-simplified.html#英文简历",
+    "href": "index-zh-simplified.html#英文简历",
+    "title": "Data with Will",
+    "section": "英文简历",
+    "text": "英文简历\nDownload PDF"
   },
   {
-    "objectID": "deprecated/query-optimization.html#links",
-    "href": "deprecated/query-optimization.html#links",
-    "title": "SQL query optimization study",
-    "section": "Links",
-    "text": "Links\n\nGitHub repo"
-  },
-  {
-    "objectID": "deprecated/blog/index.html",
-    "href": "deprecated/blog/index.html",
-    "title": "Blog",
+    "objectID": "deprecated/slides/index.html",
+    "href": "deprecated/slides/index.html",
+    "title": "Overview",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nWhen to use DuckDB vs pandas for local analytics\n\n\nA practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset.\n\n\nPython, DuckDB, pandas, performance\n\n\n\n\n\n\nNo matching items"
+    "text": "Presenter: William Song"
+  },
+  {
+    "objectID": "deprecated/slides/index.html#schedule",
+    "href": "deprecated/slides/index.html#schedule",
+    "title": "Overview",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nDuration\nModule\n\n\n\n\n10:00 AM\n30 min\nModule 1: Introduction to Data Science Tools\n\n\n10:30 AM\n45 min\nModule 2: Python and SQL Together\n\n\n11:15 AM\n10 min\nMorning Break\n\n\n11:25 AM\n60 min\nModule 3: Data Wrangling with pandas\n\n\n12:25 PM\n45 min\nLunch\n\n\n1:10 PM\n60 min\nModule 4: Query Optimization\n\n\n2:10 PM\n10 min\nAfternoon Break\n\n\n2:20 PM\n45 min\nModule 5: Visualization Best Practices\n\n\n3:05 PM\n\nEnd of session"
+  },
+  {
+    "objectID": "deprecated/slides/module2.html",
+    "href": "deprecated/slides/module2.html",
+    "title": "Module 2: Python and SQL Together",
+    "section": "",
+    "text": "SQL handles where the data lives; Python handles what you do with it."
+  },
+  {
+    "objectID": "deprecated/slides/module2.html#slides",
+    "href": "deprecated/slides/module2.html#slides",
+    "title": "Module 2: Python and SQL Together",
+    "section": "Slides",
+    "text": "Slides\nView slides in full screen"
+  },
+  {
+    "objectID": "deprecated/slides/module2.html#key-takeaways",
+    "href": "deprecated/slides/module2.html#key-takeaways",
+    "title": "Module 2: Python and SQL Together",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nUse SQL to filter and aggregate before loading into Python\nAvoid pulling entire tables into memory unnecessarily\nSQLAlchemy and DuckDB bridge the two seamlessly"
   },
   {
     "objectID": "deprecated/slides/intro.html#about-me",
@@ -119,130 +196,109 @@
     "text": "Q&A\nThank you!\n\nGitHub: canadasung\nLinkedIn: williamwnsong\nEmail: canadasung@gmail.com"
   },
   {
-    "objectID": "deprecated/slides/index.html",
-    "href": "deprecated/slides/index.html",
-    "title": "Overview",
+    "objectID": "deprecated/slides/module1.html",
+    "href": "deprecated/slides/module1.html",
+    "title": "Module 1: Introduction to Data Science Tools",
     "section": "",
-    "text": "Presenter: William Song"
+    "text": "An overview of the modern data science stack and how the tools fit together across the pipeline."
   },
   {
-    "objectID": "deprecated/slides/index.html#schedule",
-    "href": "deprecated/slides/index.html#schedule",
-    "title": "Overview",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nDuration\nModule\n\n\n\n\n10:00 AM\n30 min\nModule 1: Introduction to Data Science Tools\n\n\n10:30 AM\n45 min\nModule 2: Python and SQL Together\n\n\n11:15 AM\n10 min\nMorning Break\n\n\n11:25 AM\n60 min\nModule 3: Data Wrangling with pandas\n\n\n12:25 PM\n45 min\nLunch\n\n\n1:10 PM\n60 min\nModule 4: Query Optimization\n\n\n2:10 PM\n10 min\nAfternoon Break\n\n\n2:20 PM\n45 min\nModule 5: Visualization Best Practices\n\n\n3:05 PM\n\nEnd of session"
+    "objectID": "deprecated/slides/module1.html#topics",
+    "href": "deprecated/slides/module1.html#topics",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "Topics",
+    "text": "Topics\n\nWhat is the data science pipeline?\nWhere Python, R, and SQL each shine\nSetting up your local environment"
   },
   {
-    "objectID": "deprecated/slides/module4.html",
-    "href": "deprecated/slides/module4.html",
-    "title": "Module 4: Query Optimization",
+    "objectID": "deprecated/slides/module1.html#the-data-science-pipeline",
+    "href": "deprecated/slides/module1.html#the-data-science-pipeline",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "The Data Science Pipeline",
+    "text": "The Data Science Pipeline\nEach tool has its place:\n\n\n\nStage\nTool\n\n\n\n\nStore & query\nSQL\n\n\nWrangle & model\nPython / R\n\n\nVisualize\nPython / R / Quarto\n\n\nCommunicate\nQuarto"
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html",
+    "href": "deprecated/blog/duckdb-vs-pandas.html",
+    "title": "When to use DuckDB vs pandas for local analytics",
     "section": "",
-    "text": "Practical techniques for writing faster, more efficient SQL queries."
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
   },
   {
-    "objectID": "deprecated/slides/module4.html#use-indexes",
-    "href": "deprecated/slides/module4.html#use-indexes",
-    "title": "Module 4: Query Optimization",
-    "section": "Use Indexes",
-    "text": "Use Indexes\n\nAdd indexes on columns you frequently filter or join on\nAvoid full table scans on large datasets\n\nCREATE INDEX idx_orders_status ON orders(status);"
-  },
-  {
-    "objectID": "deprecated/slides/module4.html#push-filters-early",
-    "href": "deprecated/slides/module4.html#push-filters-early",
-    "title": "Module 4: Query Optimization",
-    "section": "Push Filters Early",
-    "text": "Push Filters Early\n-- Slow: joins first, then filters\nSELECT * FROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';\n\n-- Fast: filter before join\nSELECT o.id, c.name\nFROM (SELECT * FROM orders WHERE status = 'completed') o\nJOIN customers c ON o.customer_id = c.id;"
-  },
-  {
-    "objectID": "deprecated/slides/module4.html#read-query-plans",
-    "href": "deprecated/slides/module4.html#read-query-plans",
-    "title": "Module 4: Query Optimization",
-    "section": "Read Query Plans",
-    "text": "Read Query Plans\nEXPLAIN SELECT * FROM orders WHERE status = 'completed';\nLook for: Seq Scan (slow) vs Index Scan (fast)."
-  },
-  {
-    "objectID": "deprecated/slides/module3.html",
-    "href": "deprecated/slides/module3.html",
-    "title": "Module 3: Data Wrangling with pandas",
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#context",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#context",
+    "title": "When to use DuckDB vs pandas for local analytics",
     "section": "",
-    "text": "Hands-on walkthrough of common data cleaning and transformation patterns."
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
   },
   {
-    "objectID": "deprecated/slides/module3.html#reading-and-inspecting-data",
-    "href": "deprecated/slides/module3.html#reading-and-inspecting-data",
-    "title": "Module 3: Data Wrangling with pandas",
-    "section": "Reading and Inspecting Data",
-    "text": "Reading and Inspecting Data\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\ndf.head()\ndf.info()\ndf.describe()"
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "The short answer",
+    "text": "The short answer\nUse DuckDB when:\n\nYour dataset is larger than ~500MB\nYou are doing aggregations, joins, or window functions\nYou want to query Parquet or CSV files without loading them into memory\n\nUse pandas when:\n\nYou need row-wise Python logic (.apply, custom functions)\nYou are doing iterative data cleaning with lots of intermediate steps\nThe dataset fits comfortably in memory and transformation is simple"
   },
   {
-    "objectID": "deprecated/slides/module3.html#filtering-and-aggregating",
-    "href": "deprecated/slides/module3.html#filtering-and-aggregating",
-    "title": "Module 3: Data Wrangling with pandas",
-    "section": "Filtering and Aggregating",
-    "text": "Filtering and Aggregating\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n    .sort_values(\"revenue\", ascending=False)\n)"
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Benchmark",
+    "text": "Benchmark\nimport duckdb\nimport pandas as pd\nimport time\n\n# DuckDB aggregation\nstart = time.perf_counter()\nduckdb.sql(\"SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category\").df()\nprint(f\"DuckDB: {time.perf_counter() - start:.2f}s\")\n\n# pandas equivalent\nstart = time.perf_counter()\ndf = pd.read_parquet(\"data.parquet\")\ndf.groupby(\"category\")[\"value\"].mean()\nprint(f\"pandas: {time.perf_counter() - start:.2f}s\")\nOn 5M rows: DuckDB finished in 0.3s, pandas in 2.1s – and pandas used 1.4GB RAM vs DuckDB’s 180MB."
   },
   {
-    "objectID": "deprecated/slides/module3.html#handling-missing-values",
-    "href": "deprecated/slides/module3.html#handling-missing-values",
-    "title": "Module 3: Data Wrangling with pandas",
-    "section": "Handling Missing Values",
-    "text": "Handling Missing Values\n# Check\ndf.isnull().sum()\n\n# Drop or fill\ndf.dropna(subset=[\"critical_column\"])\ndf[\"optional_col\"].fillna(0)"
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Takeaway",
+    "text": "Takeaway\nDuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations."
   },
   {
-    "objectID": "index-zh.html",
-    "href": "index-zh.html",
-    "title": "Data with Will",
+    "objectID": "deprecated/query-optimization.html",
+    "href": "deprecated/query-optimization.html",
+    "title": "SQL query optimization study",
     "section": "",
-    "text": "English\n您好！我的名字是宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI (尤其是大型語言模型) 也已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及效率提升，但隨之而來也有無法忽視的資料安全風險與技術流失的挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
+    "text": "A structured benchmarking study comparing common SQL patterns – CTEs vs subqueries, window functions vs GROUP BY aggregations – on large datasets in both PostgreSQL 16 and BigQuery."
   },
   {
-    "objectID": "index-zh.html#數據分析資料科學職涯歷程",
-    "href": "index-zh.html#數據分析資料科學職涯歷程",
-    "title": "Data with Will",
-    "section": "數據分析／資料科學職涯歷程",
-    "text": "數據分析／資料科學職涯歷程\n\n??? | 待發掘中……\nKABAM | 數據分析師 | 2023.12 - 2025.08\nIGG | 資深數據分析師 | 2021.07 - 2023.08\nBlastworks Technology | 遊戲數據分析師 | 2018.09 - 2021.07"
-  },
-  {
-    "objectID": "index-zh.html#數據分析以前的職涯歷程",
-    "href": "index-zh.html#數據分析以前的職涯歷程",
-    "title": "Data with Will",
-    "section": "數據分析以前的職涯歷程",
-    "text": "數據分析以前的職涯歷程\n\nRiver Rock Casino Resort | 賭場荷官 | 2011.09 - 2014.07\nMcDonald’s | 麥當勞餐廳員工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 東森購物客服專員 / 網路部商品行銷企劃專員 | 2003.09 - 2009.05"
-  },
-  {
-    "objectID": "index-zh.html#學歷",
-    "href": "index-zh.html#學歷",
-    "title": "Data with Will",
-    "section": "學歷",
-    "text": "學歷\n英屬哥倫比亞大學 (UBC) | 加拿大卑詩省溫哥華\n\n資料科學碩士 (MDS) | 2025 - 2026\n\n西門菲沙大學 (SFU) | 加拿大卑詩省本拿比\n\n商學及電腦科學雙主修 (BBA) | 2012 - 2018"
-  },
-  {
-    "objectID": "index-zh.html#英文履歷",
-    "href": "index-zh.html#英文履歷",
-    "title": "Data with Will",
-    "section": "英文履歷",
-    "text": "英文履歷\nDownload PDF"
-  },
-  {
-    "objectID": "certifications.html",
-    "href": "certifications.html",
-    "title": "Certifications & Degrees",
+    "objectID": "deprecated/query-optimization.html#overview",
+    "href": "deprecated/query-optimization.html#overview",
+    "title": "SQL query optimization study",
     "section": "",
-    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
+    "text": "A structured benchmarking study comparing common SQL patterns – CTEs vs subqueries, window functions vs GROUP BY aggregations – on large datasets in both PostgreSQL 16 and BigQuery."
   },
   {
-    "objectID": "certifications.html#degrees",
-    "href": "certifications.html#degrees",
-    "title": "Certifications & Degrees",
-    "section": "",
-    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
+    "objectID": "deprecated/query-optimization.html#motivation",
+    "href": "deprecated/query-optimization.html#motivation",
+    "title": "SQL query optimization study",
+    "section": "Motivation",
+    "text": "Motivation\nMuch SQL advice online is untested or dialect-specific. I wanted concrete, reproducible numbers for the patterns I use most often."
   },
   {
-    "objectID": "certifications.html#certifications",
-    "href": "certifications.html#certifications",
-    "title": "Certifications & Degrees",
-    "section": "Certifications",
-    "text": "Certifications\n\nMicrosoft Certified: Azure Data Fundamentals\nMicrosoft | October 2023\n\n\nMicrosoft Certified: Azure Fundamentals\nMicrosoft | July 2023\n\n\nSFU Certified: Business Analytics & Decision Making\nSimon Fraser University | June 2018"
+    "objectID": "deprecated/query-optimization.html#method",
+    "href": "deprecated/query-optimization.html#method",
+    "title": "SQL query optimization study",
+    "section": "Method",
+    "text": "Method\n\nGenerated synthetic datasets of 10M rows using Python’s faker library\nRan each query 10 times and recorded median wall time\nControlled for caching by running DISCARD ALL between trials in Postgres"
+  },
+  {
+    "objectID": "deprecated/query-optimization.html#selected-findings",
+    "href": "deprecated/query-optimization.html#selected-findings",
+    "title": "SQL query optimization study",
+    "section": "Selected findings",
+    "text": "Selected findings\n\n\n\nPattern\nPostgreSQL\nBigQuery\n\n\n\n\nCTE (non-recursive)\n1.2s\n0.8s\n\n\nEquivalent subquery\n1.1s\n0.9s\n\n\nWindow ROW_NUMBER()\n0.7s\n0.4s\n\n\nGROUP BY + join\n1.4s\n0.6s\n\n\n\nCTEs in PostgreSQL are not optimization fences as of v12+, which surprised many colleagues who avoided them for performance reasons."
+  },
+  {
+    "objectID": "deprecated/query-optimization.html#code",
+    "href": "deprecated/query-optimization.html#code",
+    "title": "SQL query optimization study",
+    "section": "Code",
+    "text": "Code\nSELECT\n  user_id,\n  event_date,\n  SUM(revenue) OVER (\n    PARTITION BY user_id\n    ORDER BY event_date\n    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW\n  ) AS cumulative_revenue\nFROM events;"
+  },
+  {
+    "objectID": "deprecated/query-optimization.html#links",
+    "href": "deprecated/query-optimization.html#links",
+    "title": "SQL query optimization study",
+    "section": "Links",
+    "text": "Links\n\nGitHub repo"
   },
   {
     "objectID": "deprecated/species-search.html",
@@ -294,46 +350,39 @@
     "text": "Links\n\nGitHub repo\nLive demo"
   },
   {
-    "objectID": "deprecated/slides/module2.html",
-    "href": "deprecated/slides/module2.html",
-    "title": "Module 2: Python and SQL Together",
+    "objectID": "deprecated/blog/index.html",
+    "href": "deprecated/blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "SQL handles where the data lives; Python handles what you do with it."
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nWhen to use DuckDB vs pandas for local analytics\n\n\nA practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset.\n\n\nPython, DuckDB, pandas, performance\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "deprecated/slides/module2.html#slides",
-    "href": "deprecated/slides/module2.html#slides",
-    "title": "Module 2: Python and SQL Together",
-    "section": "Slides",
-    "text": "Slides\nView slides in full screen"
-  },
-  {
-    "objectID": "deprecated/slides/module2.html#key-takeaways",
-    "href": "deprecated/slides/module2.html#key-takeaways",
-    "title": "Module 2: Python and SQL Together",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nUse SQL to filter and aggregate before loading into Python\nAvoid pulling entire tables into memory unnecessarily\nSQLAlchemy and DuckDB bridge the two seamlessly"
-  },
-  {
-    "objectID": "deprecated/slides/module1.html",
-    "href": "deprecated/slides/module1.html",
-    "title": "Module 1: Introduction to Data Science Tools",
+    "objectID": "deprecated/slides/module4.html",
+    "href": "deprecated/slides/module4.html",
+    "title": "Module 4: Query Optimization",
     "section": "",
-    "text": "An overview of the modern data science stack and how the tools fit together across the pipeline."
+    "text": "Practical techniques for writing faster, more efficient SQL queries."
   },
   {
-    "objectID": "deprecated/slides/module1.html#topics",
-    "href": "deprecated/slides/module1.html#topics",
-    "title": "Module 1: Introduction to Data Science Tools",
-    "section": "Topics",
-    "text": "Topics\n\nWhat is the data science pipeline?\nWhere Python, R, and SQL each shine\nSetting up your local environment"
+    "objectID": "deprecated/slides/module4.html#use-indexes",
+    "href": "deprecated/slides/module4.html#use-indexes",
+    "title": "Module 4: Query Optimization",
+    "section": "Use Indexes",
+    "text": "Use Indexes\n\nAdd indexes on columns you frequently filter or join on\nAvoid full table scans on large datasets\n\nCREATE INDEX idx_orders_status ON orders(status);"
   },
   {
-    "objectID": "deprecated/slides/module1.html#the-data-science-pipeline",
-    "href": "deprecated/slides/module1.html#the-data-science-pipeline",
-    "title": "Module 1: Introduction to Data Science Tools",
-    "section": "The Data Science Pipeline",
-    "text": "The Data Science Pipeline\nEach tool has its place:\n\n\n\nStage\nTool\n\n\n\n\nStore & query\nSQL\n\n\nWrangle & model\nPython / R\n\n\nVisualize\nPython / R / Quarto\n\n\nCommunicate\nQuarto"
+    "objectID": "deprecated/slides/module4.html#push-filters-early",
+    "href": "deprecated/slides/module4.html#push-filters-early",
+    "title": "Module 4: Query Optimization",
+    "section": "Push Filters Early",
+    "text": "Push Filters Early\n-- Slow: joins first, then filters\nSELECT * FROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';\n\n-- Fast: filter before join\nSELECT o.id, c.name\nFROM (SELECT * FROM orders WHERE status = 'completed') o\nJOIN customers c ON o.customer_id = c.id;"
+  },
+  {
+    "objectID": "deprecated/slides/module4.html#read-query-plans",
+    "href": "deprecated/slides/module4.html#read-query-plans",
+    "title": "Module 4: Query Optimization",
+    "section": "Read Query Plans",
+    "text": "Read Query Plans\nEXPLAIN SELECT * FROM orders WHERE status = 'completed';\nLook for: Seq Scan (slow) vs Index Scan (fast)."
   },
   {
     "objectID": "deprecated/slides/module5.html",
@@ -364,6 +413,34 @@
     "text": "Tools\n\nPython: matplotlib, seaborn, Altair, Plotly\nR: ggplot2\nQuarto: renders all of the above inline"
   },
   {
+    "objectID": "deprecated/slides/module3.html",
+    "href": "deprecated/slides/module3.html",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "",
+    "text": "Hands-on walkthrough of common data cleaning and transformation patterns."
+  },
+  {
+    "objectID": "deprecated/slides/module3.html#reading-and-inspecting-data",
+    "href": "deprecated/slides/module3.html#reading-and-inspecting-data",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Reading and Inspecting Data",
+    "text": "Reading and Inspecting Data\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\ndf.head()\ndf.info()\ndf.describe()"
+  },
+  {
+    "objectID": "deprecated/slides/module3.html#filtering-and-aggregating",
+    "href": "deprecated/slides/module3.html#filtering-and-aggregating",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Filtering and Aggregating",
+    "text": "Filtering and Aggregating\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n    .sort_values(\"revenue\", ascending=False)\n)"
+  },
+  {
+    "objectID": "deprecated/slides/module3.html#handling-missing-values",
+    "href": "deprecated/slides/module3.html#handling-missing-values",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Handling Missing Values",
+    "text": "Handling Missing Values\n# Check\ndf.isnull().sum()\n\n# Drop or fill\ndf.dropna(subset=[\"critical_column\"])\ndf[\"optional_col\"].fillna(0)"
+  },
+  {
     "objectID": "deprecated/resume.html",
     "href": "deprecated/resume.html",
     "title": "Resume",
@@ -392,80 +469,38 @@
     "text": "Skills\n\n\n\nCategory\nTools\n\n\n\n\nLanguages\nPython, R, SQL\n\n\nML / stats\nscikit-learn, statsmodels, tidymodels\n\n\nData\npandas, DuckDB, PostgreSQL, dbt\n\n\nViz\nggplot2, matplotlib, Plotly, Quarto\n\n\nInfra\nGit, Docker, GitHub Actions"
   },
   {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html",
-    "href": "deprecated/blog/duckdb-vs-pandas.html",
-    "title": "When to use DuckDB vs pandas for local analytics",
+    "objectID": "certifications.html",
+    "href": "certifications.html",
+    "title": "Certifications & Degrees",
     "section": "",
-    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
+    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
   },
   {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#context",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#context",
-    "title": "When to use DuckDB vs pandas for local analytics",
+    "objectID": "certifications.html#degrees",
+    "href": "certifications.html#degrees",
+    "title": "Certifications & Degrees",
     "section": "",
-    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
+    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
   },
   {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "The short answer",
-    "text": "The short answer\nUse DuckDB when:\n\nYour dataset is larger than ~500MB\nYou are doing aggregations, joins, or window functions\nYou want to query Parquet or CSV files without loading them into memory\n\nUse pandas when:\n\nYou need row-wise Python logic (.apply, custom functions)\nYou are doing iterative data cleaning with lots of intermediate steps\nThe dataset fits comfortably in memory and transformation is simple"
+    "objectID": "certifications.html#certifications",
+    "href": "certifications.html#certifications",
+    "title": "Certifications & Degrees",
+    "section": "Certifications",
+    "text": "Certifications\n\nMicrosoft Certified: Azure Data Fundamentals\nMicrosoft | October 2023\n\n\nMicrosoft Certified: Azure Fundamentals\nMicrosoft | July 2023\n\n\nSFU Certified: Business Analytics & Decision Making\nSimon Fraser University | June 2018"
   },
   {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "Benchmark",
-    "text": "Benchmark\nimport duckdb\nimport pandas as pd\nimport time\n\n# DuckDB aggregation\nstart = time.perf_counter()\nduckdb.sql(\"SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category\").df()\nprint(f\"DuckDB: {time.perf_counter() - start:.2f}s\")\n\n# pandas equivalent\nstart = time.perf_counter()\ndf = pd.read_parquet(\"data.parquet\")\ndf.groupby(\"category\")[\"value\"].mean()\nprint(f\"pandas: {time.perf_counter() - start:.2f}s\")\nOn 5M rows: DuckDB finished in 0.3s, pandas in 2.1s – and pandas used 1.4GB RAM vs DuckDB’s 180MB."
-  },
-  {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "Takeaway",
-    "text": "Takeaway\nDuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Data with Will",
+    "objectID": "projects/world-education.html",
+    "href": "projects/world-education.html",
+    "title": "World Education Project",
     "section": "",
-    "text": "繁體中文\nGreetings! My name is William Song, a data scientist and analyst based in Vancouver, BC, Canada.\nMy work sits at the intersection of business analytics, statistical modeling, data engineering, and visualization.\nLike many of you, AI (LLMs in particular) has impacted my workflow in profound ways, and I am excited about the possibilities it opens up for data professionals. Also, I am aware of the potential risks it poses, technical-wise (security risk) and skill-wise (skill atrophy). That said, I also continue to write raw SQL and Python code from time to time to practice and to solve problems from the ground up."
+    "text": "The value of this group project to me\n\nTechnical skills:\n\ndeploying a Shiny dashboard to share insights interactively on Posit Cloud, a great substitute if Tableau or Power BI are not available.\napplying data cleaning, EDA, visualization, and dashboarding techniques.\n\nCollaboration:\n\nworking with a team of 4 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\n\n\n\n\n\nOverview\nThis project analyzes global education indicators to explore patterns in enrollment, attainment, and inequality across countries. The analysis was completed as part of UBC Master of Data Science, DSCI 532 Data Visualization course and demonstrates data cleaning, exploratory analysis, visualization, and basic modeling to surface insights relevant to education gaps between genders and international regions. Then finally, deploy the insights in an interactive dashboard built with Shiny, and a chatbot interface using a large language model to query the data.\n\n\nProject repository\nForked project repo: World Education Project\n\n\n\nData\nPrimary files (from the repo)\n\ndata/processed/processed_global_education.csv: cleaned, merged dataset used for analysis.\n\ndata/raw/Global_Education.csv: raw source files sourced from Kaggle - World Educational Data, compiled from UNESCO Institute for Statistics, UNICEF, and UN Statistics Division.\nnotebooks/EDA.ipynb: analysis jupyter notebooks (Python) used to produce figures and tables.\n\n\n\n\nMethods & Analytics\n\nData cleaning & integration: harmonized country codes, handled missingness, merged multiple sources.\n\nExploratory data analysis: summary statistics, distributions, and correlation matrices.\nSegmentation: country clustering by region, gender, education outcomes and socioeconomic indicators.\nVisualization: maps, comparative bar charts, correlation scatter plot.\nChatbot using LLM: used a large language model to automatically filter and explore the data.\n\n\n\n\nDashboard\nLink to the dashboard\nWe built an interactive dashboard using Shiny app to allow users to explore the data and insights dynamically. The dashboard includes: World map views with metric selector, bar charts comparing average education level by region, and completion rate gap by region, scatter plot comparing male and female literacy rate by region, and a chatbot interface for querying the data using natural language.\n\nLanding page \nInteractive plots \nChatbot page"
   },
   {
-    "objectID": "index.html#career-journey-in-dads",
-    "href": "index.html#career-journey-in-dads",
-    "title": "Data with Will",
-    "section": "Career Journey in DA/DS",
-    "text": "Career Journey in DA/DS\n\n??? | To be discovered…..\nKABAM | Data Analyst | 2023.12 - 2025.08\nIGG | Senior Data Analyst | 2021.07 - 2023.08\nBlastworks Technology | Game Data Analyst | 2018.09 - 2021.07"
-  },
-  {
-    "objectID": "index.html#career-journey-before-da",
-    "href": "index.html#career-journey-before-da",
-    "title": "Data with Will",
-    "section": "Career Journey before DA",
-    "text": "Career Journey before DA\n\nRiver Rock Casino Resort | Table Game Dealer | 2011.09 - 2014.07\nMcDonald’s | Crew | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | CS Agent / Product Marketing Analyst | 2003.09 - 2009.05"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Data with Will",
-    "section": "Education",
-    "text": "Education\nUniversity of British Columbia | Vancouver, BC, Canada\n\nMaster of Data Science (MDS) | 2025 - 2026\n\nSimon Fraser University | Burnaby, BC, Canada\n\nJoint major in Business and Computer Science (BBA) | 2012 - 2018"
-  },
-  {
-    "objectID": "index.html#resume",
-    "href": "index.html#resume",
-    "title": "Data with Will",
-    "section": "Resume",
-    "text": "Resume\nDownload PDF"
-  },
-  {
-    "objectID": "projects/washrooms-vancouver-parks.html",
-    "href": "projects/washrooms-vancouver-parks.html",
-    "title": "Washrooms in Vancouver Parks",
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "The value of this group project to me\n\nTechnical skills:\n\ncreating a containerized environment using Docker to practice a reproducible workflow.\napplying data cleaning, EDA, machine learning models (baseline, KNN, SVM RBF), and visualization techniques.\n\nCollaboration:\n\nworking with a team of 3 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\n\n\n\n\n\nOverview\nThis project maps and analyzes public washroom availability in Vancouver parks. It combines spatial data, park metadata, and accessibility attributes to identify coverage gaps and inform planning decisions for park amenities. The analysis was completed as part of UBC Master of Data Science, DSCI 522 Data Science Workflow course.\n\n\nProject repository\nForked project repo: washrooms-in-vancouver-parks\n\n\n\nReport\nThe final report can be found here: Predicting the Presence of Washrooms in Vancouver Parks.\n\n\n\nData\n\nSource and scope\n\nCity of Vancouver Parks dataset (Vancouver 2025) covering 218 parks with facility attributes, locations, and sizes.\n\n\n\nKey variables used\n\nTarget: washrooms (presence/absence).\nPredictors: park size (hectares), neighbourhood, official park flag, advisories, counts of additional facilities, and special features.\n\n\n\nNotes and limitations\n\nThe dataset is cross‑sectional and may omit contextual features (visitor counts, funding cycles) that could improve predictive performance.\n\n\n\n\n\nMethods & Analytics\n\nExploratory analysis\n\nCompare distributions of binary amenities and park size between parks with and without washrooms (frequency plots, histograms).\n\n\n\nModeling approach\n\nBaseline: Dummy classifier to set a reference accuracy.\nModels tested: K‑Nearest Neighbors (KNN) and Support Vector Machine with RBF kernel (SVM RBF).\nValidation: 70/30 train/test split with 5‑fold cross‑validation on training data.\nPreprocessing: Standardize numeric features; encode categorical predictors (neighbourhood, flags); handle missingness prior to fitting.\n\n\n\nEvaluation metrics\n\nCross‑validation test score, training score, and confusion matrix on held‑out test set to assess generalization and class balance.\n\n\n\n\n\nKey Findings\n\nParks with washrooms tend to be larger: median hectare is higher for parks that include washrooms.\nWashroom presence correlates with other amenities: parks offering more facilities are more likely to have washrooms.\nSVM RBF outperformed KNN and the baseline: in cross‑validation, though the improvement over the dummy baseline was modest, indicating limited predictive signal in the chosen features.\nKNN showed signs of overfitting: (higher training score, lower test performance) and therefore generalized poorly.\nImplication: richer features (e.g., visitor counts, park usage, funding/prioritization data) or alternative modeling strategies are likely needed to produce stronger, actionable predictions.\n\n\n\n\nVisualizations\n\nModel comparison: \nConfusion matrix:"
+    "text": "World Education Project\n\n\n\nPython\n\nShiny\n\nData Visualization\n\nEDA\n\nLLM\n\n\n\nAnalyzing global education indicators to explore patterns in enrollment, attainment, and inequality across countries, with an interactive Shiny dashboard and LLM-powered…\n\n\n\nMar 15, 2026\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Parks\n\n\n\nPython\n\nScikit-learn\n\nClassification\n\nEDA\n\n\n\nPredicting the presence of washrooms in Vancouver parks using machine learning models based on park attributes and amenities.\n\n\n\nDec 6, 2025\n\n\n\n\n\n\nNo matching items"
   }
 ]
