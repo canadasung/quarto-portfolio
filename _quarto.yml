@@ -29,8 +29,9 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - assets/custom.scss
+      dark: darkly
+      light: cosmo
+    respect-user-color-scheme: true
     highlight-style: github
     code-fold: true
     code-tools: false
