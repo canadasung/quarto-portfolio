@@ -3,7 +3,7 @@ title: "Model Interpretation"
 code-tools: false
 description: "Interpreting machine learning models using software development best practices to ensure reproducibility and scalability of data science workflows."
 date: 2026-02-01
-categories: [Python, Scikit-learn,  Classification, EDA]
+categories: [Python, Scikit-learn, Model Evaluation, Hyperparameter Tuning, Package Development]
 format:
   html:
     toc: true
