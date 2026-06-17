@@ -1,0 +1,102 @@
+---
+title: "Market Basket Analysis"
+code-tools: false
+description: "Building a cross-selling tool using Market Basket Analysis (affinity analysis) — Support, Confidence, and Lift — to surface product co-occurrence patterns with Excel and Power Query."
+date: 2017-10-01
+categories: [Business Analytics, Market Basket Analysis, Excel, Power Query, Presentation]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: default
+---
+
+### The value of this project to me
+
+- **Business analytics skills**:
+    - applying affinity analysis (Market Basket Analysis) to uncover product co-occurrence patterns from transactional data.
+    - translating data mining concepts (Support, Confidence, Lift) into a practical, business-friendly cross-selling tool.
+
+- **Communication**:
+    - presenting a technical analytics method to business stakeholders using a worked example (bread & butter) and clear SMART criteria.
+
+[Presentation Slides](../assets/mba_presentation.pdf){.btn .btn-outline-primary target="_blank"}
+
+---
+
+### Overview
+
+Market Basket Analysis (MBA) — also known as affinity analysis — is a data mining technique based on conditional probability (Bayes' Theorem) used to discover co-occurrence relationships among products (the classic "beers and diapers" example). It is widely adopted across retail, e-commerce, and finance for cross-sell/upsell strategy, bundling and discounting, shelf or page placement, and fraud detection.
+
+---
+
+### Why Market Basket Analysis
+
+- **Easy to understand and implement**: gather transactional data with a defined "basket" (e.g., by customer or by transaction).
+- **Widely applicable**: cross-sell/upsell, bundle/discount strategy, shelf or webpage display optimization, and fraud pattern detection in finance.
+
+---
+
+### Analytic Terms
+
+#### Occurrence & Support
+
+**Occurrence / Co-occurrence**: the number of times an item (or set of items) is purchased within the group.
+
+**Support**: the frequency (ratio) of an occurrence within the group.
+
+**Worked example** — out of 100 customers:
+
+- Bread is purchased by 50 customers → Support(Bread) = 50/100 = **0.5**
+- Butter is purchased by 30 customers → Support(Butter) = 30/100 = **0.3**
+- Bread and Butter together are purchased 20 times → Support(Co-occurrence) = 20/100 = **0.2**
+
+#### Confidence
+
+**Confidence**: the probability of both items being purchased, given that one item was purchased.
+
+$$
+Confidence(Bread) = \frac{Support(Co\text{-}occur)}{Support(Bread)} = \frac{0.2}{0.5} = 0.4
+$$
+
+$$
+Confidence(Butter) = \frac{Support(Co\text{-}occur)}{Support(Butter)} = \frac{0.2}{0.3} = 0.6667
+$$
+
+#### Lift
+
+**Lift**: the key indicator — the likelihood that two products go together. Only meaningful when greater than 1 (the higher, the stronger the association), though there is no universal market standard for "high enough"; values are interpreted relative to other outputs.
+
+$$
+Lift(Bread \,\&\, Butter) = \frac{Support(Co\text{-}occur)}{Support(Bread) \times Support(Butter)} = \frac{0.2}{0.15} = 1.33
+$$
+
+---
+
+### Benefits of MBA
+
+- **Accurate and easy to read**: Support, Confidence, and Lift are simple, interpretable metrics.
+- **Automation is possible**: all products analyzed in under 10 minutes, versus manual correlation analysis comparing only 3–4 products per day.
+- **Balances data cleanliness vs. time cost**: different levels of data cleanliness still reveal similar patterns.
+- **Additional insights**: product popularity, and comparisons across years, seasons, or stores.
+
+---
+
+### Constraints
+
+- **Similar product formats are still compared**: e.g., 1L milk vs. 2L milk. Mitigate by using filtering features to screen products.
+- **Basic MBA is limited to 1-to-1 relationships**: e.g., product A and product B. Advanced MBA (A + B + C → D) requires more advanced software/services.
+- **Data cleaning and model maintenance**:
+    - Data training is required.
+    - Raw data needs cleaning to reduce model run time.
+    - Procedures must be modified or re-created if the analysis goals change (e.g., changes to the basket or product hierarchy).
+
+---
+
+### Conclusion — SMART in Creating MBA Analytics
+
+- **Specific**: can be measured under different product hierarchies.
+- **Measurable**: Support, Confidence, and Lift indicators support decision-making.
+- **Achievable**: cost-effective when there's no budget for external software licenses for the functionality and require self-build.
+- **Relevant**: directly matches cross-selling strategy goals.
+- **Timeliness**: automation enables fast, easy-to-learn results.
