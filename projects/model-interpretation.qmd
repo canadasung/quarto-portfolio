@@ -2,7 +2,7 @@
 title: "Model Interpretation"
 code-tools: false
 description: "Interpreting machine learning models using software development best practices to ensure reproducibility and scalability of data science workflows."
-date: 2026-03-01
+date: 2026-02-01
 categories: [Python, Scikit-learn,  Classification, EDA]
 format:
   html:
@@ -15,7 +15,8 @@ format:
 ### The value of this group project to me
 
 - **Technical skills**:
-    - creating a containerized environment using [Docker](https://www.docker.com/){target="_blank"} to practice a reproducible workflow.
+    - creating reusable functions and scripts for data preprocessing, modeling, and evaluation to promote reproducibility and scalability.
+    - exploring new platform Netlify for hosting and sharing data science projects.
     - applying data cleaning, EDA, machine learning models (baseline, KNN, SVM RBF), and visualization techniques. 
 
 - **Collaboration**: 
@@ -23,81 +24,57 @@ format:
 
 - **Project management**: 
     - coordinating timelines, version control, and communication to ensure smooth progress.
+    - pushing code to GitHub and deploying the final report on Netlify for public access.
 
 ---
 
 ### Overview
 
-This project maps and analyzes public washroom availability in Vancouver parks. It combines spatial data, park metadata, and accessibility attributes to identify coverage gaps and inform planning decisions for park amenities. The analysis was completed as part of **UBC Master of Data Science, DSCI 522 Data Science Workflow course**.
+**`model_auto_interpret`** is a Python package that streamlines the repetitive parts of building and comparing scikit-learn classification models — hyperparameter tuning, cross-model comparison, and performance evaluation. Rather than rewriting the same boilerplate for every project, the package wraps these steps into three reusable functions, sitting in the gap between scikit-learn's low-level utilities and visualization-only libraries like `mlxtend`. The package was built as part of **UBC Master of Data Science, DSCI 524 Collaborative Software Development course**, with a team of 3: Daisy (Ying) Zhou, Yasaman Baher, and myself.
 
 ### Project repository
 
-**Forked project repo:** [washrooms-in-vancouver-parks](https://github.com/canadasung/washrooms-in-vancouver-parks){target="_blank"}
+**GitHub repo:** [UBC-MDS/model_interpretation](https://github.com/canadasung/model_interpretation){target="_blank"} (forked from school repo because it is not publicly accessible)
+
+### Documentation & tutorial
+
+**Docs site:** [machine-learning-model-interpretation.netlify.app](https://machine-learning-model-interpretation.netlify.app/){target="_blank"} — deployed on Netlify, including a full [tutorial](https://machine-learning-model-interpretation.netlify.app/tutorial){target="_blank"} and [API reference](https://machine-learning-model-interpretation.netlify.app/reference/){target="_blank"}.
 
 ---
 
-### Report
+### Installation
 
-The final report can be found here: [Predicting the Presence of Washrooms in Vancouver Parks](https://rsokolsnyder.github.io/washrooms-in-vancouver-parks/reports/washrooms_in_parks.html){target="_blank"}.
-
----
-
-### Data
-
-#### Source and scope
-
-- **City of Vancouver Parks dataset** (Vancouver 2025) covering 218 parks with facility attributes, locations, and sizes. 
-
-#### Key variables used
-
-- **Target**: washrooms (presence/absence).
-
-- **Predictors**: park size (hectares), neighbourhood, official park flag, advisories, counts of additional facilities, and special features. 
-
-#### Notes and limitations
-
-- The dataset is cross‑sectional and may omit contextual features (visitor counts, funding cycles) that could improve predictive performance. 
+```bash
+pip install -i https://test.pypi.org/simple/ model-auto-interpret
+```
 
 ---
 
-### Methods & Analytics
+### Key Functions
 
-#### Exploratory analysis
+The package centers on three functions covering the typical model-development workflow:
 
-- Compare distributions of binary amenities and park size between parks with and without washrooms (frequency plots, histograms). 
+- **[`param_tuning_summary`](https://machine-learning-model-interpretation.netlify.app/reference/hyperparameter_tuning_summary.param_tuning_summary){target="_blank"}**: takes a fitted `GridSearchCV`/`RandomizedSearchCV` object and returns a clean summary dataframe of the best parameters and scores, plus the best estimator ready to use.
 
-#### Modeling approach
+- **[`model_cv_metric_compare`](https://machine-learning-model-interpretation.netlify.app/reference/model_compare.model_cv_metric_compare){target="_blank"}**: evaluates multiple unfitted models side-by-side via cross-validation, returning accuracy, precision, recall, F1, and ROC-AUC in a single comparison table.
 
-- **Baseline**: Dummy classifier to set a reference accuracy.
-
-- **Models tested**: K‑Nearest Neighbors (KNN) and Support Vector Machine with RBF kernel (SVM RBF).
-
-- **Validation**: 70/30 train/test split with 5‑fold cross‑validation on training data.
-
-- **Preprocessing**: Standardize numeric features; encode categorical predictors (neighbourhood, flags); handle missingness prior to fitting. 
-
-#### Evaluation metrics
-
-- Cross‑validation test score, training score, and confusion matrix on held‑out test set to assess generalization and class balance. 
+- **[`model_evaluation_plotting`](https://machine-learning-model-interpretation.netlify.app/reference/model_evaluation.model_evaluation_plotting){target="_blank"}**: scores a fitted model on held-out test data, returning accuracy/F2 metrics, a confusion matrix table, and a ready-to-plot confusion matrix display.
 
 ---
 
-### Key Findings
+### Tutorial walkthrough
 
-- **Parks with washrooms tend to be larger**: median hectare is higher for parks that include washrooms. 
+The package tutorial demonstrates the full workflow on the **Breast Cancer dataset** (455 training samples, 30 features, binary classification):
 
-- **Washroom presence correlates with other amenities**: parks offering more facilities are more likely to have washrooms. 
+1. **Compare models**: `model_cv_metric_compare()` runs 5-fold cross-validation across Logistic Regression, SVC variants, Random Forest, Decision Tree, and Gradient Boosting, producing a single comparison table.
+2. **Tune hyperparameters**: `param_tuning_summary()` extracts the best parameter configuration from `GridSearchCV`/`RandomizedSearchCV` results for the top candidate models.
+3. **Evaluate on test data**: `model_evaluation_plotting()` scores the tuned model on the test set and generates a confusion matrix visualization.
 
-- **SVM RBF outperformed KNN and the baseline**: in cross‑validation, though the improvement over the dummy baseline was modest, indicating limited predictive signal in the chosen features. 
-
-- **KNN showed signs of overfitting**: (higher training score, lower test performance) and therefore generalized poorly. 
-
-- **Implication**: richer features (e.g., visitor counts, park usage, funding/prioritization data) or alternative modeling strategies are likely needed to produce stronger, actionable predictions. 
+**Result**: Random Forest emerged as the top performer at ~96% cross-validation accuracy. The tutorial closes with an end-to-end example on the Iris dataset, reaching 100% test accuracy.
 
 ---
 
-### Visualizations
+### Key takeaways
 
-- Model comparison: ![Model Performance](images/washrooms-van-parks-table.png){fig-alt="Model Performance" width="100%"}
-
-- Confusion matrix: ![Confusion Matrix](images/washrooms-van-parks-confusion.png){fig-alt="Confusion Matrix" width="100%"}
+- **Less boilerplate, more reproducibility**: collapsing tuning, comparison, and evaluation into three function calls makes model-development notebooks shorter and easier for teammates to rerun.
+- **Designed for collaboration**: built with packaging best practices (tests, CI, semantic versioning, hosted docs) as the core learning objective of the course, not just the modeling logic itself.
