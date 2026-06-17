@@ -20,7 +20,7 @@ format:
 - **Communication**:
     - structuring a technical topic into a 19-slide presentation with worked examples, suitable for stakeholders without a statistics background.
 
-[Presentation Slides](assets/clv_presentation.pdf){.btn .btn-outline-primary target="_blank"}
+[Presentation Slides](../assets/clv_presentation.pdf){.btn .btn-outline-primary target="_blank"}
 
 ---
 
