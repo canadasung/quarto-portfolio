@@ -3,7 +3,7 @@ title: "Smart Amazon Product Query Assistant"
 code-tools: false
 description: "An AI-powered tool for enhancing the Amazon product search experience with natural language processing and machine learning."
 date: 2026-04-19
-categories: [NLP, Machine Learning, E-commerce, Python]
+categories: [NLP, Machine Learning, E-commerce, Python, BM25, Semantic Search, FAISS, Streamlit]
 format:
   html:
     toc: true
@@ -13,112 +13,82 @@ format:
 
 ### The value of this project to me
 
-- **Business analytics skills**:
-    - translating a core marketing/finance metric (CLV) into approachable formulas and examples for a non-technical audience.
-    - comparing historical vs. predictive methods and understanding the trade-offs between simplicity, accuracy, and cost.
+- **Technical skills**:
+    - implementing and comparing three retrieval approaches (BM25, semantic search, hybrid) on a large real-world product dataset.
+    - building a full RAG pipeline, from retrieval through context construction to LLM generation, with a Streamlit chat interface.
+    - working with vector search (FAISS) and sentence embeddings, plus comparing two different LLMs for the generation step.
 
-- **Communication**:
-    - structuring a technical topic into a 19-slide presentation with worked examples, suitable for stakeholders without a statistics background.
+- **Collaboration**:
+    - working with a teammate across two milestones, dividing work between retrieval methods and the generation/app layer.
+
+- **Project management**:
+    - structuring the project as incremental milestones, each with its own discussion and evaluation writeup, and documenting setup so the app can be reproduced from a fresh environment.
 
 ---
 
 ### Overview
 
-Customer Lifetime Value (CLV) estimates the total net profit a business can expect from a customer over the duration of their relationship. This presentation covers why CLV matters, the major families of CLV calculation methods, and worked examples for each.
+This project is a context-aware product search assistant for Amazon listings. Given a natural language query, it retrieves relevant products and can generate a conversational answer grounded in product metadata and reviews. It was built for **UBC Master of Data Science, DSCI 575 Advanced Machine Learning course**, with teammate Harrison Li.
 
-**Agenda**
+### Project repository
 
-1. Introduction to CLV
-2. Historical CLV methods
-3. Predictive CLV methods
-4. Conclusion
-5. Q&A
+**GitHub repo:** [DSCI_575_project_hli76_wnsong](https://github.com/canadasung/DSCI_575_project_hli76_wnsong){target="_blank"} (forked from school repo because it is not publicly accessible)
 
 ---
 
-### Why CLV is hard
+### Dataset
 
-There is no single "correct" way to calculate CLV — every method involves assumptions and trade-offs.
-
-- Even well-built models typically carry **15–25% error margins**.
-- CLV is usually applied to **3–7 year** forecasting horizons, so small errors compound.
-- Every approach faces the same dilemma: a CLV method can be at most two of **Simple**, **Accurate**, and **Inexpensive** — never all three.
+- **Source**: [Amazon Reviews 2023](https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023){target="_blank"} dataset (McAuley-Lab, via Hugging Face), Appliances category.
+- **Scale**: 94,319 products, 2,128,605 total rows of product metadata (titles, descriptions, features, pricing) and aggregated user reviews.
 
 ---
 
-### Historical CLV
+### Architecture
 
-Historical methods look backward at actual customer revenue/profit data.
+The project progressed through two milestones, layering generation on top of retrieval.
 
-#### ARPU / ARPA method
+#### Milestone 1: Retrieval methods
 
-Average Revenue Per User (ARPU) or Average Revenue Per Account (ARPA) multiplies average revenue per customer by the expected customer lifespan.
+- **BM25**: traditional keyword matching, with scores normalized via max scaling.
+- **Semantic search**: dense embeddings from `all-MiniLM-L6-v2` (sentence-transformers), indexed in FAISS using `IndexFlatIP` for L2-normalized inner product (cosine similarity) search.
+- **Hybrid retrieval**: combines both methods by normalizing each score to [0, 1] and blending them, `hybrid_score = alpha * norm_sem + (1 - alpha) * norm_bm25`, with alpha defaulting to 0.5.
 
-**Worked example — Alice vs. Bob**
+#### Milestone 2: RAG pipeline
 
-- Alice spends less per month but stays subscribed much longer than Bob.
-- Even though Bob's monthly spend is higher, Alice's longer retention can make her CLV greater — illustrating why **retention matters as much as spend**.
-
-#### Cohort method
-
-Groups customers by acquisition period (e.g., signup month) and tracks their cumulative revenue over time.
-
-- **Pros**: captures real behavioral trends within a cohort; easy to visualize as a revenue curve.
-- **Limitations**: requires a long history to be reliable, and recent cohorts are inherently incomplete (their "future" hasn't happened yet).
+- **Workflow**: user query, retriever selection, document retrieval, context building, LLM generation, response shown in the chat UI.
+- **Primary model**: `Llama-3.3-70b-versatile` via the Groq API, chosen for strong instruction-following and summarization, and for its large context window to handle the "lost in the middle" problem with lengthy product reviews. Groq's LPU hardware also gives fast inference.
+- **Alternative model**: `gpt-oss-20b`, included for side-by-side comparison against the primary model.
 
 ---
 
-### Predictive CLV
+### App
 
-Predictive methods use statistical models to forecast future value rather than relying solely on historical averages.
-
-- **Probabilistic models**: model purchase frequency and customer "alive" probability as random processes.
-- **Pareto/NBD (Negative Binomial Distribution)**: a widely used probabilistic model that estimates how many future transactions a customer will make and the probability they are still an active customer, based on their past purchase recency and frequency.
-
-#### Simple formula
-
-$$
-CLV = \text{Average Revenue per Customer} \times \text{Expected Customer Lifespan}
-$$
-
-#### Complete formula
-
-A more complete formula incorporates profit margins, retention, and the time value of money:
-
-$$
-CLV = \left( \frac{\text{Revenue per Customer} \times \text{Gross Margin}}{1 - \text{Retention Rate} + \text{Discount Rate}} \right) - \text{Acquisition Cost}
-$$
+The assistant runs as a Streamlit chat app (`app/app.py`). Users pick a retrieval method and LLM, ask a question in natural language, and get back a grounded answer along with the retrieved products. LLM features require a `.env` file with `GROQ_API_KEY` and `TAVILY_API_KEY` (the latter for web search augmentation). A demo video [app-demo.mp4](https://github.com/canadasung/DSCI_575_project_hli76_wnsong/blob/main/app-demo.mp4){target="_blank"} walks through the app in the repo.
 
 ---
 
-### Key variables
+### Installation & usage
 
-Four variables drive most CLV calculations:
+```bash
+git clone https://github.com/canadasung/DSCI_575_project_hli76_wnsong.git
+cd DSCI_575_project_hli76_wnsong
+conda env create -f environment.yml
+conda activate <env-name>
+python src/download_data.py
+streamlit run app/app.py
+```
 
-- **Acquisition Cost**: cost to acquire a new customer (e.g., marketing spend per conversion).
-- **Net Profit Margin**: the share of revenue retained as profit after costs.
-- **Retention / Churn Rate**: the probability a customer continues (or stops) in the next period.
-- **Discount Rate**: accounts for the time value of money when projecting future profits to present value.
-
----
-
-### Conclusion
-
-CLV ultimately helps answer three fundamental business questions:
-
-1. **How much should we spend to acquire a customer?**
-2. **Which customer segments are worth investing in retaining?**
-3. **How sustainable is our current growth strategy?**
-
-Choosing a CLV method is less about finding the "perfect" formula and more about matching the right balance of simplicity, accuracy, and cost to the decision at hand.
+The data pipeline produces raw parquet files, processed documents and product indices, a BM25 pickle index with tokenized corpus, and a FAISS vector index for semantic search. User feedback collected from the app is logged to CSV.
 
 ---
 
-### References
+### Results & evaluation
 
-- [For Entrepreneurs — Startup Killer: The Cost of Customer Acquisition](https://www.forentrepreneurs.com/){target="_blank"}
-- [Custora — Customer Lifetime Value](https://www.custora.com/){target="_blank"}
-- [Kaushik.net — Standard Metrics Revisited: Customer Lifetime Value](https://www.kaushik.net/avinash/){target="_blank"}
-- [DataScience.com](https://www.datascience.com/){target="_blank"}
-- [Above the Crowd — All Revenue Is Not Created Equal](https://abovethecrowd.com/){target="_blank"}
-- [Wikipedia — Customer Lifetime Value](https://en.wikipedia.org/wiki/Customer_lifetime_value){target="_blank"}
+Detailed findings and evaluation discussion for each milestone are documented in the repo under [results/milestone1_discussion.md](https://github.com/canadasung/DSCI_575_project_hli76_wnsong/blob/main/results/milestone1_discussion.md){target="_blank"} and [results/milestone2_discussion.md](https://github.com/canadasung/DSCI_575_project_hli76_wnsong/blob/main/results/milestone2_discussion.md){target="_blank"}.
+
+---
+
+### Key takeaways
+
+- **Retrieval choice matters**: BM25, semantic search, and hybrid retrieval each have different strengths, and blending them gave more flexibility than committing to one method.
+- **Model size versus speed tradeoff**: comparing a 70B and a 20B model surfaced practical tradeoffs between answer quality and inference cost/speed, which Groq's hardware helped offset.
