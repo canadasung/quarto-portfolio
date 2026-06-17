@@ -1,15 +1,16 @@
 ---
-title: "Washrooms in Vancouver Parks"
+title: "Model Interpretation"
 code-tools: false
-description: "Predicting the presence of washrooms in Vancouver parks using machine learning models based on park attributes and amenities."
-date: 2025-12-06
-categories: [Python, Scikit-learn, Classification, EDA]
+description: "Interpreting machine learning models using software development best practices to ensure reproducibility and scalability of data science workflows."
+date: 2026-03-01
+categories: [Python, Scikit-learn,  Classification, EDA]
 format:
   html:
     toc: true
     toc-depth: 2
     theme: lux
 ---
+
 
 ### The value of this group project to me
 

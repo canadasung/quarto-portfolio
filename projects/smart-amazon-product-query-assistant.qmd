@@ -1,0 +1,124 @@
+---
+title: "Smart Amazon Product Query Assistant"
+code-tools: false
+description: "An AI-powered tool for enhancing the Amazon product search experience with natural language processing and machine learning."
+date: 2026-04-19
+categories: [NLP, Machine Learning, E-commerce, Python]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: lux
+---
+
+### The value of this project to me
+
+- **Business analytics skills**:
+    - translating a core marketing/finance metric (CLV) into approachable formulas and examples for a non-technical audience.
+    - comparing historical vs. predictive methods and understanding the trade-offs between simplicity, accuracy, and cost.
+
+- **Communication**:
+    - structuring a technical topic into a 19-slide presentation with worked examples, suitable for stakeholders without a statistics background.
+
+---
+
+### Overview
+
+Customer Lifetime Value (CLV) estimates the total net profit a business can expect from a customer over the duration of their relationship. This presentation covers why CLV matters, the major families of CLV calculation methods, and worked examples for each.
+
+**Agenda**
+
+1. Introduction to CLV
+2. Historical CLV methods
+3. Predictive CLV methods
+4. Conclusion
+5. Q&A
+
+---
+
+### Why CLV is hard
+
+There is no single "correct" way to calculate CLV — every method involves assumptions and trade-offs.
+
+- Even well-built models typically carry **15–25% error margins**.
+- CLV is usually applied to **3–7 year** forecasting horizons, so small errors compound.
+- Every approach faces the same dilemma: a CLV method can be at most two of **Simple**, **Accurate**, and **Inexpensive** — never all three.
+
+---
+
+### Historical CLV
+
+Historical methods look backward at actual customer revenue/profit data.
+
+#### ARPU / ARPA method
+
+Average Revenue Per User (ARPU) or Average Revenue Per Account (ARPA) multiplies average revenue per customer by the expected customer lifespan.
+
+**Worked example — Alice vs. Bob**
+
+- Alice spends less per month but stays subscribed much longer than Bob.
+- Even though Bob's monthly spend is higher, Alice's longer retention can make her CLV greater — illustrating why **retention matters as much as spend**.
+
+#### Cohort method
+
+Groups customers by acquisition period (e.g., signup month) and tracks their cumulative revenue over time.
+
+- **Pros**: captures real behavioral trends within a cohort; easy to visualize as a revenue curve.
+- **Limitations**: requires a long history to be reliable, and recent cohorts are inherently incomplete (their "future" hasn't happened yet).
+
+---
+
+### Predictive CLV
+
+Predictive methods use statistical models to forecast future value rather than relying solely on historical averages.
+
+- **Probabilistic models**: model purchase frequency and customer "alive" probability as random processes.
+- **Pareto/NBD (Negative Binomial Distribution)**: a widely used probabilistic model that estimates how many future transactions a customer will make and the probability they are still an active customer, based on their past purchase recency and frequency.
+
+#### Simple formula
+
+$$
+CLV = \text{Average Revenue per Customer} \times \text{Expected Customer Lifespan}
+$$
+
+#### Complete formula
+
+A more complete formula incorporates profit margins, retention, and the time value of money:
+
+$$
+CLV = \left( \frac{\text{Revenue per Customer} \times \text{Gross Margin}}{1 - \text{Retention Rate} + \text{Discount Rate}} \right) - \text{Acquisition Cost}
+$$
+
+---
+
+### Key variables
+
+Four variables drive most CLV calculations:
+
+- **Acquisition Cost**: cost to acquire a new customer (e.g., marketing spend per conversion).
+- **Net Profit Margin**: the share of revenue retained as profit after costs.
+- **Retention / Churn Rate**: the probability a customer continues (or stops) in the next period.
+- **Discount Rate**: accounts for the time value of money when projecting future profits to present value.
+
+---
+
+### Conclusion
+
+CLV ultimately helps answer three fundamental business questions:
+
+1. **How much should we spend to acquire a customer?**
+2. **Which customer segments are worth investing in retaining?**
+3. **How sustainable is our current growth strategy?**
+
+Choosing a CLV method is less about finding the "perfect" formula and more about matching the right balance of simplicity, accuracy, and cost to the decision at hand.
+
+---
+
+### References
+
+- [For Entrepreneurs — Startup Killer: The Cost of Customer Acquisition](https://www.forentrepreneurs.com/){target="_blank"}
+- [Custora — Customer Lifetime Value](https://www.custora.com/){target="_blank"}
+- [Kaushik.net — Standard Metrics Revisited: Customer Lifetime Value](https://www.kaushik.net/avinash/){target="_blank"}
+- [DataScience.com](https://www.datascience.com/){target="_blank"}
+- [Above the Crowd — All Revenue Is Not Created Equal](https://abovethecrowd.com/){target="_blank"}
+- [Wikipedia — Customer Lifetime Value](https://en.wikipedia.org/wiki/Customer_lifetime_value){target="_blank"}
