@@ -1,0 +1,158 @@
+---
+title: "Calculating Customer Lifetime Value (CLV)"
+code-tools: false
+description: "A walkthrough of historical and predictive Customer Lifetime Value methods, comparing ARPU/ARPA and Cohort approaches with probabilistic models like Pareto/NBD."
+date: 2017-09-01
+categories: [Business Analytics, CLV, LTV, Predictive Modeling, Presentation]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: default
+---
+
+### The value of this project to me
+
+- **Business analytics skills**:
+    - translating a core marketing/finance metric (CLV) into approachable formulas and examples for a non-technical audience.
+    - comparing historical vs. predictive methods and understanding the trade-offs between simplicity, accuracy, and cost.
+
+- **Communication**:
+    - structuring a technical topic into a 19-slide presentation with worked examples, suitable for stakeholders without a statistics background.
+
+[Presentation Slides](assets/clv_presentation.pdf){.btn .btn-outline-primary target="_blank"}
+
+---
+
+### Overview
+
+Customer Lifetime Value (CLV), also commonly known as LTV, estimates the total net profit a business can expect from a customer over the duration of their relationship. This presentation covers why CLV matters, the major families of CLV calculation methods, and worked examples for each.
+
+### Definition of a Cohort
+
+Groups customers by acquisition period or channel (e.g., signup month or marketing channel) and tracks their cumulative revenue over time. The way of grouping can vary based on the business context and the insights sought.
+
+### Why CLV is hard
+
+There is no single "correct" way to calculate CLV — every method involves assumptions and trade-offs.
+
+- Even well-built models typically carry **15–25% error margins**.
+- CLV is usually applied to **3–7 year** forecasting horizons, so small errors compound.
+- Every approach faces the same dilemma: a CLV model construction can be at most two of **Simple**, **Accurate**, and **Inexpensive** — never all three.
+
+---
+
+### Historical CLV
+
+Historical methods look backward at actual customer revenue/profit data.
+
+#### ARPU / ARPA method
+
+Average Revenue Per User (ARPU) or Average Revenue Per Account (ARPA) multiplies average revenue per customer by the expected customer lifespan.
+
+**Worked example — Alice vs. Bob**
+
+Alice: (150 + 50 + 100) / 6 months = $50 ARPU, 6 months lifespan → CLV = $300
+
+Bob: (45 + 75 +100) / 2 months = $110 ARPU, 2 months lifespan → CLV = $220
+
+(50 + 110) / 2 = $80 per customer
+
+12 months value: $80 * 12 months = $960
+
+24 months value: $80 * 24 months = $1,920
+
+- Alice spends less per month but stays subscribed much longer than Bob.
+- Even though Bob's monthly spend is higher, Alice's longer retention can make her CLV greater — illustrating why **retention matters as much as spend**.
+
+#### Key points of Historical CLV methods
+
+There are some factors that may not be captured by historical methods:
+
+- Different customers have different behavior patterns that may not be reflected in averages. Use cohort method to narrow down to more specific segments.
+- Future changes in customer behavior or market conditions may not be captured, such as internally changed by offerings or externally changed by market trends.
+- Not enough data when a business is too young or data duration is too short to capture the full customer lifecycle.
+
+---
+
+### Predictive CLV
+
+Predictive methods use statistical models to forecast future value rather than relying solely on historical averages.
+
+#### Key Variables
+
+Four variables drive most predictive CLV calculations:
+
+- **Acquisition Cost / Retention Cost**: 
+
+The cost to acquire a new customer or retain an existing one (e.g., marketing spend per conversion).
+
+- **Net Profit Margin**: 
+
+    - Among the cohorts, the share of revenue retained as profit after costs.
+
+    - Profit Margin Ratio: Net Income / Net Sales
+
+    - Usually the Finance team can provide this number, but if not, general rules are:
+        - 10% for public companies
+        - 15% for private companies that are scaling predictably
+        - 20%-25% for private companies that have not yet reached scale and predictable growth
+
+- **Retention / Churn Rate and Expected Lifespan**: 
+
+$$
+\text{Retention Rate} = \frac{\text{Customers at End of Period} - \text{New Customers Acquired}}{\text{Customers at Start of Period}}
+$$
+
+The Churn Rate is the complement of the Retention Rate:
+$$
+\text{Churn Rate} = 1 - \text{Retention Rate}
+$$
+
+We can use the retention rate to estimate the expected customer lifespan:
+$$
+\text{Expected Customer Lifespan} = \frac{1}{\text{Churn Rate}}
+$$
+
+- **Discount Rate**: 
+
+Accounts for the time value of money when projecting future profits to present value. Get this from the Finance team, or use 1 as a starting point for simplicity.
+
+### Formula
+
+After getting the key variables, we can plug them into the formula to calculate CLV:
+
+#### Simple formula
+
+$$
+CLV = \text{Average Revenue per Customer} \times \text{Expected Customer Lifespan}
+$$
+
+#### Complete formula
+
+A more complete formula incorporates profit margins, retention, and the time value of money:
+
+$$
+CLV = \left( \frac{\text{Revenue per Customer} \times \text{Gross Margin}}{1 - \text{Retention Rate} + \text{Discount Rate}} \right) - \text{Acquisition Cost}
+$$
+
+---
+
+### Conclusion
+
+CLV ultimately helps answer three fundamental business questions:
+
+1. **How much should we spend to acquire a customer?**
+2. **Which customer segments are worth investing in retaining?**
+3. **How sustainable is our current growth strategy?**
+
+Choosing a CLV method is less about finding the "perfect" formula and more about matching the right balance of simplicity, accuracy, and cost to the decision at hand.
+
+---
+
+### References
+
+- [For Entrepreneurs — What’s your TRUE customer lifetime value (LTV)?](https://www.forentrepreneurs.com/ltv/){target="_blank"}
+- [Kaushik.net — Excellent Analytics Tip #17: Calculate Customer Lifetime Value](https://www.kaushik.net/avinash/analytics-tip-calculate-ltv-customer-lifetime-value/){target="_blank"}
+- [Above the Crowd — The Dangerous Seduction of the Lifetime Value (LTV) Formula](https://abovethecrowd.com/2012/09/04/the-dangerous-seduction-of-the-lifetime-value-ltv-formula/){target="_blank"}
+- [Wikipedia — Customer Lifetime Value](https://en.wikipedia.org/wiki/Customer_lifetime_value){target="_blank"}
