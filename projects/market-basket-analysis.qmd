@@ -3,7 +3,7 @@ title: "Market Basket Analysis"
 code-tools: false
 description: "Building a cross-selling tool using Market Basket Analysis (affinity analysis) — Support, Confidence, and Lift — to surface product co-occurrence patterns with Excel and Power Query."
 date: 2017-10-01
-categories: [Business Analytics, Market Basket Analysis, Excel, Power Query, Presentation]
+categories: [Business Analytics, Market Basket Analysis, Presentation]
 format:
   html:
     toc: true

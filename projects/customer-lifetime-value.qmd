@@ -1,9 +1,9 @@
 ---
-title: "Calculating Customer Lifetime Value (CLV)"
+title: "Calculating Customer Lifetime Value"
 code-tools: false
 description: "A walkthrough of historical and predictive Customer Lifetime Value methods, comparing ARPU/ARPA and Cohort approaches with probabilistic models like Pareto/NBD."
 date: 2017-09-01
-categories: [Business Analytics, CLV, LTV, Predictive Modeling, Presentation]
+categories: [Business Analytics, Lifetime Value Analysis, Presentation]
 format:
   html:
     toc: true
