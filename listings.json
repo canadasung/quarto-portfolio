@@ -2,8 +2,12 @@
   {
     "listing": "/projects/index.html",
     "items": [
+      "/projects/smart-amazon-product-query-assistant.html",
       "/projects/world-education.html",
-      "/projects/washrooms-vancouver-parks.html"
+      "/projects/model-interpretation.html",
+      "/projects/washrooms-vancouver-parks.html",
+      "/projects/market-basket-analysis.html",
+      "/projects/customer-lifetime-value.html"
     ]
   },
   {

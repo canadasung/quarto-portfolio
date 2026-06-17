@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2017-10-01">
+<meta name="description" content="Building a cross-selling tool using Market Basket Analysis (affinity analysis) — Support, Confidence, and Lift — to surface product co-occurrence patterns with Excel and Power Query.">
 
-<title>Module 2: Python and SQL Together – Data with Will</title>
+<title>Market Basket Analysis – Data with Will</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,25 +28,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-00c9af38664fdbcd17515e33851bf1e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-302a28f62a29dd586fcee17213d54bce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a6723a1fe18ba67754569397e6a4e15b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,186 +74,46 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = true;
-    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    const darkModeDefault = queryPrefersDark.matches;
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    queryPrefersDark.addEventListener("change", e => {
-      if(window.localStorage.getItem("quarto-color-scheme") !== null)
-        return;
-      const alternate = e.matches
-      toggleColorMode(alternate);
-      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
-      toggleGiscusIfUsed(alternate, darkModeDefault);
-    });
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Data with Will</span>
     </a>
   </div>
@@ -264,15 +124,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects/index.html"> 
+    <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../certifications.html"> 
+    <a class="nav-link" href="../certifications.html"> 
 <span class="menu-text">Certifications</span></a>
   </li>  
 </ul>
@@ -303,34 +163,39 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
-  </ul>
-</nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Module 2: Python and SQL Together</h1>
-</div>
+<h1 class="title">Market Basket Analysis</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Business Analytics</div>
+    <div class="quarto-category">Market Basket Analysis</div>
+    <div class="quarto-category">Presentation</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Building a cross-selling tool using Market Basket Analysis (affinity analysis) — Support, Confidence, and Lift — to surface product co-occurrence patterns with Excel and Power Query.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 1, 2017</p>
+    </div>
+  </div>
   
     
   </div>
@@ -340,19 +205,99 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>SQL handles where the data lives; Python handles what you do with it.</p>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p><a href="intro.html" target="_blank">View slides in full screen</a></p>
-<iframe src="intro.html" width="100%" height="500px" style="border:1px solid #ddd; border-radius:4px;">
-</iframe>
-</section>
-<section id="key-takeaways" class="level2">
-<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<section id="the-value-of-this-project-to-me" class="level3">
+<h3 class="anchored" data-anchor-id="the-value-of-this-project-to-me">The value of this project to me</h3>
 <ul>
-<li>Use SQL to filter and aggregate <strong>before</strong> loading into Python</li>
-<li>Avoid pulling entire tables into memory unnecessarily</li>
-<li>SQLAlchemy and DuckDB bridge the two seamlessly</li>
+<li><strong>Business analytics skills</strong>:
+<ul>
+<li>applying affinity analysis (Market Basket Analysis) to uncover product co-occurrence patterns from transactional data.</li>
+<li>translating data mining concepts (Support, Confidence, Lift) into a practical, business-friendly cross-selling tool.</li>
+</ul></li>
+<li><strong>Communication</strong>:
+<ul>
+<li>presenting a technical analytics method to business stakeholders using a worked example (bread &amp; butter) and clear SMART criteria.</li>
+</ul></li>
+</ul>
+<p><a href="../assets/mba_presentation.pdf" class="btn btn-outline-primary" target="_blank">Presentation Slides</a></p>
+<hr>
+</section>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>Market Basket Analysis (MBA) — also known as affinity analysis — is a data mining technique based on conditional probability (Bayes’ Theorem) used to discover co-occurrence relationships among products (the classic “beers and diapers” example). It is widely adopted across retail, e-commerce, and finance for cross-sell/upsell strategy, bundling and discounting, shelf or page placement, and fraud detection.</p>
+<hr>
+</section>
+<section id="why-market-basket-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="why-market-basket-analysis">Why Market Basket Analysis</h3>
+<ul>
+<li><strong>Easy to understand and implement</strong>: gather transactional data with a defined “basket” (e.g., by customer or by transaction).</li>
+<li><strong>Widely applicable</strong>: cross-sell/upsell, bundle/discount strategy, shelf or webpage display optimization, and fraud pattern detection in finance.</li>
+</ul>
+<hr>
+</section>
+<section id="analytic-terms" class="level3">
+<h3 class="anchored" data-anchor-id="analytic-terms">Analytic Terms</h3>
+<section id="occurrence-support" class="level4">
+<h4 class="anchored" data-anchor-id="occurrence-support">Occurrence &amp; Support</h4>
+<p><strong>Occurrence / Co-occurrence</strong>: the number of times an item (or set of items) is purchased within the group.</p>
+<p><strong>Support</strong>: the frequency (ratio) of an occurrence within the group.</p>
+<p><strong>Worked example</strong> — out of 100 customers:</p>
+<ul>
+<li>Bread is purchased by 50 customers → Support(Bread) = 50/100 = <strong>0.5</strong></li>
+<li>Butter is purchased by 30 customers → Support(Butter) = 30/100 = <strong>0.3</strong></li>
+<li>Bread and Butter together are purchased 20 times → Support(Co-occurrence) = 20/100 = <strong>0.2</strong></li>
+</ul>
+</section>
+<section id="confidence" class="level4">
+<h4 class="anchored" data-anchor-id="confidence">Confidence</h4>
+<p><strong>Confidence</strong>: the probability of both items being purchased, given that one item was purchased.</p>
+<p><span class="math display">\[
+Confidence(Bread) = \frac{Support(Co\text{-}occur)}{Support(Bread)} = \frac{0.2}{0.5} = 0.4
+\]</span></p>
+<p><span class="math display">\[
+Confidence(Butter) = \frac{Support(Co\text{-}occur)}{Support(Butter)} = \frac{0.2}{0.3} = 0.6667
+\]</span></p>
+</section>
+<section id="lift" class="level4">
+<h4 class="anchored" data-anchor-id="lift">Lift</h4>
+<p><strong>Lift</strong>: the key indicator — the likelihood that two products go together. Only meaningful when greater than 1 (the higher, the stronger the association), though there is no universal market standard for “high enough”; values are interpreted relative to other outputs.</p>
+<p><span class="math display">\[
+Lift(Bread \,\&amp;\, Butter) = \frac{Support(Co\text{-}occur)}{Support(Bread) \times Support(Butter)} = \frac{0.2}{0.15} = 1.33
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="benefits-of-mba" class="level3">
+<h3 class="anchored" data-anchor-id="benefits-of-mba">Benefits of MBA</h3>
+<ul>
+<li><strong>Accurate and easy to read</strong>: Support, Confidence, and Lift are simple, interpretable metrics.</li>
+<li><strong>Automation is possible</strong>: all products analyzed in under 10 minutes, versus manual correlation analysis comparing only 3–4 products per day.</li>
+<li><strong>Balances data cleanliness vs.&nbsp;time cost</strong>: different levels of data cleanliness still reveal similar patterns.</li>
+<li><strong>Additional insights</strong>: product popularity, and comparisons across years, seasons, or stores.</li>
+</ul>
+<hr>
+</section>
+<section id="constraints" class="level3">
+<h3 class="anchored" data-anchor-id="constraints">Constraints</h3>
+<ul>
+<li><strong>Similar product formats are still compared</strong>: e.g., 1L milk vs.&nbsp;2L milk. Mitigate by using filtering features to screen products.</li>
+<li><strong>Basic MBA is limited to 1-to-1 relationships</strong>: e.g., product A and product B. Advanced MBA (A + B + C → D) requires more advanced software/services.</li>
+<li><strong>Data cleaning and model maintenance</strong>:
+<ul>
+<li>Data training is required.</li>
+<li>Raw data needs cleaning to reduce model run time.</li>
+<li>Procedures must be modified or re-created if the analysis goals change (e.g., changes to the basket or product hierarchy).</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="conclusion-smart-in-creating-mba-analytics" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion-smart-in-creating-mba-analytics">Conclusion — SMART in Creating MBA Analytics</h3>
+<ul>
+<li><strong>Specific</strong>: can be measured under different product hierarchies.</li>
+<li><strong>Measurable</strong>: Support, Confidence, and Lift indicators support decision-making.</li>
+<li><strong>Achievable</strong>: cost-effective when there’s no budget for external software licenses for the functionality and require self-build.</li>
+<li><strong>Relevant</strong>: directly matches cross-selling strategy goals.</li>
+<li><strong>Timeliness</strong>: automation enables fast, easy-to-learn results.</li>
 </ul>
 
 
@@ -361,19 +306,6 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -790,5 +722,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

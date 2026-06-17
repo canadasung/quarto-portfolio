@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2017-09-01">
+<meta name="description" content="A walkthrough of historical and predictive Customer Lifetime Value methods, comparing ARPU/ARPA and Cohort approaches with probabilistic models like Pareto/NBD.">
 
-<title>Module 2: Python and SQL Together – Data with Will</title>
+<title>Calculating Customer Lifetime Value – Data with Will</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,25 +28,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-00c9af38664fdbcd17515e33851bf1e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-302a28f62a29dd586fcee17213d54bce.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a6723a1fe18ba67754569397e6a4e15b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,186 +74,46 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="floating nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = true;
-    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    const darkModeDefault = queryPrefersDark.matches;
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    queryPrefersDark.addEventListener("change", e => {
-      if(window.localStorage.getItem("quarto-color-scheme") !== null)
-        return;
-      const alternate = e.matches
-      toggleColorMode(alternate);
-      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
-      toggleGiscusIfUsed(alternate, darkModeDefault);
-    });
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Data with Will</span>
     </a>
   </div>
@@ -264,15 +124,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects/index.html"> 
+    <a class="nav-link" href="../projects/index.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../certifications.html"> 
+    <a class="nav-link" href="../certifications.html"> 
 <span class="menu-text">Certifications</span></a>
   </li>  
 </ul>
@@ -303,34 +163,39 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
-  </ul>
-</nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Module 2: Python and SQL Together</h1>
-</div>
+<h1 class="title">Calculating Customer Lifetime Value</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Business Analytics</div>
+    <div class="quarto-category">Lifetime Value Analysis</div>
+    <div class="quarto-category">Presentation</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    A walkthrough of historical and predictive Customer Lifetime Value methods, comparing ARPU/ARPA and Cohort approaches with probabilistic models like Pareto/NBD.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 1, 2017</p>
+    </div>
+  </div>
   
     
   </div>
@@ -340,19 +205,143 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>SQL handles where the data lives; Python handles what you do with it.</p>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p><a href="intro.html" target="_blank">View slides in full screen</a></p>
-<iframe src="intro.html" width="100%" height="500px" style="border:1px solid #ddd; border-radius:4px;">
-</iframe>
-</section>
-<section id="key-takeaways" class="level2">
-<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<section id="the-value-of-this-project-to-me" class="level3">
+<h3 class="anchored" data-anchor-id="the-value-of-this-project-to-me">The value of this project to me</h3>
 <ul>
-<li>Use SQL to filter and aggregate <strong>before</strong> loading into Python</li>
-<li>Avoid pulling entire tables into memory unnecessarily</li>
-<li>SQLAlchemy and DuckDB bridge the two seamlessly</li>
+<li><strong>Business analytics skills</strong>:
+<ul>
+<li>translating a core marketing/finance metric (CLV) into approachable formulas and examples for a non-technical audience.</li>
+<li>comparing historical vs.&nbsp;predictive methods and understanding the trade-offs between simplicity, accuracy, and cost.</li>
+</ul></li>
+<li><strong>Communication</strong>:
+<ul>
+<li>structuring a technical topic into a 19-slide presentation with worked examples, suitable for stakeholders without a statistics background.</li>
+</ul></li>
+</ul>
+<p><a href="../assets/clv_presentation.pdf" class="btn btn-outline-primary" target="_blank">Presentation Slides</a></p>
+<hr>
+</section>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>Customer Lifetime Value (CLV), also commonly known as LTV, estimates the total net profit a business can expect from a customer over the duration of their relationship. This presentation covers why CLV matters, the major families of CLV calculation methods, and worked examples for each.</p>
+</section>
+<section id="definition-of-a-cohort" class="level3">
+<h3 class="anchored" data-anchor-id="definition-of-a-cohort">Definition of a Cohort</h3>
+<p>Groups customers by acquisition period or channel (e.g., signup month or marketing channel) and tracks their cumulative revenue over time. The way of grouping can vary based on the business context and the insights sought.</p>
+</section>
+<section id="why-clv-is-hard" class="level3">
+<h3 class="anchored" data-anchor-id="why-clv-is-hard">Why CLV is hard</h3>
+<p>There is no single “correct” way to calculate CLV — every method involves assumptions and trade-offs.</p>
+<ul>
+<li>Even well-built models typically carry <strong>15–25% error margins</strong>.</li>
+<li>CLV is usually applied to <strong>3–7 year</strong> forecasting horizons, so small errors compound.</li>
+<li>Every approach faces the same dilemma: a CLV model construction can be at most two of <strong>Simple</strong>, <strong>Accurate</strong>, and <strong>Inexpensive</strong> — never all three.</li>
+</ul>
+<hr>
+</section>
+<section id="historical-clv" class="level3">
+<h3 class="anchored" data-anchor-id="historical-clv">Historical CLV</h3>
+<p>Historical methods look backward at actual customer revenue/profit data.</p>
+<section id="arpu-arpa-method" class="level4">
+<h4 class="anchored" data-anchor-id="arpu-arpa-method">ARPU / ARPA method</h4>
+<p>Average Revenue Per User (ARPU) or Average Revenue Per Account (ARPA) multiplies average revenue per customer by the expected customer lifespan.</p>
+<p><strong>Worked example — Alice vs.&nbsp;Bob</strong></p>
+<p>Alice: (150 + 50 + 100) / 6 months = $50 ARPU, 6 months lifespan → CLV = $300</p>
+<p>Bob: (45 + 75 +100) / 2 months = $110 ARPU, 2 months lifespan → CLV = $220</p>
+<p>(50 + 110) / 2 = $80 per customer</p>
+<p>12 months value: $80 * 12 months = $960</p>
+<p>24 months value: $80 * 24 months = $1,920</p>
+<ul>
+<li>Alice spends less per month but stays subscribed much longer than Bob.</li>
+<li>Even though Bob’s monthly spend is higher, Alice’s longer retention can make her CLV greater — illustrating why <strong>retention matters as much as spend</strong>.</li>
+</ul>
+</section>
+<section id="key-points-of-historical-clv-methods" class="level4">
+<h4 class="anchored" data-anchor-id="key-points-of-historical-clv-methods">Key points of Historical CLV methods</h4>
+<p>There are some factors that may not be captured by historical methods:</p>
+<ul>
+<li>Different customers have different behavior patterns that may not be reflected in averages. Use cohort method to narrow down to more specific segments.</li>
+<li>Future changes in customer behavior or market conditions may not be captured, such as internally changed by offerings or externally changed by market trends.</li>
+<li>Not enough data when a business is too young or data duration is too short to capture the full customer lifecycle.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="predictive-clv" class="level3">
+<h3 class="anchored" data-anchor-id="predictive-clv">Predictive CLV</h3>
+<p>Predictive methods use statistical models to forecast future value rather than relying solely on historical averages.</p>
+<section id="key-variables" class="level4">
+<h4 class="anchored" data-anchor-id="key-variables">Key Variables</h4>
+<p>Four variables drive most predictive CLV calculations:</p>
+<ul>
+<li><strong>Acquisition Cost / Retention Cost</strong>:</li>
+</ul>
+<p>The cost to acquire a new customer or retain an existing one (e.g., marketing spend per conversion).</p>
+<ul>
+<li><p><strong>Net Profit Margin</strong>:</p>
+<ul>
+<li><p>Among the cohorts, the share of revenue retained as profit after costs.</p></li>
+<li><p>Profit Margin Ratio: Net Income / Net Sales</p></li>
+<li><p>Usually the Finance team can provide this number, but if not, general rules are:</p>
+<ul>
+<li>10% for public companies</li>
+<li>15% for private companies that are scaling predictably</li>
+<li>20%-25% for private companies that have not yet reached scale and predictable growth</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Retention / Churn Rate and Expected Lifespan</strong>:</p></li>
+</ul>
+<p><span class="math display">\[
+\text{Retention Rate} = \frac{\text{Customers at End of Period} - \text{New Customers Acquired}}{\text{Customers at Start of Period}}
+\]</span></p>
+<p>The Churn Rate is the complement of the Retention Rate: <span class="math display">\[
+\text{Churn Rate} = 1 - \text{Retention Rate}
+\]</span></p>
+<p>We can use the retention rate to estimate the expected customer lifespan: <span class="math display">\[
+\text{Expected Customer Lifespan} = \frac{1}{\text{Churn Rate}}
+\]</span></p>
+<ul>
+<li><strong>Discount Rate</strong>:</li>
+</ul>
+<p>Accounts for the time value of money when projecting future profits to present value. Get this from the Finance team, or use 1 as a starting point for simplicity.</p>
+</section>
+</section>
+<section id="formula" class="level3">
+<h3 class="anchored" data-anchor-id="formula">Formula</h3>
+<p>After getting the key variables, we can plug them into the formula to calculate CLV:</p>
+<section id="simple-formula" class="level4">
+<h4 class="anchored" data-anchor-id="simple-formula">Simple formula</h4>
+<p><span class="math display">\[
+CLV = \text{Average Revenue per Customer} \times \text{Expected Customer Lifespan}
+\]</span></p>
+</section>
+<section id="complete-formula" class="level4">
+<h4 class="anchored" data-anchor-id="complete-formula">Complete formula</h4>
+<p>A more complete formula incorporates profit margins, retention, and the time value of money:</p>
+<p><span class="math display">\[
+CLV = \left( \frac{\text{Revenue per Customer} \times \text{Gross Margin}}{1 - \text{Retention Rate} + \text{Discount Rate}} \right) - \text{Acquisition Cost}
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>CLV ultimately helps answer three fundamental business questions:</p>
+<ol type="1">
+<li><strong>How much should we spend to acquire a customer?</strong></li>
+<li><strong>Which customer segments are worth investing in retaining?</strong></li>
+<li><strong>How sustainable is our current growth strategy?</strong></li>
+</ol>
+<p>Choosing a CLV method is less about finding the “perfect” formula and more about matching the right balance of simplicity, accuracy, and cost to the decision at hand.</p>
+<hr>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li><a href="https://www.forentrepreneurs.com/ltv/" target="_blank">For Entrepreneurs — What’s your TRUE customer lifetime value (LTV)?</a></li>
+<li><a href="https://www.kaushik.net/avinash/analytics-tip-calculate-ltv-customer-lifetime-value/" target="_blank">Kaushik.net — Excellent Analytics Tip #17: Calculate Customer Lifetime Value</a></li>
+<li><a href="https://abovethecrowd.com/2012/09/04/the-dangerous-seduction-of-the-lifetime-value-ltv-formula/" target="_blank">Above the Crowd — The Dangerous Seduction of the Lifetime Value (LTV) Formula</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Customer_lifetime_value" target="_blank">Wikipedia — Customer Lifetime Value</a></li>
 </ul>
 
 
@@ -361,19 +350,6 @@ ul.task-list li input[type="checkbox"] {
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
-    }
-    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -790,5 +766,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
