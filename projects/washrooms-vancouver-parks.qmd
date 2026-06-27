@@ -31,7 +31,7 @@ This project maps and analyzes public washroom availability in Vancouver parks. 
 
 ### Project repository
 
-**Forked project repo:** [washrooms-in-vancouver-parks](https://github.com/canadasung/washrooms-in-vancouver-parks){target="_blank"}
+**GitHub repo:** [washrooms-in-vancouver-parks](https://github.com/canadasung/ubc-dsci522-washrooms-in-vancouver-parks.git){target="_blank"}
 
 ---
 

@@ -32,7 +32,7 @@ This project is a context-aware product search assistant for Amazon listings. Gi
 
 ### Project repository
 
-**GitHub repo:** [ubc-dsci575-smart-amazon-product-query-assistant](https://github.com/canadasung/ubc-dsci575-smart-amazon-product-query-assistant.git){target="_blank"} (mirrored from school repo because it is not publicly accessible)
+**GitHub repo:** [smart-amazon-product-query-assistant](https://github.com/canadasung/ubc-dsci575-smart-amazon-product-query-assistant.git){target="_blank"} (mirrored from school repo because it is not publicly accessible)
 
 ---
 

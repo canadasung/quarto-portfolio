@@ -34,7 +34,7 @@ format:
 
 ### Project repository
 
-**GitHub repo:** [UBC-MDS/model_interpretation](https://github.com/canadasung/model_interpretation){target="_blank"} (forked from school repo because it is not publicly accessible)
+**GitHub repo:** [ml-model_interpretation](https://github.com/canadasung/ubc-dsci524-ml-model-interpretation.git){target="_blank"} (mirrored from school repo because it is not publicly accessible)
 
 ### Documentation & tutorial
 

@@ -31,7 +31,7 @@ This project analyzes global education indicators to explore patterns in enrollm
 
 ### Project repository
 
-**Forked project repo:** [World Education Project](https://github.com/canadasung/DSCI-532_2026_15_WorldEducation){target="_blank"}
+**Forked project repo:** [World Education Project](https://github.com/canadasung/ubc-dsci532-world-education.git){target="_blank"} (mirrored from school repo because it is not publicly accessible)
 
 ---
 
