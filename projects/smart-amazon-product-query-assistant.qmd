@@ -32,7 +32,7 @@ This project is a context-aware product search assistant for Amazon listings. Gi
 
 ### Project repository
 
-**GitHub repo:** [DSCI_575_project_hli76_wnsong](https://github.com/canadasung/DSCI_575_project_hli76_wnsong){target="_blank"} (forked from school repo because it is not publicly accessible)
+**GitHub repo:** [ubc-dsci575-smart-amazon-product-query-assistant](https://github.com/canadasung/ubc-dsci575-smart-amazon-product-query-assistant.git){target="_blank"} (mirrored from school repo because it is not publicly accessible)
 
 ---
 
@@ -63,7 +63,7 @@ The project progressed through two milestones, layering generation on top of ret
 
 ### App
 
-The assistant runs as a Streamlit chat app (`app/app.py`). Users pick a retrieval method and LLM, ask a question in natural language, and get back a grounded answer along with the retrieved products. LLM features require a `.env` file with `GROQ_API_KEY` and `TAVILY_API_KEY` (the latter for web search augmentation). A demo video [app-demo.mp4](https://github.com/canadasung/DSCI_575_project_hli76_wnsong/blob/main/app-demo.mp4){target="_blank"} walks through the app in the repo.
+The assistant runs as a Streamlit chat app (`app/app.py`). Users pick a retrieval method and LLM, ask a question in natural language, and get back a grounded answer along with the retrieved products. LLM features require a `.env` file with `GROQ_API_KEY` and `TAVILY_API_KEY` (the latter for web search augmentation). A demo video [app-demo.mp4](https://github.com/canadasung/ubc-dsci575-smart-amazon-product-query-assistant/blob/main/app-demo.mp4){target="_blank"} walks through the app in the repo.
 
 ---
 
