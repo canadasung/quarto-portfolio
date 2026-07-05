@@ -39,371 +39,77 @@
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Smart Amazon Product Query Assistant\n\n\n\nNLP\n\nMachine Learning\n\nE-commerce\n\nPython\n\nBM25\n\nSemantic Search\n\nFAISS\n\nStreamlit\n\n\n\nAn AI-powered tool for enhancing the Amazon product search experience with natural language processing and machine learning.\n\n\n\nApr 19, 2026\n\n\n\n\n\n\n\n\n\n\nWorld Education Project\n\n\n\nPython\n\nShiny\n\nData Visualization\n\nEDA\n\nLLM\n\n\n\nAnalyzing global education indicators to explore patterns in enrollment, attainment, and inequality across countries, with an interactive Shiny dashboard and LLM-powered…\n\n\n\nMar 15, 2026\n\n\n\n\n\n\n\n\n\n\nModel Interpretation\n\n\n\nPython\n\nScikit-learn\n\nModel Evaluation\n\nHyperparameter Tuning\n\nPackage Development\n\n\n\nInterpreting machine learning models using software development best practices to ensure reproducibility and scalability of data science workflows.\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Parks\n\n\n\nPython\n\nScikit-learn\n\nClassification\n\nEDA\n\n\n\nPredicting the presence of washrooms in Vancouver parks using machine learning models based on park attributes and amenities.\n\n\n\nDec 6, 2025\n\n\n\n\n\n\n\n\n\n\nMarket Basket Analysis\n\n\n\nBusiness Analytics\n\nMarket Basket Analysis\n\nPresentation\n\n\n\nBuilding a cross-selling tool using Market Basket Analysis (affinity analysis) — Support, Confidence, and Lift — to surface product co-occurrence patterns with Excel and…\n\n\n\nOct 1, 2017\n\n\n\n\n\n\n\n\n\n\nCalculating Customer Lifetime Value\n\n\n\nBusiness Analytics\n\nLifetime Value Analysis\n\nPresentation\n\n\n\nA walkthrough of historical and predictive Customer Lifetime Value methods, comparing ARPU/ARPA and Cohort approaches with probabilistic models like Pareto/NBD.\n\n\n\nSep 1, 2017\n\n\n\n\n\n\nNo matching items"
+    "text": "Species Synonym Search (UBC MDS Capstone Project)\n\n\n\nPython\n\nFastAPI\n\nReact\n\nNext.js\n\nFull-Stack\n\nDocker\n\nBiodiversity\n\nTypeScript\n\n\n\nA full-stack web app that aggregates taxonomic synonyms from 20+ biodiversity databases, built as a UBC MDS capstone for the UBC Beaty Biodiversity Museum.\n\n\n\nJul 1, 2026\n\n\n\n\n\n\n\n\n\n\nSmart Amazon Product Query Assistant\n\n\n\nNLP\n\nMachine Learning\n\nE-commerce\n\nPython\n\nBM25\n\nSemantic Search\n\nFAISS\n\nStreamlit\n\n\n\nAn AI-powered tool for enhancing the Amazon product search experience with natural language processing and machine learning.\n\n\n\nApr 19, 2026\n\n\n\n\n\n\n\n\n\n\nWorld Education Project\n\n\n\nPython\n\nShiny\n\nData Visualization\n\nEDA\n\nLLM\n\n\n\nAnalyzing global education indicators to explore patterns in enrollment, attainment, and inequality across countries, with an interactive Shiny dashboard and LLM-powered…\n\n\n\nMar 15, 2026\n\n\n\n\n\n\n\n\n\n\nModel Interpretation\n\n\n\nPython\n\nScikit-learn\n\nModel Evaluation\n\nHyperparameter Tuning\n\nPackage Development\n\n\n\nInterpreting machine learning models using software development best practices to ensure reproducibility and scalability of data science workflows.\n\n\n\nFeb 1, 2026\n\n\n\n\n\n\n\n\n\n\nWashrooms in Vancouver Parks\n\n\n\nPython\n\nScikit-learn\n\nClassification\n\nEDA\n\n\n\nPredicting the presence of washrooms in Vancouver parks using machine learning models based on park attributes and amenities.\n\n\n\nDec 6, 2025\n\n\n\n\n\n\n\n\n\n\nMarket Basket Analysis\n\n\n\nBusiness Analytics\n\nMarket Basket Analysis\n\nPresentation\n\n\n\nBuilding a cross-selling tool using Market Basket Analysis (affinity analysis) — Support, Confidence, and Lift — to surface product co-occurrence patterns with Excel and…\n\n\n\nOct 1, 2017\n\n\n\n\n\n\n\n\n\n\nCalculating Customer Lifetime Value\n\n\n\nBusiness Analytics\n\nLifetime Value Analysis\n\nPresentation\n\n\n\nA walkthrough of historical and predictive Customer Lifetime Value methods, comparing ARPU/ARPA and Cohort approaches with probabilistic models like Pareto/NBD.\n\n\n\nSep 1, 2017\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "projects/customer-lifetime-value.html",
-    "href": "projects/customer-lifetime-value.html",
-    "title": "Calculating Customer Lifetime Value",
+    "objectID": "projects/species-synonym-search.html",
+    "href": "projects/species-synonym-search.html",
+    "title": "Species Synonym Search (UBC MDS Capstone Project)",
     "section": "",
-    "text": "The value of this project to me\n\nBusiness analytics skills:\n\ntranslating a core marketing/finance metric (CLV) into approachable formulas and examples for a non-technical audience.\ncomparing historical vs. predictive methods and understanding the trade-offs between simplicity, accuracy, and cost.\n\nCommunication:\n\nstructuring a technical topic into a 19-slide presentation with worked examples, suitable for stakeholders without a statistics background.\n\n\nPresentation Slides\n\n\n\nOverview\nCustomer Lifetime Value (CLV), also commonly known as LTV, estimates the total net profit a business can expect from a customer over the duration of their relationship. This presentation covers why CLV matters, the major families of CLV calculation methods, and worked examples for each.\n\n\nDefinition of a Cohort\nGroups customers by acquisition period or channel (e.g., signup month or marketing channel) and tracks their cumulative revenue over time. The way of grouping can vary based on the business context and the insights sought.\n\n\nWhy CLV is hard\nThere is no single “correct” way to calculate CLV — every method involves assumptions and trade-offs.\n\nEven well-built models typically carry 15–25% error margins.\nCLV is usually applied to 3–7 year forecasting horizons, so small errors compound.\nEvery approach faces the same dilemma: a CLV model construction can be at most two of Simple, Accurate, and Inexpensive — never all three.\n\n\n\n\nHistorical CLV\nHistorical methods look backward at actual customer revenue/profit data.\n\nARPU / ARPA method\nAverage Revenue Per User (ARPU) or Average Revenue Per Account (ARPA) multiplies average revenue per customer by the expected customer lifespan.\nWorked example — Alice vs. Bob\nAlice: (150 + 50 + 100) / 6 months = $50 ARPU, 6 months lifespan → CLV = $300\nBob: (45 + 75 +100) / 2 months = $110 ARPU, 2 months lifespan → CLV = $220\n(50 + 110) / 2 = $80 per customer\n12 months value: $80 * 12 months = $960\n24 months value: $80 * 24 months = $1,920\n\nAlice spends less per month but stays subscribed much longer than Bob.\nEven though Bob’s monthly spend is higher, Alice’s longer retention can make her CLV greater — illustrating why retention matters as much as spend.\n\n\n\nKey points of Historical CLV methods\nThere are some factors that may not be captured by historical methods:\n\nDifferent customers have different behavior patterns that may not be reflected in averages. Use cohort method to narrow down to more specific segments.\nFuture changes in customer behavior or market conditions may not be captured, such as internally changed by offerings or externally changed by market trends.\nNot enough data when a business is too young or data duration is too short to capture the full customer lifecycle.\n\n\n\n\n\nPredictive CLV\nPredictive methods use statistical models to forecast future value rather than relying solely on historical averages.\n\nKey Variables\nFour variables drive most predictive CLV calculations:\n\nAcquisition Cost / Retention Cost:\n\nThe cost to acquire a new customer or retain an existing one (e.g., marketing spend per conversion).\n\nNet Profit Margin:\n\nAmong the cohorts, the share of revenue retained as profit after costs.\nProfit Margin Ratio: Net Income / Net Sales\nUsually the Finance team can provide this number, but if not, general rules are:\n\n10% for public companies\n15% for private companies that are scaling predictably\n20%-25% for private companies that have not yet reached scale and predictable growth\n\n\nRetention / Churn Rate and Expected Lifespan:\n\n\\[\n\\text{Retention Rate} = \\frac{\\text{Customers at End of Period} - \\text{New Customers Acquired}}{\\text{Customers at Start of Period}}\n\\]\nThe Churn Rate is the complement of the Retention Rate: \\[\n\\text{Churn Rate} = 1 - \\text{Retention Rate}\n\\]\nWe can use the retention rate to estimate the expected customer lifespan: \\[\n\\text{Expected Customer Lifespan} = \\frac{1}{\\text{Churn Rate}}\n\\]\n\nDiscount Rate:\n\nAccounts for the time value of money when projecting future profits to present value. Get this from the Finance team, or use 1 as a starting point for simplicity.\n\n\n\nFormula\nAfter getting the key variables, we can plug them into the formula to calculate CLV:\n\nSimple formula\n\\[\nCLV = \\text{Average Revenue per Customer} \\times \\text{Expected Customer Lifespan}\n\\]\n\n\nComplete formula\nA more complete formula incorporates profit margins, retention, and the time value of money:\n\\[\nCLV = \\left( \\frac{\\text{Revenue per Customer} \\times \\text{Gross Margin}}{1 - \\text{Retention Rate} + \\text{Discount Rate}} \\right) - \\text{Acquisition Cost}\n\\]\n\n\n\n\nConclusion\nCLV ultimately helps answer three fundamental business questions:\n\nHow much should we spend to acquire a customer?\nWhich customer segments are worth investing in retaining?\nHow sustainable is our current growth strategy?\n\nChoosing a CLV method is less about finding the “perfect” formula and more about matching the right balance of simplicity, accuracy, and cost to the decision at hand.\n\n\n\nReferences\n\nFor Entrepreneurs — What’s your TRUE customer lifetime value (LTV)?\nKaushik.net — Excellent Analytics Tip #17: Calculate Customer Lifetime Value\nAbove the Crowd — The Dangerous Seduction of the Lifetime Value (LTV) Formula\nWikipedia — Customer Lifetime Value"
+    "text": "The value of this project to me\n\nTechnical skills:\n\nbuilding a full-stack application end-to-end: a Next.js frontend, a FastAPI backend, and a Python data pipeline, all wired together and deployed to cloud platforms (Vercel and Hugging Face Spaces).\ndesigning an extensible API abstraction layer (SpeciesAPI) that allowed 20+ external biodiversity databases to be integrated using a shared contract, making adding new sources a structured, predictable process.\nimplementing streaming search via Server-Sent Events (SSE) so the UI shows results as they arrive, rather than waiting for all sources to finish.\ncontainerizing the backend with Docker and setting up CI/CD with GitHub Actions.\n\nCollaboration:\n\nworking as a team of 4 across the full stack, coordinating ownership of frontend views, backend routes, and individual pipeline source clients.\npartnering with an external stakeholder (the museum’s informatics curator) and a faculty mentor, which required translating technical decisions into plain language and aligning the roadmap to real curatorial workflows.\n\nProject management:\n\nscoping and delivering a production-grade system within the capstone timeline, including a test suite with fixture management, API documentation, and a final report.\n\n\n\n\n\nOverview\nThe Beaty Biodiversity Museum at UBC maintains millions of specimens organized by current scientific taxonomy. Because taxonomic classifications evolve over time, a single species can carry many different names across publications and databases. Museum curators previously had to check each database manually to reconcile synonyms.\nThis tool queries 20+ biodiversity databases simultaneously, consolidates the returned names and taxonomic data, and presents curators with five linked views to explore the results. The goal is to surface organized evidence while preserving the curator’s final decision-making authority.\nDeveloped as part of UBC Master of Data Science, DSCI 591 Capstone Program (2025-2026) in partnership with the museum’s informatics team. Team members: Molly Kessler, Wendy Frankel, Johnson Chuang, and myself William Song.\n\n\nProject repository\nGitHub repo: ubc-mds-capstone-project\n\n\nLive demo\n\nFrontend: ubc-mds-capstone-project.vercel.app\nBackend API docs: windforce9e4-species-synonym-api.hf.space/docs\n\n\n\n\nArchitecture\nThe system has three layers:\nBrowser (Next.js)\n      |\nFastAPI Backend\n      |\nData Pipeline (20+ source clients)\n\nFrontend (frontend/): Next.js (App Router) with React, Mantine v7 components, TanStack Query for data fetching, and Zustand for state. Communicates with the backend over HTTP/JSON.\nBackend (backend_api/): FastAPI service exposing search, suggest, sources, and taxonomy endpoints. Live search streams results back via Server-Sent Events at /api/search/stream.\nPipeline (scripts/apis_pipe/): each biodiversity source is a Python class that extends a shared SpeciesAPI abstract base class, implementing five required methods (fetch query data, fetch synonym data, fetch accepted data, compile synonyms, compile accepted name). This contract makes each client independently testable and interchangeable.\n\n\n\n\nData sources\n20+ external biodiversity databases are integrated:\n\nGlobal backbone: GBIF\nSymbiota portals: MyCoPortal, Lichen, Bryophyte, SERNEC, CCH2, NANSH, and others (11 portals total)\nIndependent APIs: Catalogue of Life, Tropicos, Index Fungorum, GenBank, FishBase, ITIS, Mushroom Observer, Paleobiology Database, MycoBank\n\nEach source returns data normalized to a 16-field standardized schema. The pipeline routes queries to relevant sources based on kingdom (Animalia, Plantae, Fungi), so curators are not shown databases that are irrelevant to the specimen they are researching.\n\n\n\nKey features\n\nFive linked views\n\nOverview: every synonym returned, alongside which databases recognize each name.\nRelations: interactive graph of synonyms grouped by genus and species, with links to source records.\nTimeline: names arranged chronologically by publication year.\nTaxonomy: classification across ranks with edit-distance shading to highlight spelling variants versus genuine taxonomic disagreements.\nDetail: complete records from all databases with CSV export.\n\n\n\nStreaming search\nResults stream into the UI via Server-Sent Events as each database responds, so curators see partial results immediately rather than waiting for the slowest source.\n\n\nFuzzy name suggestions\nWhen a search returns no results, the app queries GBIF for close matches and presents “Did you mean?” suggestions.\n\n\n\n\nTesting and CI\n\nUnit tests: run offline against recorded API fixture files, no live credentials required. Fixtures are generated by tests/fixtures/regenerate_fixtures.py, which hits real APIs and stores the responses.\nIntegration tests: marked with @pytest.mark.integration, run against live APIs.\nCI: GitHub Actions runs the unit test suite on every pull request.\n\npytest -m \"not integration\" tests/   # unit tests (CI mode)\npytest -m integration tests/         # live integration tests\n\n\n\nDeployment\n\nBackend: Docker image deployed to a Hugging Face Space (port 7860).\nFrontend: Next.js app auto-deployed to Vercel on push to main.\nThe two layers are connected via the NEXT_PUBLIC_API_BASE_URL environment variable on the frontend, and CORS is configured on the backend to allow the Vercel domain.\n\n\n\n\nKey takeaways\n\nAbstraction pays off at scale: the SpeciesAPI contract meant adding each new source required touching a predictable set of files rather than scattered ad-hoc code, and kept the test surface manageable across 20+ clients.\nStreaming UX changes how users experience latency: showing results as they arrive made the tool feel faster and more transparent than a spinner followed by a full-page result dump.\nWorking with a real partner sharpens scope decisions: having a curator as the end user (not a classmate) pushed the team to prioritize features that fit actual museum workflows over technically interesting but less useful ones."
   },
   {
-    "objectID": "projects/world-education.html",
-    "href": "projects/world-education.html",
-    "title": "World Education Project",
+    "objectID": "projects/smart-amazon-product-query-assistant.html",
+    "href": "projects/smart-amazon-product-query-assistant.html",
+    "title": "Smart Amazon Product Query Assistant",
     "section": "",
-    "text": "The value of this group project to me\n\nTechnical skills:\n\ndeploying a Shiny dashboard to share insights interactively on Posit Cloud, a great substitute if Tableau or Power BI are not available.\napplying data cleaning, EDA, visualization, and dashboarding techniques.\n\nCollaboration:\n\nworking with a team of 4 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\n\n\n\n\n\nOverview\nThis project analyzes global education indicators to explore patterns in enrollment, attainment, and inequality across countries. The analysis was completed as part of UBC Master of Data Science, DSCI 532 Data Visualization course and demonstrates data cleaning, exploratory analysis, visualization, and basic modeling to surface insights relevant to education gaps between genders and international regions. Then finally, deploy the insights in an interactive dashboard built with Shiny, and a chatbot interface using a large language model to query the data.\n\n\nProject repository\nForked project repo: World Education Project (mirrored from school repo because it is not publicly accessible)\n\n\n\nData\nPrimary files (from the repo)\n\ndata/processed/processed_global_education.csv: cleaned, merged dataset used for analysis.\n\ndata/raw/Global_Education.csv: raw source files sourced from Kaggle - World Educational Data, compiled from UNESCO Institute for Statistics, UNICEF, and UN Statistics Division.\nnotebooks/EDA.ipynb: analysis jupyter notebooks (Python) used to produce figures and tables.\n\n\n\n\nMethods & Analytics\n\nData cleaning & integration: harmonized country codes, handled missingness, merged multiple sources.\n\nExploratory data analysis: summary statistics, distributions, and correlation matrices.\nSegmentation: country clustering by region, gender, education outcomes and socioeconomic indicators.\nVisualization: maps, comparative bar charts, correlation scatter plot.\nChatbot using LLM: used a large language model to automatically filter and explore the data.\n\n\n\n\nDashboard\nLink to the dashboard\nWe built an interactive dashboard using Shiny app to allow users to explore the data and insights dynamically. The dashboard includes: World map views with metric selector, bar charts comparing average education level by region, and completion rate gap by region, scatter plot comparing male and female literacy rate by region, and a chatbot interface for querying the data using natural language.\n\nLanding page \nInteractive plots \nChatbot page"
+    "text": "The value of this project to me\n\nTechnical skills:\n\nimplementing and comparing three retrieval approaches (BM25, semantic search, hybrid) on a large real-world product dataset.\nbuilding a full RAG pipeline, from retrieval through context construction to LLM generation, with a Streamlit chat interface.\nworking with vector search (FAISS) and sentence embeddings, plus comparing two different LLMs for the generation step.\n\nCollaboration:\n\nworking with a teammate across two milestones, dividing work between retrieval methods and the generation/app layer.\n\nProject management:\n\nstructuring the project as incremental milestones, each with its own discussion and evaluation writeup, and documenting setup so the app can be reproduced from a fresh environment.\n\n\n\n\n\nOverview\nThis project is a context-aware product search assistant for Amazon listings. Given a natural language query, it retrieves relevant products and can generate a conversational answer grounded in product metadata and reviews. It was built for UBC Master of Data Science, DSCI 575 Advanced Machine Learning course, with teammate Harrison Li.\n\n\nProject repository\nGitHub repo: smart-amazon-product-query-assistant (mirrored from school repo because it is not publicly accessible)\n\n\n\nDataset\n\nSource: Amazon Reviews 2023 dataset (McAuley-Lab, via Hugging Face), Appliances category.\nScale: 94,319 products, 2,128,605 total rows of product metadata (titles, descriptions, features, pricing) and aggregated user reviews.\n\n\n\n\nArchitecture\nThe project progressed through two milestones, layering generation on top of retrieval.\n\nMilestone 1: Retrieval methods\n\nBM25: traditional keyword matching, with scores normalized via max scaling.\nSemantic search: dense embeddings from all-MiniLM-L6-v2 (sentence-transformers), indexed in FAISS using IndexFlatIP for L2-normalized inner product (cosine similarity) search.\nHybrid retrieval: combines both methods by normalizing each score to [0, 1] and blending them, hybrid_score = alpha * norm_sem + (1 - alpha) * norm_bm25, with alpha defaulting to 0.5.\n\n\n\nMilestone 2: RAG pipeline\n\nWorkflow: user query, retriever selection, document retrieval, context building, LLM generation, response shown in the chat UI.\nPrimary model: Llama-3.3-70b-versatile via the Groq API, chosen for strong instruction-following and summarization, and for its large context window to handle the “lost in the middle” problem with lengthy product reviews. Groq’s LPU hardware also gives fast inference.\nAlternative model: gpt-oss-20b, included for side-by-side comparison against the primary model.\n\n\n\n\n\nApp\nThe assistant runs as a Streamlit chat app (app/app.py). Users pick a retrieval method and LLM, ask a question in natural language, and get back a grounded answer along with the retrieved products. LLM features require a .env file with GROQ_API_KEY and TAVILY_API_KEY (the latter for web search augmentation). A demo video app-demo.mp4 walks through the app in the repo.\n\n\n\nInstallation & usage\ngit clone https://github.com/canadasung/DSCI_575_project_hli76_wnsong.git\ncd DSCI_575_project_hli76_wnsong\nconda env create -f environment.yml\nconda activate &lt;env-name&gt;\npython src/download_data.py\nstreamlit run app/app.py\nThe data pipeline produces raw parquet files, processed documents and product indices, a BM25 pickle index with tokenized corpus, and a FAISS vector index for semantic search. User feedback collected from the app is logged to CSV.\n\n\n\nResults & evaluation\nDetailed findings and evaluation discussion for each milestone are documented in the repo under results/milestone1_discussion.md and results/milestone2_discussion.md.\n\n\n\nKey takeaways\n\nRetrieval choice matters: BM25, semantic search, and hybrid retrieval each have different strengths, and blending them gave more flexibility than committing to one method.\nModel size versus speed tradeoff: comparing a 70B and a 20B model surfaced practical tradeoffs between answer quality and inference cost/speed, which Groq’s hardware helped offset."
   },
   {
-    "objectID": "index-zh.html",
-    "href": "index-zh.html",
-    "title": "Data with Will",
+    "objectID": "projects/model-interpretation.html",
+    "href": "projects/model-interpretation.html",
+    "title": "Model Interpretation",
     "section": "",
-    "text": "English | 简体中文\n您好！我的名字是宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞(卑詩)省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI (尤其是大型語言模型) 也已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及效率提升，但隨之而來也有無法忽視的資料安全風險與技術流失的挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
+    "text": "The value of this group project to me\n\nTechnical skills:\n\ncreating reusable functions and scripts for data preprocessing, modeling, and evaluation to promote reproducibility and scalability.\nexploring new platform Netlify for hosting and sharing data science projects.\napplying data cleaning, EDA, machine learning models (baseline, KNN, SVM RBF), and visualization techniques.\n\nCollaboration:\n\nworking with a team of 3 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\npushing code to GitHub and deploying the final report on Netlify for public access.\n\n\n\n\n\nOverview\nmodel_auto_interpret is a Python package that streamlines the repetitive parts of building and comparing scikit-learn classification models — hyperparameter tuning, cross-model comparison, and performance evaluation. Rather than rewriting the same boilerplate for every project, the package wraps these steps into three reusable functions, sitting in the gap between scikit-learn’s low-level utilities and visualization-only libraries like mlxtend. The package was built as part of UBC Master of Data Science, DSCI 524 Collaborative Software Development course, with a team of 3: Daisy (Ying) Zhou, Yasaman Baher, and myself.\n\n\nProject repository\nGitHub repo: ml-model_interpretation (mirrored from school repo because it is not publicly accessible)\n\n\nDocumentation & tutorial\nDocs site: machine-learning-model-interpretation.netlify.app — deployed on Netlify, including a full tutorial and API reference.\n\n\n\nInstallation\npip install -i https://test.pypi.org/simple/ model-auto-interpret\n\n\n\nKey Functions\nThe package centers on three functions covering the typical model-development workflow:\n\nparam_tuning_summary: takes a fitted GridSearchCV/RandomizedSearchCV object and returns a clean summary dataframe of the best parameters and scores, plus the best estimator ready to use.\nmodel_cv_metric_compare: evaluates multiple unfitted models side-by-side via cross-validation, returning accuracy, precision, recall, F1, and ROC-AUC in a single comparison table.\nmodel_evaluation_plotting: scores a fitted model on held-out test data, returning accuracy/F2 metrics, a confusion matrix table, and a ready-to-plot confusion matrix display.\n\n\n\n\nTutorial walkthrough\nThe package tutorial demonstrates the full workflow on the Breast Cancer dataset (455 training samples, 30 features, binary classification):\n\nCompare models: model_cv_metric_compare() runs 5-fold cross-validation across Logistic Regression, SVC variants, Random Forest, Decision Tree, and Gradient Boosting, producing a single comparison table.\nTune hyperparameters: param_tuning_summary() extracts the best parameter configuration from GridSearchCV/RandomizedSearchCV results for the top candidate models.\nEvaluate on test data: model_evaluation_plotting() scores the tuned model on the test set and generates a confusion matrix visualization.\n\nResult: Random Forest emerged as the top performer at ~96% cross-validation accuracy. The tutorial closes with an end-to-end example on the Iris dataset, reaching 100% test accuracy.\n\n\n\nKey takeaways\n\nLess boilerplate, more reproducibility: collapsing tuning, comparison, and evaluation into three function calls makes model-development notebooks shorter and easier for teammates to rerun.\nDesigned for collaboration: built with packaging best practices (tests, CI, semantic versioning, hosted docs) as the core learning objective of the course, not just the modeling logic itself."
   },
   {
-    "objectID": "index-zh.html#數據分析資料科學職涯歷程",
-    "href": "index-zh.html#數據分析資料科學職涯歷程",
-    "title": "Data with Will",
-    "section": "數據分析／資料科學職涯歷程",
-    "text": "數據分析／資料科學職涯歷程\n\n??? | 待發掘中……\nKABAM | 數據分析師 | 2023.12 - 2025.08\nIGG | 資深數據分析師 | 2021.07 - 2023.08\nBlastworks Technology | 遊戲數據分析師 | 2018.09 - 2021.07"
-  },
-  {
-    "objectID": "index-zh.html#數據分析以前的職涯歷程",
-    "href": "index-zh.html#數據分析以前的職涯歷程",
-    "title": "Data with Will",
-    "section": "數據分析以前的職涯歷程",
-    "text": "數據分析以前的職涯歷程\n\nRiver Rock Casino Resort | 賭場荷官 | 2011.09 - 2014.07\nMcDonald’s | 麥當勞餐廳員工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 東森購物客服專員 / 網路部商品行銷企劃專員 | 2003.09 - 2009.05"
-  },
-  {
-    "objectID": "index-zh.html#學歷",
-    "href": "index-zh.html#學歷",
-    "title": "Data with Will",
-    "section": "學歷",
-    "text": "學歷\n英屬哥倫比亞大學 (UBC) | 加拿大卑詩省溫哥華\n\n資料科學碩士 (MDS) | 2025 - 2026\n\n西門菲沙大學 (SFU) | 加拿大卑詩省本拿比\n\n商學及電腦科學雙主修 (BBA) | 2012 - 2018"
-  },
-  {
-    "objectID": "index-zh.html#英文履歷",
-    "href": "index-zh.html#英文履歷",
-    "title": "Data with Will",
-    "section": "英文履歷",
-    "text": "英文履歷\nDownload PDF"
-  },
-  {
-    "objectID": "index-zh-simplified.html",
-    "href": "index-zh-simplified.html",
-    "title": "Data with Will",
+    "objectID": "certifications.html",
+    "href": "certifications.html",
+    "title": "Certifications & Degrees",
     "section": "",
-    "text": "English | 繁體中文\n您好！我的名字是宋伟宁（William Song），一位居住于加拿大不列颠哥伦比亚(卑诗)省温哥华的数据科学家与分析师。\n我的工作横跨商业分析、统计建模、数据工程与可视化等领域。\n与许多人一样，AI（尤其是大型语言模型）也已深刻影响了我的工作流程，它为未来的世界带来许多可能以及效率提升，但随之而来也有无法忽视的数据安全风险与技术流失的挑战，比如说降低写代码的能力与记忆。尽管如此，我仍然时不时地砥砺自己手写原始 SQL 和 Python 的代码来解决问题。"
+    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
   },
   {
-    "objectID": "index-zh-simplified.html#数据分析数据科学职业历程",
-    "href": "index-zh-simplified.html#数据分析数据科学职业历程",
-    "title": "Data with Will",
-    "section": "数据分析／数据科学职业历程",
-    "text": "数据分析／数据科学职业历程\n\n??? | 待发掘中……\nKABAM | 数据分析师 | 2023.12 - 2025.08\nIGG | 高级数据分析师 | 2021.07 - 2023.08\nBlastworks Technology | 游戏数据分析师 | 2018.09 - 2021.07"
-  },
-  {
-    "objectID": "index-zh-simplified.html#数据分析之前的职业历程",
-    "href": "index-zh-simplified.html#数据分析之前的职业历程",
-    "title": "Data with Will",
-    "section": "数据分析之前的职业历程",
-    "text": "数据分析之前的职业历程\n\nRiver Rock Casino Resort | 赌场荷官 | 2011.09 - 2014.07\nMcDonald’s | 麦当劳餐厅员工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 东森购物客服专员 / 网络部商品营销策划专员 | 2003.09 - 2009.05"
-  },
-  {
-    "objectID": "index-zh-simplified.html#学历",
-    "href": "index-zh-simplified.html#学历",
-    "title": "Data with Will",
-    "section": "学历",
-    "text": "学历\n英属哥伦比亚大学 (UBC) | 加拿大不列颠哥伦比亚省温哥华\n\n数据科学硕士 (MDS) | 2025 - 2026\n\n西蒙菲莎大学 (SFU) | 加拿大不列颠哥伦比亚省本拿比\n\n商学及计算机科学双主修 (BBA) | 2012 - 2018"
-  },
-  {
-    "objectID": "index-zh-simplified.html#英文简历",
-    "href": "index-zh-simplified.html#英文简历",
-    "title": "Data with Will",
-    "section": "英文简历",
-    "text": "英文简历\nDownload PDF"
-  },
-  {
-    "objectID": "deprecated/projects/species-search.html",
-    "href": "deprecated/projects/species-search.html",
-    "title": "Species name search",
+    "objectID": "certifications.html#degrees",
+    "href": "certifications.html#degrees",
+    "title": "Certifications & Degrees",
     "section": "",
-    "text": "This project builds a production-grade species name search tool that aggregates results from over 15 external biodiversity databases including GBIF and Symbiota portals."
+    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
   },
   {
-    "objectID": "deprecated/projects/species-search.html#overview",
-    "href": "deprecated/projects/species-search.html#overview",
-    "title": "Species name search",
+    "objectID": "certifications.html#certifications",
+    "href": "certifications.html#certifications",
+    "title": "Certifications & Degrees",
+    "section": "Certifications",
+    "text": "Certifications\n\nMicrosoft Certified: Azure Data Fundamentals\nMicrosoft | October 2023\n\n\nMicrosoft Certified: Azure Fundamentals\nMicrosoft | July 2023\n\n\nSFU Certified: Business Analytics & Decision Making\nSimon Fraser University | June 2018"
+  },
+  {
+    "objectID": "deprecated/projects/resume.html",
+    "href": "deprecated/projects/resume.html",
+    "title": "Resume",
     "section": "",
-    "text": "This project builds a production-grade species name search tool that aggregates results from over 15 external biodiversity databases including GBIF and Symbiota portals."
+    "text": "Download PDF"
   },
   {
-    "objectID": "deprecated/projects/species-search.html#problem",
-    "href": "deprecated/projects/species-search.html#problem",
-    "title": "Species name search",
-    "section": "Problem",
-    "text": "Problem\nBiodiversity researchers often need to reconcile species names across multiple taxonomic authorities. No single API covers all databases, and sequential requests are too slow for interactive use."
+    "objectID": "deprecated/projects/resume.html#experience",
+    "href": "deprecated/projects/resume.html#experience",
+    "title": "Resume",
+    "section": "Experience",
+    "text": "Experience\n\n[Job Title] – [Company]\n[Start date] – [End date]\n\nBullet describing what you did and the impact\nQuantify where possible (e.g. reduced query runtime by 40%)"
   },
   {
-    "objectID": "deprecated/projects/species-search.html#approach",
-    "href": "deprecated/projects/species-search.html#approach",
-    "title": "Species name search",
-    "section": "Approach",
-    "text": "Approach\n\nAsync fan-out: Used httpx with asyncio.gather to query all APIs concurrently, reducing median latency from ~8s sequential to ~1.2s.\nRedis caching: Common species names are cached with a 24-hour TTL, cutting repeat query cost to near zero.\nPostgreSQL: Stores canonical name mappings and user search history.\nNext.js frontend: Displays ranked results with source attribution and fuzzy match scores."
+    "objectID": "deprecated/projects/resume.html#education",
+    "href": "deprecated/projects/resume.html#education",
+    "title": "Resume",
+    "section": "Education",
+    "text": "Education\n\nMaster of Data Science – UBC\n2024 – 2025\nCoursework: statistical inference, machine learning, data visualization, databases, cloud computing, collaborative software development.\n\n\n[Bachelor’s degree] – [Institution]\n[Years]"
   },
   {
-    "objectID": "deprecated/projects/species-search.html#key-code",
-    "href": "deprecated/projects/species-search.html#key-code",
-    "title": "Species name search",
-    "section": "Key code",
-    "text": "Key code\nimport asyncio\nimport httpx\n\nasync def fan_out(name: str, sources: list[str]) -&gt; dict:\n    async with httpx.AsyncClient(timeout=5.0) as client:\n        tasks = [query_source(client, name, src) for src in sources]\n        results = await asyncio.gather(*tasks, return_exceptions=True)\n    return {src: r for src, r in zip(sources, results) if not isinstance(r, Exception)}"
-  },
-  {
-    "objectID": "deprecated/projects/species-search.html#results",
-    "href": "deprecated/projects/species-search.html#results",
-    "title": "Species name search",
-    "section": "Results",
-    "text": "Results\n\nSub-2s response time across 15 sources\n94% cache hit rate on common queries after first week\nDeployed on a single $6/month VPS with no downtime in 3 months"
-  },
-  {
-    "objectID": "deprecated/projects/species-search.html#links",
-    "href": "deprecated/projects/species-search.html#links",
-    "title": "Species name search",
-    "section": "Links",
-    "text": "Links\n\nGitHub repo\nLive demo"
-  },
-  {
-    "objectID": "deprecated/slides/index.html",
-    "href": "deprecated/slides/index.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Presenter: William Song"
-  },
-  {
-    "objectID": "deprecated/slides/index.html#schedule",
-    "href": "deprecated/slides/index.html#schedule",
-    "title": "Overview",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nDuration\nModule\n\n\n\n\n10:00 AM\n30 min\nModule 1: Introduction to Data Science Tools\n\n\n10:30 AM\n45 min\nModule 2: Python and SQL Together\n\n\n11:15 AM\n10 min\nMorning Break\n\n\n11:25 AM\n60 min\nModule 3: Data Wrangling with pandas\n\n\n12:25 PM\n45 min\nLunch\n\n\n1:10 PM\n60 min\nModule 4: Query Optimization\n\n\n2:10 PM\n10 min\nAfternoon Break\n\n\n2:20 PM\n45 min\nModule 5: Visualization Best Practices\n\n\n3:05 PM\n\nEnd of session"
-  },
-  {
-    "objectID": "deprecated/slides/module2.html",
-    "href": "deprecated/slides/module2.html",
-    "title": "Module 2: Python and SQL Together",
-    "section": "",
-    "text": "SQL handles where the data lives; Python handles what you do with it."
-  },
-  {
-    "objectID": "deprecated/slides/module2.html#slides",
-    "href": "deprecated/slides/module2.html#slides",
-    "title": "Module 2: Python and SQL Together",
-    "section": "Slides",
-    "text": "Slides\nView slides in full screen"
-  },
-  {
-    "objectID": "deprecated/slides/module2.html#key-takeaways",
-    "href": "deprecated/slides/module2.html#key-takeaways",
-    "title": "Module 2: Python and SQL Together",
-    "section": "Key Takeaways",
-    "text": "Key Takeaways\n\nUse SQL to filter and aggregate before loading into Python\nAvoid pulling entire tables into memory unnecessarily\nSQLAlchemy and DuckDB bridge the two seamlessly"
-  },
-  {
-    "objectID": "deprecated/slides/intro.html#about-me",
-    "href": "deprecated/slides/intro.html#about-me",
-    "title": "Data Science with Python & SQL",
-    "section": "About Me",
-    "text": "About Me\n\nMDS graduate from UBC\nPython, R, and SQL for data science\nFocus on statistical modeling, data engineering, and visualization"
-  },
-  {
-    "objectID": "deprecated/slides/intro.html#agenda",
-    "href": "deprecated/slides/intro.html#agenda",
-    "title": "Data Science with Python & SQL",
-    "section": "Agenda",
-    "text": "Agenda\n\nWhy Python & SQL together?\nData wrangling with pandas\nQuery optimization basics\nVisualization tips\nQ&A"
-  },
-  {
-    "objectID": "deprecated/slides/intro.html#why-python-sql-together",
-    "href": "deprecated/slides/intro.html#why-python-sql-together",
-    "title": "Data Science with Python & SQL",
-    "section": "Why Python & SQL Together?",
-    "text": "Why Python & SQL Together?\n\nSQL handles where the data lives\nPython handles what you do with it\nTogether they cover the full pipeline: extract → transform → analyze → visualize"
-  },
-  {
-    "objectID": "deprecated/slides/intro.html#data-wrangling-with-pandas",
-    "href": "deprecated/slides/intro.html#data-wrangling-with-pandas",
-    "title": "Data Science with Python & SQL",
-    "section": "Data Wrangling with pandas",
-    "text": "Data Wrangling with pandas\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\n\n# Filter, group, aggregate\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n)"
-  },
-  {
-    "objectID": "deprecated/slides/intro.html#query-optimization-basics",
-    "href": "deprecated/slides/intro.html#query-optimization-basics",
-    "title": "Data Science with Python & SQL",
-    "section": "Query Optimization Basics",
-    "text": "Query Optimization Basics\n\nUse indexes on columns you filter or join on\nAvoid SELECT * — only fetch what you need\nPush filters early, before joins\nUse EXPLAIN to inspect query plans\n\n-- Before\nSELECT * FROM orders JOIN customers ON orders.customer_id = customers.id;\n\n-- After\nSELECT orders.id, customers.name\nFROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';"
-  },
-  {
-    "objectID": "deprecated/slides/intro.html#visualization-tips",
-    "href": "deprecated/slides/intro.html#visualization-tips",
-    "title": "Data Science with Python & SQL",
-    "section": "Visualization Tips",
-    "text": "Visualization Tips\n\nMatch chart type to your question\n\nDistribution → histogram or boxplot\nTrend → line chart\nComparison → bar chart\n\nLabel axes clearly\nAvoid chartjunk"
-  },
-  {
-    "objectID": "deprecated/slides/intro.html#qa",
-    "href": "deprecated/slides/intro.html#qa",
-    "title": "Data Science with Python & SQL",
-    "section": "Q&A",
-    "text": "Q&A\nThank you!\n\nGitHub: canadasung\nLinkedIn: williamwnsong\nEmail: canadasung@gmail.com"
-  },
-  {
-    "objectID": "deprecated/slides/module1.html",
-    "href": "deprecated/slides/module1.html",
-    "title": "Module 1: Introduction to Data Science Tools",
-    "section": "",
-    "text": "An overview of the modern data science stack and how the tools fit together across the pipeline."
-  },
-  {
-    "objectID": "deprecated/slides/module1.html#topics",
-    "href": "deprecated/slides/module1.html#topics",
-    "title": "Module 1: Introduction to Data Science Tools",
-    "section": "Topics",
-    "text": "Topics\n\nWhat is the data science pipeline?\nWhere Python, R, and SQL each shine\nSetting up your local environment"
-  },
-  {
-    "objectID": "deprecated/slides/module1.html#the-data-science-pipeline",
-    "href": "deprecated/slides/module1.html#the-data-science-pipeline",
-    "title": "Module 1: Introduction to Data Science Tools",
-    "section": "The Data Science Pipeline",
-    "text": "The Data Science Pipeline\nEach tool has its place:\n\n\n\nStage\nTool\n\n\n\n\nStore & query\nSQL\n\n\nWrangle & model\nPython / R\n\n\nVisualize\nPython / R / Quarto\n\n\nCommunicate\nQuarto"
-  },
-  {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html",
-    "href": "deprecated/blog/duckdb-vs-pandas.html",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "",
-    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
-  },
-  {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#context",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#context",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "",
-    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
-  },
-  {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "The short answer",
-    "text": "The short answer\nUse DuckDB when:\n\nYour dataset is larger than ~500MB\nYou are doing aggregations, joins, or window functions\nYou want to query Parquet or CSV files without loading them into memory\n\nUse pandas when:\n\nYou need row-wise Python logic (.apply, custom functions)\nYou are doing iterative data cleaning with lots of intermediate steps\nThe dataset fits comfortably in memory and transformation is simple"
-  },
-  {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "Benchmark",
-    "text": "Benchmark\nimport duckdb\nimport pandas as pd\nimport time\n\n# DuckDB aggregation\nstart = time.perf_counter()\nduckdb.sql(\"SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category\").df()\nprint(f\"DuckDB: {time.perf_counter() - start:.2f}s\")\n\n# pandas equivalent\nstart = time.perf_counter()\ndf = pd.read_parquet(\"data.parquet\")\ndf.groupby(\"category\")[\"value\"].mean()\nprint(f\"pandas: {time.perf_counter() - start:.2f}s\")\nOn 5M rows: DuckDB finished in 0.3s, pandas in 2.1s – and pandas used 1.4GB RAM vs DuckDB’s 180MB."
-  },
-  {
-    "objectID": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
-    "href": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
-    "title": "When to use DuckDB vs pandas for local analytics",
-    "section": "Takeaway",
-    "text": "Takeaway\nDuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations."
-  },
-  {
-    "objectID": "deprecated/blog/index.html",
-    "href": "deprecated/blog/index.html",
-    "title": "Blog",
-    "section": "",
-    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nWhen to use DuckDB vs pandas for local analytics\n\n\nA practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset.\n\n\nPython, DuckDB, pandas, performance\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "deprecated/slides/module4.html",
-    "href": "deprecated/slides/module4.html",
-    "title": "Module 4: Query Optimization",
-    "section": "",
-    "text": "Practical techniques for writing faster, more efficient SQL queries."
-  },
-  {
-    "objectID": "deprecated/slides/module4.html#use-indexes",
-    "href": "deprecated/slides/module4.html#use-indexes",
-    "title": "Module 4: Query Optimization",
-    "section": "Use Indexes",
-    "text": "Use Indexes\n\nAdd indexes on columns you frequently filter or join on\nAvoid full table scans on large datasets\n\nCREATE INDEX idx_orders_status ON orders(status);"
-  },
-  {
-    "objectID": "deprecated/slides/module4.html#push-filters-early",
-    "href": "deprecated/slides/module4.html#push-filters-early",
-    "title": "Module 4: Query Optimization",
-    "section": "Push Filters Early",
-    "text": "Push Filters Early\n-- Slow: joins first, then filters\nSELECT * FROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';\n\n-- Fast: filter before join\nSELECT o.id, c.name\nFROM (SELECT * FROM orders WHERE status = 'completed') o\nJOIN customers c ON o.customer_id = c.id;"
-  },
-  {
-    "objectID": "deprecated/slides/module4.html#read-query-plans",
-    "href": "deprecated/slides/module4.html#read-query-plans",
-    "title": "Module 4: Query Optimization",
-    "section": "Read Query Plans",
-    "text": "Read Query Plans\nEXPLAIN SELECT * FROM orders WHERE status = 'completed';\nLook for: Seq Scan (slow) vs Index Scan (fast)."
-  },
-  {
-    "objectID": "deprecated/slides/module5.html",
-    "href": "deprecated/slides/module5.html",
-    "title": "Module 5: Visualization Best Practices",
-    "section": "",
-    "text": "How to choose the right chart and communicate data clearly."
-  },
-  {
-    "objectID": "deprecated/slides/module5.html#match-chart-to-question",
-    "href": "deprecated/slides/module5.html#match-chart-to-question",
-    "title": "Module 5: Visualization Best Practices",
-    "section": "Match Chart to Question",
-    "text": "Match Chart to Question\n\n\n\nQuestion\nChart type\n\n\n\n\nDistribution\nHistogram, boxplot\n\n\nTrend over time\nLine chart\n\n\nComparison\nBar chart\n\n\nRelationship\nScatter plot\n\n\nComposition\nStacked bar, pie (sparingly)"
-  },
-  {
-    "objectID": "deprecated/slides/module5.html#labeling-and-annotation",
-    "href": "deprecated/slides/module5.html#labeling-and-annotation",
-    "title": "Module 5: Visualization Best Practices",
-    "section": "Labeling and Annotation",
-    "text": "Labeling and Annotation\n\nAlways label axes with units\nAdd a clear title that states the insight, not just the variable\nAnnotate outliers or key events directly on the chart"
-  },
-  {
-    "objectID": "deprecated/slides/module5.html#tools",
-    "href": "deprecated/slides/module5.html#tools",
-    "title": "Module 5: Visualization Best Practices",
-    "section": "Tools",
-    "text": "Tools\n\nPython: matplotlib, seaborn, Altair, Plotly\nR: ggplot2\nQuarto: renders all of the above inline"
-  },
-  {
-    "objectID": "deprecated/slides/module3.html",
-    "href": "deprecated/slides/module3.html",
-    "title": "Module 3: Data Wrangling with pandas",
-    "section": "",
-    "text": "Hands-on walkthrough of common data cleaning and transformation patterns."
-  },
-  {
-    "objectID": "deprecated/slides/module3.html#reading-and-inspecting-data",
-    "href": "deprecated/slides/module3.html#reading-and-inspecting-data",
-    "title": "Module 3: Data Wrangling with pandas",
-    "section": "Reading and Inspecting Data",
-    "text": "Reading and Inspecting Data\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\ndf.head()\ndf.info()\ndf.describe()"
-  },
-  {
-    "objectID": "deprecated/slides/module3.html#filtering-and-aggregating",
-    "href": "deprecated/slides/module3.html#filtering-and-aggregating",
-    "title": "Module 3: Data Wrangling with pandas",
-    "section": "Filtering and Aggregating",
-    "text": "Filtering and Aggregating\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n    .sort_values(\"revenue\", ascending=False)\n)"
-  },
-  {
-    "objectID": "deprecated/slides/module3.html#handling-missing-values",
-    "href": "deprecated/slides/module3.html#handling-missing-values",
-    "title": "Module 3: Data Wrangling with pandas",
-    "section": "Handling Missing Values",
-    "text": "Handling Missing Values\n# Check\ndf.isnull().sum()\n\n# Drop or fill\ndf.dropna(subset=[\"critical_column\"])\ndf[\"optional_col\"].fillna(0)"
+    "objectID": "deprecated/projects/resume.html#skills",
+    "href": "deprecated/projects/resume.html#skills",
+    "title": "Resume",
+    "section": "Skills",
+    "text": "Skills\n\n\n\nCategory\nTools\n\n\n\n\nLanguages\nPython, R, SQL\n\n\nML / stats\nscikit-learn, statsmodels, tidymodels\n\n\nData\npandas, DuckDB, PostgreSQL, dbt\n\n\nViz\nggplot2, matplotlib, Plotly, Quarto\n\n\nInfra\nGit, Docker, GitHub Actions"
   },
   {
     "objectID": "deprecated/projects/query-optimization.html",
@@ -455,67 +161,368 @@
     "text": "Links\n\nGitHub repo"
   },
   {
-    "objectID": "deprecated/projects/resume.html",
-    "href": "deprecated/projects/resume.html",
-    "title": "Resume",
+    "objectID": "deprecated/slides/module3.html",
+    "href": "deprecated/slides/module3.html",
+    "title": "Module 3: Data Wrangling with pandas",
     "section": "",
-    "text": "Download PDF"
+    "text": "Hands-on walkthrough of common data cleaning and transformation patterns."
   },
   {
-    "objectID": "deprecated/projects/resume.html#experience",
-    "href": "deprecated/projects/resume.html#experience",
-    "title": "Resume",
-    "section": "Experience",
-    "text": "Experience\n\n[Job Title] – [Company]\n[Start date] – [End date]\n\nBullet describing what you did and the impact\nQuantify where possible (e.g. reduced query runtime by 40%)"
+    "objectID": "deprecated/slides/module3.html#reading-and-inspecting-data",
+    "href": "deprecated/slides/module3.html#reading-and-inspecting-data",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Reading and Inspecting Data",
+    "text": "Reading and Inspecting Data\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\ndf.head()\ndf.info()\ndf.describe()"
   },
   {
-    "objectID": "deprecated/projects/resume.html#education",
-    "href": "deprecated/projects/resume.html#education",
-    "title": "Resume",
-    "section": "Education",
-    "text": "Education\n\nMaster of Data Science – UBC\n2024 – 2025\nCoursework: statistical inference, machine learning, data visualization, databases, cloud computing, collaborative software development.\n\n\n[Bachelor’s degree] – [Institution]\n[Years]"
+    "objectID": "deprecated/slides/module3.html#filtering-and-aggregating",
+    "href": "deprecated/slides/module3.html#filtering-and-aggregating",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Filtering and Aggregating",
+    "text": "Filtering and Aggregating\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n    .sort_values(\"revenue\", ascending=False)\n)"
   },
   {
-    "objectID": "deprecated/projects/resume.html#skills",
-    "href": "deprecated/projects/resume.html#skills",
-    "title": "Resume",
-    "section": "Skills",
-    "text": "Skills\n\n\n\nCategory\nTools\n\n\n\n\nLanguages\nPython, R, SQL\n\n\nML / stats\nscikit-learn, statsmodels, tidymodels\n\n\nData\npandas, DuckDB, PostgreSQL, dbt\n\n\nViz\nggplot2, matplotlib, Plotly, Quarto\n\n\nInfra\nGit, Docker, GitHub Actions"
+    "objectID": "deprecated/slides/module3.html#handling-missing-values",
+    "href": "deprecated/slides/module3.html#handling-missing-values",
+    "title": "Module 3: Data Wrangling with pandas",
+    "section": "Handling Missing Values",
+    "text": "Handling Missing Values\n# Check\ndf.isnull().sum()\n\n# Drop or fill\ndf.dropna(subset=[\"critical_column\"])\ndf[\"optional_col\"].fillna(0)"
   },
   {
-    "objectID": "certifications.html",
-    "href": "certifications.html",
-    "title": "Certifications & Degrees",
+    "objectID": "deprecated/slides/module5.html",
+    "href": "deprecated/slides/module5.html",
+    "title": "Module 5: Visualization Best Practices",
     "section": "",
-    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
+    "text": "How to choose the right chart and communicate data clearly."
   },
   {
-    "objectID": "certifications.html#degrees",
-    "href": "certifications.html#degrees",
-    "title": "Certifications & Degrees",
+    "objectID": "deprecated/slides/module5.html#match-chart-to-question",
+    "href": "deprecated/slides/module5.html#match-chart-to-question",
+    "title": "Module 5: Visualization Best Practices",
+    "section": "Match Chart to Question",
+    "text": "Match Chart to Question\n\n\n\nQuestion\nChart type\n\n\n\n\nDistribution\nHistogram, boxplot\n\n\nTrend over time\nLine chart\n\n\nComparison\nBar chart\n\n\nRelationship\nScatter plot\n\n\nComposition\nStacked bar, pie (sparingly)"
+  },
+  {
+    "objectID": "deprecated/slides/module5.html#labeling-and-annotation",
+    "href": "deprecated/slides/module5.html#labeling-and-annotation",
+    "title": "Module 5: Visualization Best Practices",
+    "section": "Labeling and Annotation",
+    "text": "Labeling and Annotation\n\nAlways label axes with units\nAdd a clear title that states the insight, not just the variable\nAnnotate outliers or key events directly on the chart"
+  },
+  {
+    "objectID": "deprecated/slides/module5.html#tools",
+    "href": "deprecated/slides/module5.html#tools",
+    "title": "Module 5: Visualization Best Practices",
+    "section": "Tools",
+    "text": "Tools\n\nPython: matplotlib, seaborn, Altair, Plotly\nR: ggplot2\nQuarto: renders all of the above inline"
+  },
+  {
+    "objectID": "deprecated/slides/module4.html",
+    "href": "deprecated/slides/module4.html",
+    "title": "Module 4: Query Optimization",
     "section": "",
-    "text": "University of British Columbia | Vancouver, BC, Canada | 2025 - 2026\n\n\n\nSimon Fraser University | Burnaby, BC, Canada | 2012 - 2018 Joint major in Business and Computer Science"
+    "text": "Practical techniques for writing faster, more efficient SQL queries."
   },
   {
-    "objectID": "certifications.html#certifications",
-    "href": "certifications.html#certifications",
-    "title": "Certifications & Degrees",
-    "section": "Certifications",
-    "text": "Certifications\n\nMicrosoft Certified: Azure Data Fundamentals\nMicrosoft | October 2023\n\n\nMicrosoft Certified: Azure Fundamentals\nMicrosoft | July 2023\n\n\nSFU Certified: Business Analytics & Decision Making\nSimon Fraser University | June 2018"
+    "objectID": "deprecated/slides/module4.html#use-indexes",
+    "href": "deprecated/slides/module4.html#use-indexes",
+    "title": "Module 4: Query Optimization",
+    "section": "Use Indexes",
+    "text": "Use Indexes\n\nAdd indexes on columns you frequently filter or join on\nAvoid full table scans on large datasets\n\nCREATE INDEX idx_orders_status ON orders(status);"
   },
   {
-    "objectID": "projects/model-interpretation.html",
-    "href": "projects/model-interpretation.html",
-    "title": "Model Interpretation",
+    "objectID": "deprecated/slides/module4.html#push-filters-early",
+    "href": "deprecated/slides/module4.html#push-filters-early",
+    "title": "Module 4: Query Optimization",
+    "section": "Push Filters Early",
+    "text": "Push Filters Early\n-- Slow: joins first, then filters\nSELECT * FROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';\n\n-- Fast: filter before join\nSELECT o.id, c.name\nFROM (SELECT * FROM orders WHERE status = 'completed') o\nJOIN customers c ON o.customer_id = c.id;"
+  },
+  {
+    "objectID": "deprecated/slides/module4.html#read-query-plans",
+    "href": "deprecated/slides/module4.html#read-query-plans",
+    "title": "Module 4: Query Optimization",
+    "section": "Read Query Plans",
+    "text": "Read Query Plans\nEXPLAIN SELECT * FROM orders WHERE status = 'completed';\nLook for: Seq Scan (slow) vs Index Scan (fast)."
+  },
+  {
+    "objectID": "deprecated/blog/index.html",
+    "href": "deprecated/blog/index.html",
+    "title": "Blog",
     "section": "",
-    "text": "The value of this group project to me\n\nTechnical skills:\n\ncreating reusable functions and scripts for data preprocessing, modeling, and evaluation to promote reproducibility and scalability.\nexploring new platform Netlify for hosting and sharing data science projects.\napplying data cleaning, EDA, machine learning models (baseline, KNN, SVM RBF), and visualization techniques.\n\nCollaboration:\n\nworking with a team of 3 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\npushing code to GitHub and deploying the final report on Netlify for public access.\n\n\n\n\n\nOverview\nmodel_auto_interpret is a Python package that streamlines the repetitive parts of building and comparing scikit-learn classification models — hyperparameter tuning, cross-model comparison, and performance evaluation. Rather than rewriting the same boilerplate for every project, the package wraps these steps into three reusable functions, sitting in the gap between scikit-learn’s low-level utilities and visualization-only libraries like mlxtend. The package was built as part of UBC Master of Data Science, DSCI 524 Collaborative Software Development course, with a team of 3: Daisy (Ying) Zhou, Yasaman Baher, and myself.\n\n\nProject repository\nGitHub repo: ml-model_interpretation (mirrored from school repo because it is not publicly accessible)\n\n\nDocumentation & tutorial\nDocs site: machine-learning-model-interpretation.netlify.app — deployed on Netlify, including a full tutorial and API reference.\n\n\n\nInstallation\npip install -i https://test.pypi.org/simple/ model-auto-interpret\n\n\n\nKey Functions\nThe package centers on three functions covering the typical model-development workflow:\n\nparam_tuning_summary: takes a fitted GridSearchCV/RandomizedSearchCV object and returns a clean summary dataframe of the best parameters and scores, plus the best estimator ready to use.\nmodel_cv_metric_compare: evaluates multiple unfitted models side-by-side via cross-validation, returning accuracy, precision, recall, F1, and ROC-AUC in a single comparison table.\nmodel_evaluation_plotting: scores a fitted model on held-out test data, returning accuracy/F2 metrics, a confusion matrix table, and a ready-to-plot confusion matrix display.\n\n\n\n\nTutorial walkthrough\nThe package tutorial demonstrates the full workflow on the Breast Cancer dataset (455 training samples, 30 features, binary classification):\n\nCompare models: model_cv_metric_compare() runs 5-fold cross-validation across Logistic Regression, SVC variants, Random Forest, Decision Tree, and Gradient Boosting, producing a single comparison table.\nTune hyperparameters: param_tuning_summary() extracts the best parameter configuration from GridSearchCV/RandomizedSearchCV results for the top candidate models.\nEvaluate on test data: model_evaluation_plotting() scores the tuned model on the test set and generates a confusion matrix visualization.\n\nResult: Random Forest emerged as the top performer at ~96% cross-validation accuracy. The tutorial closes with an end-to-end example on the Iris dataset, reaching 100% test accuracy.\n\n\n\nKey takeaways\n\nLess boilerplate, more reproducibility: collapsing tuning, comparison, and evaluation into three function calls makes model-development notebooks shorter and easier for teammates to rerun.\nDesigned for collaboration: built with packaging best practices (tests, CI, semantic versioning, hosted docs) as the core learning objective of the course, not just the modeling logic itself."
+    "text": "Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJun 1, 2025\n\n\nWhen to use DuckDB vs pandas for local analytics\n\n\nA practical breakdown of where each tool wins, with benchmarks on a 5M-row dataset.\n\n\nPython, DuckDB, pandas, performance\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "projects/smart-amazon-product-query-assistant.html",
-    "href": "projects/smart-amazon-product-query-assistant.html",
-    "title": "Smart Amazon Product Query Assistant",
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html",
+    "href": "deprecated/blog/duckdb-vs-pandas.html",
+    "title": "When to use DuckDB vs pandas for local analytics",
     "section": "",
-    "text": "The value of this project to me\n\nTechnical skills:\n\nimplementing and comparing three retrieval approaches (BM25, semantic search, hybrid) on a large real-world product dataset.\nbuilding a full RAG pipeline, from retrieval through context construction to LLM generation, with a Streamlit chat interface.\nworking with vector search (FAISS) and sentence embeddings, plus comparing two different LLMs for the generation step.\n\nCollaboration:\n\nworking with a teammate across two milestones, dividing work between retrieval methods and the generation/app layer.\n\nProject management:\n\nstructuring the project as incremental milestones, each with its own discussion and evaluation writeup, and documenting setup so the app can be reproduced from a fresh environment.\n\n\n\n\n\nOverview\nThis project is a context-aware product search assistant for Amazon listings. Given a natural language query, it retrieves relevant products and can generate a conversational answer grounded in product metadata and reviews. It was built for UBC Master of Data Science, DSCI 575 Advanced Machine Learning course, with teammate Harrison Li.\n\n\nProject repository\nGitHub repo: smart-amazon-product-query-assistant (mirrored from school repo because it is not publicly accessible)\n\n\n\nDataset\n\nSource: Amazon Reviews 2023 dataset (McAuley-Lab, via Hugging Face), Appliances category.\nScale: 94,319 products, 2,128,605 total rows of product metadata (titles, descriptions, features, pricing) and aggregated user reviews.\n\n\n\n\nArchitecture\nThe project progressed through two milestones, layering generation on top of retrieval.\n\nMilestone 1: Retrieval methods\n\nBM25: traditional keyword matching, with scores normalized via max scaling.\nSemantic search: dense embeddings from all-MiniLM-L6-v2 (sentence-transformers), indexed in FAISS using IndexFlatIP for L2-normalized inner product (cosine similarity) search.\nHybrid retrieval: combines both methods by normalizing each score to [0, 1] and blending them, hybrid_score = alpha * norm_sem + (1 - alpha) * norm_bm25, with alpha defaulting to 0.5.\n\n\n\nMilestone 2: RAG pipeline\n\nWorkflow: user query, retriever selection, document retrieval, context building, LLM generation, response shown in the chat UI.\nPrimary model: Llama-3.3-70b-versatile via the Groq API, chosen for strong instruction-following and summarization, and for its large context window to handle the “lost in the middle” problem with lengthy product reviews. Groq’s LPU hardware also gives fast inference.\nAlternative model: gpt-oss-20b, included for side-by-side comparison against the primary model.\n\n\n\n\n\nApp\nThe assistant runs as a Streamlit chat app (app/app.py). Users pick a retrieval method and LLM, ask a question in natural language, and get back a grounded answer along with the retrieved products. LLM features require a .env file with GROQ_API_KEY and TAVILY_API_KEY (the latter for web search augmentation). A demo video app-demo.mp4 walks through the app in the repo.\n\n\n\nInstallation & usage\ngit clone https://github.com/canadasung/DSCI_575_project_hli76_wnsong.git\ncd DSCI_575_project_hli76_wnsong\nconda env create -f environment.yml\nconda activate &lt;env-name&gt;\npython src/download_data.py\nstreamlit run app/app.py\nThe data pipeline produces raw parquet files, processed documents and product indices, a BM25 pickle index with tokenized corpus, and a FAISS vector index for semantic search. User feedback collected from the app is logged to CSV.\n\n\n\nResults & evaluation\nDetailed findings and evaluation discussion for each milestone are documented in the repo under results/milestone1_discussion.md and results/milestone2_discussion.md.\n\n\n\nKey takeaways\n\nRetrieval choice matters: BM25, semantic search, and hybrid retrieval each have different strengths, and blending them gave more flexibility than committing to one method.\nModel size versus speed tradeoff: comparing a 70B and a 20B model surfaced practical tradeoffs between answer quality and inference cost/speed, which Groq’s hardware helped offset."
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#context",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#context",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "",
+    "text": "Both DuckDB and pandas can handle local analytical workloads, but they have very different performance profiles. After hitting pandas memory limits on a 5M-row CSV, I did a side-by-side comparison."
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#the-short-answer",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "The short answer",
+    "text": "The short answer\nUse DuckDB when:\n\nYour dataset is larger than ~500MB\nYou are doing aggregations, joins, or window functions\nYou want to query Parquet or CSV files without loading them into memory\n\nUse pandas when:\n\nYou need row-wise Python logic (.apply, custom functions)\nYou are doing iterative data cleaning with lots of intermediate steps\nThe dataset fits comfortably in memory and transformation is simple"
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#benchmark",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Benchmark",
+    "text": "Benchmark\nimport duckdb\nimport pandas as pd\nimport time\n\n# DuckDB aggregation\nstart = time.perf_counter()\nduckdb.sql(\"SELECT category, AVG(value) FROM 'data.parquet' GROUP BY category\").df()\nprint(f\"DuckDB: {time.perf_counter() - start:.2f}s\")\n\n# pandas equivalent\nstart = time.perf_counter()\ndf = pd.read_parquet(\"data.parquet\")\ndf.groupby(\"category\")[\"value\"].mean()\nprint(f\"pandas: {time.perf_counter() - start:.2f}s\")\nOn 5M rows: DuckDB finished in 0.3s, pandas in 2.1s – and pandas used 1.4GB RAM vs DuckDB’s 180MB."
+  },
+  {
+    "objectID": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
+    "href": "deprecated/blog/duckdb-vs-pandas.html#takeaway",
+    "title": "When to use DuckDB vs pandas for local analytics",
+    "section": "Takeaway",
+    "text": "Takeaway\nDuckDB is not a replacement for pandas. They compose well: use DuckDB to filter and aggregate down to a manageable size, then hand off to pandas for Python-native transformations."
+  },
+  {
+    "objectID": "deprecated/slides/module1.html",
+    "href": "deprecated/slides/module1.html",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "",
+    "text": "An overview of the modern data science stack and how the tools fit together across the pipeline."
+  },
+  {
+    "objectID": "deprecated/slides/module1.html#topics",
+    "href": "deprecated/slides/module1.html#topics",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "Topics",
+    "text": "Topics\n\nWhat is the data science pipeline?\nWhere Python, R, and SQL each shine\nSetting up your local environment"
+  },
+  {
+    "objectID": "deprecated/slides/module1.html#the-data-science-pipeline",
+    "href": "deprecated/slides/module1.html#the-data-science-pipeline",
+    "title": "Module 1: Introduction to Data Science Tools",
+    "section": "The Data Science Pipeline",
+    "text": "The Data Science Pipeline\nEach tool has its place:\n\n\n\nStage\nTool\n\n\n\n\nStore & query\nSQL\n\n\nWrangle & model\nPython / R\n\n\nVisualize\nPython / R / Quarto\n\n\nCommunicate\nQuarto"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#about-me",
+    "href": "deprecated/slides/intro.html#about-me",
+    "title": "Data Science with Python & SQL",
+    "section": "About Me",
+    "text": "About Me\n\nMDS graduate from UBC\nPython, R, and SQL for data science\nFocus on statistical modeling, data engineering, and visualization"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#agenda",
+    "href": "deprecated/slides/intro.html#agenda",
+    "title": "Data Science with Python & SQL",
+    "section": "Agenda",
+    "text": "Agenda\n\nWhy Python & SQL together?\nData wrangling with pandas\nQuery optimization basics\nVisualization tips\nQ&A"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#why-python-sql-together",
+    "href": "deprecated/slides/intro.html#why-python-sql-together",
+    "title": "Data Science with Python & SQL",
+    "section": "Why Python & SQL Together?",
+    "text": "Why Python & SQL Together?\n\nSQL handles where the data lives\nPython handles what you do with it\nTogether they cover the full pipeline: extract → transform → analyze → visualize"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#data-wrangling-with-pandas",
+    "href": "deprecated/slides/intro.html#data-wrangling-with-pandas",
+    "title": "Data Science with Python & SQL",
+    "section": "Data Wrangling with pandas",
+    "text": "Data Wrangling with pandas\nimport pandas as pd\n\ndf = pd.read_csv(\"data.csv\")\n\n# Filter, group, aggregate\nresult = (\n    df[df[\"year\"] == 2024]\n    .groupby(\"category\")[\"revenue\"]\n    .sum()\n    .reset_index()\n)"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#query-optimization-basics",
+    "href": "deprecated/slides/intro.html#query-optimization-basics",
+    "title": "Data Science with Python & SQL",
+    "section": "Query Optimization Basics",
+    "text": "Query Optimization Basics\n\nUse indexes on columns you filter or join on\nAvoid SELECT * — only fetch what you need\nPush filters early, before joins\nUse EXPLAIN to inspect query plans\n\n-- Before\nSELECT * FROM orders JOIN customers ON orders.customer_id = customers.id;\n\n-- After\nSELECT orders.id, customers.name\nFROM orders\nJOIN customers ON orders.customer_id = customers.id\nWHERE orders.status = 'completed';"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#visualization-tips",
+    "href": "deprecated/slides/intro.html#visualization-tips",
+    "title": "Data Science with Python & SQL",
+    "section": "Visualization Tips",
+    "text": "Visualization Tips\n\nMatch chart type to your question\n\nDistribution → histogram or boxplot\nTrend → line chart\nComparison → bar chart\n\nLabel axes clearly\nAvoid chartjunk"
+  },
+  {
+    "objectID": "deprecated/slides/intro.html#qa",
+    "href": "deprecated/slides/intro.html#qa",
+    "title": "Data Science with Python & SQL",
+    "section": "Q&A",
+    "text": "Q&A\nThank you!\n\nGitHub: canadasung\nLinkedIn: williamwnsong\nEmail: canadasung@gmail.com"
+  },
+  {
+    "objectID": "deprecated/slides/module2.html",
+    "href": "deprecated/slides/module2.html",
+    "title": "Module 2: Python and SQL Together",
+    "section": "",
+    "text": "SQL handles where the data lives; Python handles what you do with it."
+  },
+  {
+    "objectID": "deprecated/slides/module2.html#slides",
+    "href": "deprecated/slides/module2.html#slides",
+    "title": "Module 2: Python and SQL Together",
+    "section": "Slides",
+    "text": "Slides\nView slides in full screen"
+  },
+  {
+    "objectID": "deprecated/slides/module2.html#key-takeaways",
+    "href": "deprecated/slides/module2.html#key-takeaways",
+    "title": "Module 2: Python and SQL Together",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nUse SQL to filter and aggregate before loading into Python\nAvoid pulling entire tables into memory unnecessarily\nSQLAlchemy and DuckDB bridge the two seamlessly"
+  },
+  {
+    "objectID": "deprecated/slides/index.html",
+    "href": "deprecated/slides/index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Presenter: William Song"
+  },
+  {
+    "objectID": "deprecated/slides/index.html#schedule",
+    "href": "deprecated/slides/index.html#schedule",
+    "title": "Overview",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nDuration\nModule\n\n\n\n\n10:00 AM\n30 min\nModule 1: Introduction to Data Science Tools\n\n\n10:30 AM\n45 min\nModule 2: Python and SQL Together\n\n\n11:15 AM\n10 min\nMorning Break\n\n\n11:25 AM\n60 min\nModule 3: Data Wrangling with pandas\n\n\n12:25 PM\n45 min\nLunch\n\n\n1:10 PM\n60 min\nModule 4: Query Optimization\n\n\n2:10 PM\n10 min\nAfternoon Break\n\n\n2:20 PM\n45 min\nModule 5: Visualization Best Practices\n\n\n3:05 PM\n\nEnd of session"
+  },
+  {
+    "objectID": "deprecated/projects/species-search.html",
+    "href": "deprecated/projects/species-search.html",
+    "title": "Species name search",
+    "section": "",
+    "text": "This project builds a production-grade species name search tool that aggregates results from over 15 external biodiversity databases including GBIF and Symbiota portals."
+  },
+  {
+    "objectID": "deprecated/projects/species-search.html#overview",
+    "href": "deprecated/projects/species-search.html#overview",
+    "title": "Species name search",
+    "section": "",
+    "text": "This project builds a production-grade species name search tool that aggregates results from over 15 external biodiversity databases including GBIF and Symbiota portals."
+  },
+  {
+    "objectID": "deprecated/projects/species-search.html#problem",
+    "href": "deprecated/projects/species-search.html#problem",
+    "title": "Species name search",
+    "section": "Problem",
+    "text": "Problem\nBiodiversity researchers often need to reconcile species names across multiple taxonomic authorities. No single API covers all databases, and sequential requests are too slow for interactive use."
+  },
+  {
+    "objectID": "deprecated/projects/species-search.html#approach",
+    "href": "deprecated/projects/species-search.html#approach",
+    "title": "Species name search",
+    "section": "Approach",
+    "text": "Approach\n\nAsync fan-out: Used httpx with asyncio.gather to query all APIs concurrently, reducing median latency from ~8s sequential to ~1.2s.\nRedis caching: Common species names are cached with a 24-hour TTL, cutting repeat query cost to near zero.\nPostgreSQL: Stores canonical name mappings and user search history.\nNext.js frontend: Displays ranked results with source attribution and fuzzy match scores."
+  },
+  {
+    "objectID": "deprecated/projects/species-search.html#key-code",
+    "href": "deprecated/projects/species-search.html#key-code",
+    "title": "Species name search",
+    "section": "Key code",
+    "text": "Key code\nimport asyncio\nimport httpx\n\nasync def fan_out(name: str, sources: list[str]) -&gt; dict:\n    async with httpx.AsyncClient(timeout=5.0) as client:\n        tasks = [query_source(client, name, src) for src in sources]\n        results = await asyncio.gather(*tasks, return_exceptions=True)\n    return {src: r for src, r in zip(sources, results) if not isinstance(r, Exception)}"
+  },
+  {
+    "objectID": "deprecated/projects/species-search.html#results",
+    "href": "deprecated/projects/species-search.html#results",
+    "title": "Species name search",
+    "section": "Results",
+    "text": "Results\n\nSub-2s response time across 15 sources\n94% cache hit rate on common queries after first week\nDeployed on a single $6/month VPS with no downtime in 3 months"
+  },
+  {
+    "objectID": "deprecated/projects/species-search.html#links",
+    "href": "deprecated/projects/species-search.html#links",
+    "title": "Species name search",
+    "section": "Links",
+    "text": "Links\n\nGitHub repo\nLive demo"
+  },
+  {
+    "objectID": "index-zh-simplified.html",
+    "href": "index-zh-simplified.html",
+    "title": "Data with Will",
+    "section": "",
+    "text": "English | 繁體中文\n您好！我的名字是宋伟宁（William Song），一位居住于加拿大不列颠哥伦比亚(卑诗)省温哥华的数据科学家与分析师。\n我的工作横跨商业分析、统计建模、数据工程与可视化等领域。\n与许多人一样，AI（尤其是大型语言模型）也已深刻影响了我的工作流程，它为未来的世界带来许多可能以及效率提升，但随之而来也有无法忽视的数据安全风险与技术流失的挑战，比如说降低写代码的能力与记忆。尽管如此，我仍然时不时地砥砺自己手写原始 SQL 和 Python 的代码来解决问题。"
+  },
+  {
+    "objectID": "index-zh-simplified.html#数据分析数据科学职业历程",
+    "href": "index-zh-simplified.html#数据分析数据科学职业历程",
+    "title": "Data with Will",
+    "section": "数据分析／数据科学职业历程",
+    "text": "数据分析／数据科学职业历程\n\n??? | 待发掘中……\nKABAM | 数据分析师 | 2023.12 - 2025.08\nIGG | 高级数据分析师 | 2021.07 - 2023.08\nBlastworks Technology | 游戏数据分析师 | 2018.09 - 2021.07"
+  },
+  {
+    "objectID": "index-zh-simplified.html#数据分析之前的职业历程",
+    "href": "index-zh-simplified.html#数据分析之前的职业历程",
+    "title": "Data with Will",
+    "section": "数据分析之前的职业历程",
+    "text": "数据分析之前的职业历程\n\nRiver Rock Casino Resort | 赌场荷官 | 2011.09 - 2014.07\nMcDonald’s | 麦当劳餐厅员工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 东森购物客服专员 / 网络部商品营销策划专员 | 2003.09 - 2009.05"
+  },
+  {
+    "objectID": "index-zh-simplified.html#学历",
+    "href": "index-zh-simplified.html#学历",
+    "title": "Data with Will",
+    "section": "学历",
+    "text": "学历\n英属哥伦比亚大学 (UBC) | 加拿大不列颠哥伦比亚省温哥华\n\n数据科学硕士 (MDS) | 2025 - 2026\n\n西蒙菲莎大学 (SFU) | 加拿大不列颠哥伦比亚省本拿比\n\n商学及计算机科学双主修 (BBA) | 2012 - 2018"
+  },
+  {
+    "objectID": "index-zh-simplified.html#英文简历",
+    "href": "index-zh-simplified.html#英文简历",
+    "title": "Data with Will",
+    "section": "英文简历",
+    "text": "英文简历\nDownload PDF"
+  },
+  {
+    "objectID": "index-zh.html",
+    "href": "index-zh.html",
+    "title": "Data with Will",
+    "section": "",
+    "text": "English | 简体中文\n您好！我的名字是宋偉寧（William Song），一位居住於加拿大英屬哥倫比亞(卑詩)省溫哥華的數據科學家與分析師。\n我的工作橫跨商業分析、統計建模、資料工程與視覺化等領域。\n與許多人一樣，AI (尤其是大型語言模型) 也已深刻影響了我的工作流程，它為未來的世界帶來許多可能以及效率提升，但隨之而來也有無法忽視的資料安全風險與技術流失的挑戰，比如說降低寫程式的能力與記憶。儘管如此，我仍然時不時地砥礪自己手寫原始 SQL 和 Python 的程式碼來解決問題。"
+  },
+  {
+    "objectID": "index-zh.html#數據分析資料科學職涯歷程",
+    "href": "index-zh.html#數據分析資料科學職涯歷程",
+    "title": "Data with Will",
+    "section": "數據分析／資料科學職涯歷程",
+    "text": "數據分析／資料科學職涯歷程\n\n??? | 待發掘中……\nKABAM | 數據分析師 | 2023.12 - 2025.08\nIGG | 資深數據分析師 | 2021.07 - 2023.08\nBlastworks Technology | 遊戲數據分析師 | 2018.09 - 2021.07"
+  },
+  {
+    "objectID": "index-zh.html#數據分析以前的職涯歷程",
+    "href": "index-zh.html#數據分析以前的職涯歷程",
+    "title": "Data with Will",
+    "section": "數據分析以前的職涯歷程",
+    "text": "數據分析以前的職涯歷程\n\nRiver Rock Casino Resort | 賭場荷官 | 2011.09 - 2014.07\nMcDonald’s | 麥當勞餐廳員工 | 2009.07 - 2011.02\nEHSN Taiwan CS & E-Commerce | 東森購物客服專員 / 網路部商品行銷企劃專員 | 2003.09 - 2009.05"
+  },
+  {
+    "objectID": "index-zh.html#學歷",
+    "href": "index-zh.html#學歷",
+    "title": "Data with Will",
+    "section": "學歷",
+    "text": "學歷\n英屬哥倫比亞大學 (UBC) | 加拿大卑詩省溫哥華\n\n資料科學碩士 (MDS) | 2025 - 2026\n\n西門菲沙大學 (SFU) | 加拿大卑詩省本拿比\n\n商學及電腦科學雙主修 (BBA) | 2012 - 2018"
+  },
+  {
+    "objectID": "index-zh.html#英文履歷",
+    "href": "index-zh.html#英文履歷",
+    "title": "Data with Will",
+    "section": "英文履歷",
+    "text": "英文履歷\nDownload PDF"
+  },
+  {
+    "objectID": "projects/world-education.html",
+    "href": "projects/world-education.html",
+    "title": "World Education Project",
+    "section": "",
+    "text": "The value of this group project to me\n\nTechnical skills:\n\ndeploying a Shiny dashboard to share insights interactively on Posit Cloud, a great substitute if Tableau or Power BI are not available.\napplying data cleaning, EDA, visualization, and dashboarding techniques.\n\nCollaboration:\n\nworking with a team of 4 data science students to divide tasks, share insights, and integrate work into a cohesive project.\n\nProject management:\n\ncoordinating timelines, version control, and communication to ensure smooth progress.\n\n\n\n\n\nOverview\nThis project analyzes global education indicators to explore patterns in enrollment, attainment, and inequality across countries. The analysis was completed as part of UBC Master of Data Science, DSCI 532 Data Visualization course and demonstrates data cleaning, exploratory analysis, visualization, and basic modeling to surface insights relevant to education gaps between genders and international regions. Then finally, deploy the insights in an interactive dashboard built with Shiny, and a chatbot interface using a large language model to query the data.\n\n\nProject repository\nForked project repo: World Education Project (mirrored from school repo because it is not publicly accessible)\n\n\n\nData\nPrimary files (from the repo)\n\ndata/processed/processed_global_education.csv: cleaned, merged dataset used for analysis.\n\ndata/raw/Global_Education.csv: raw source files sourced from Kaggle - World Educational Data, compiled from UNESCO Institute for Statistics, UNICEF, and UN Statistics Division.\nnotebooks/EDA.ipynb: analysis jupyter notebooks (Python) used to produce figures and tables.\n\n\n\n\nMethods & Analytics\n\nData cleaning & integration: harmonized country codes, handled missingness, merged multiple sources.\n\nExploratory data analysis: summary statistics, distributions, and correlation matrices.\nSegmentation: country clustering by region, gender, education outcomes and socioeconomic indicators.\nVisualization: maps, comparative bar charts, correlation scatter plot.\nChatbot using LLM: used a large language model to automatically filter and explore the data.\n\n\n\n\nDashboard\nLink to the dashboard\nWe built an interactive dashboard using Shiny app to allow users to explore the data and insights dynamically. The dashboard includes: World map views with metric selector, bar charts comparing average education level by region, and completion rate gap by region, scatter plot comparing male and female literacy rate by region, and a chatbot interface for querying the data using natural language.\n\nLanding page \nInteractive plots \nChatbot page"
+  },
+  {
+    "objectID": "projects/customer-lifetime-value.html",
+    "href": "projects/customer-lifetime-value.html",
+    "title": "Calculating Customer Lifetime Value",
+    "section": "",
+    "text": "The value of this project to me\n\nBusiness analytics skills:\n\ntranslating a core marketing/finance metric (CLV) into approachable formulas and examples for a non-technical audience.\ncomparing historical vs. predictive methods and understanding the trade-offs between simplicity, accuracy, and cost.\n\nCommunication:\n\nstructuring a technical topic into a 19-slide presentation with worked examples, suitable for stakeholders without a statistics background.\n\n\nPresentation Slides\n\n\n\nOverview\nCustomer Lifetime Value (CLV), also commonly known as LTV, estimates the total net profit a business can expect from a customer over the duration of their relationship. This presentation covers why CLV matters, the major families of CLV calculation methods, and worked examples for each.\n\n\nDefinition of a Cohort\nGroups customers by acquisition period or channel (e.g., signup month or marketing channel) and tracks their cumulative revenue over time. The way of grouping can vary based on the business context and the insights sought.\n\n\nWhy CLV is hard\nThere is no single “correct” way to calculate CLV — every method involves assumptions and trade-offs.\n\nEven well-built models typically carry 15–25% error margins.\nCLV is usually applied to 3–7 year forecasting horizons, so small errors compound.\nEvery approach faces the same dilemma: a CLV model construction can be at most two of Simple, Accurate, and Inexpensive — never all three.\n\n\n\n\nHistorical CLV\nHistorical methods look backward at actual customer revenue/profit data.\n\nARPU / ARPA method\nAverage Revenue Per User (ARPU) or Average Revenue Per Account (ARPA) multiplies average revenue per customer by the expected customer lifespan.\nWorked example — Alice vs. Bob\nAlice: (150 + 50 + 100) / 6 months = $50 ARPU, 6 months lifespan → CLV = $300\nBob: (45 + 75 +100) / 2 months = $110 ARPU, 2 months lifespan → CLV = $220\n(50 + 110) / 2 = $80 per customer\n12 months value: $80 * 12 months = $960\n24 months value: $80 * 24 months = $1,920\n\nAlice spends less per month but stays subscribed much longer than Bob.\nEven though Bob’s monthly spend is higher, Alice’s longer retention can make her CLV greater — illustrating why retention matters as much as spend.\n\n\n\nKey points of Historical CLV methods\nThere are some factors that may not be captured by historical methods:\n\nDifferent customers have different behavior patterns that may not be reflected in averages. Use cohort method to narrow down to more specific segments.\nFuture changes in customer behavior or market conditions may not be captured, such as internally changed by offerings or externally changed by market trends.\nNot enough data when a business is too young or data duration is too short to capture the full customer lifecycle.\n\n\n\n\n\nPredictive CLV\nPredictive methods use statistical models to forecast future value rather than relying solely on historical averages.\n\nKey Variables\nFour variables drive most predictive CLV calculations:\n\nAcquisition Cost / Retention Cost:\n\nThe cost to acquire a new customer or retain an existing one (e.g., marketing spend per conversion).\n\nNet Profit Margin:\n\nAmong the cohorts, the share of revenue retained as profit after costs.\nProfit Margin Ratio: Net Income / Net Sales\nUsually the Finance team can provide this number, but if not, general rules are:\n\n10% for public companies\n15% for private companies that are scaling predictably\n20%-25% for private companies that have not yet reached scale and predictable growth\n\n\nRetention / Churn Rate and Expected Lifespan:\n\n\\[\n\\text{Retention Rate} = \\frac{\\text{Customers at End of Period} - \\text{New Customers Acquired}}{\\text{Customers at Start of Period}}\n\\]\nThe Churn Rate is the complement of the Retention Rate: \\[\n\\text{Churn Rate} = 1 - \\text{Retention Rate}\n\\]\nWe can use the retention rate to estimate the expected customer lifespan: \\[\n\\text{Expected Customer Lifespan} = \\frac{1}{\\text{Churn Rate}}\n\\]\n\nDiscount Rate:\n\nAccounts for the time value of money when projecting future profits to present value. Get this from the Finance team, or use 1 as a starting point for simplicity.\n\n\n\nFormula\nAfter getting the key variables, we can plug them into the formula to calculate CLV:\n\nSimple formula\n\\[\nCLV = \\text{Average Revenue per Customer} \\times \\text{Expected Customer Lifespan}\n\\]\n\n\nComplete formula\nA more complete formula incorporates profit margins, retention, and the time value of money:\n\\[\nCLV = \\left( \\frac{\\text{Revenue per Customer} \\times \\text{Gross Margin}}{1 - \\text{Retention Rate} + \\text{Discount Rate}} \\right) - \\text{Acquisition Cost}\n\\]\n\n\n\n\nConclusion\nCLV ultimately helps answer three fundamental business questions:\n\nHow much should we spend to acquire a customer?\nWhich customer segments are worth investing in retaining?\nHow sustainable is our current growth strategy?\n\nChoosing a CLV method is less about finding the “perfect” formula and more about matching the right balance of simplicity, accuracy, and cost to the decision at hand.\n\n\n\nReferences\n\nFor Entrepreneurs — What’s your TRUE customer lifetime value (LTV)?\nKaushik.net — Excellent Analytics Tip #17: Calculate Customer Lifetime Value\nAbove the Crowd — The Dangerous Seduction of the Lifetime Value (LTV) Formula\nWikipedia — Customer Lifetime Value"
   },
   {
     "objectID": "projects/washrooms-vancouver-parks.html",

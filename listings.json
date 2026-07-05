@@ -2,6 +2,7 @@
   {
     "listing": "/projects/index.html",
     "items": [
+      "/projects/species-synonym-search.html",
       "/projects/smart-amazon-product-query-assistant.html",
       "/projects/world-education.html",
       "/projects/model-interpretation.html",
