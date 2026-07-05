@@ -5,6 +5,7 @@ project:
 website:
   title: "Data with Will"
   description: "William Song's Storytelling Portfolio"
+  favicon: assets/profile.jpg
   navbar:
     left:
       - href: index.qmd
