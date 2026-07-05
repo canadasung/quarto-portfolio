@@ -23,9 +23,9 @@ website:
       - icon: linkedin
         href: https://linkedin.com/in/williamwnsong
         target: _blank
-      - icon: instagram
-        href: https://instagram.com/song.great.serenity
-        target: _blank
+      # - icon: instagram
+      #   href: https://instagram.com/song.great.serenity
+      #   target: _blank
 
   page-footer:
     center: "© 2026 William Song"
