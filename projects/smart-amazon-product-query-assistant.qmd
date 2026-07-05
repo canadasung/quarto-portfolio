@@ -3,7 +3,7 @@ title: "Smart Amazon Product Query Assistant"
 code-tools: false
 description: "An AI-powered tool for enhancing the Amazon product search experience with natural language processing and machine learning."
 date: 2026-04-19
-categories: [NLP, Machine Learning, E-commerce, Python, BM25, Semantic Search, FAISS, Streamlit]
+categories: [NLP, Machine Learning, Python, BM25, Semantic Search, FAISS, Streamlit]
 format:
   html:
     toc: true

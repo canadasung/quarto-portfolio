@@ -3,7 +3,7 @@ title: "World Education Project"
 code-tools: false
 description: "Analyzing global education indicators to explore patterns in enrollment, attainment, and inequality across countries, with an interactive Shiny dashboard and LLM-powered chatbot interface."
 date: 2026-03-15
-categories: [Python, Shiny, Data Visualization, EDA, LLM]
+categories: [Python, Shiny, Visualization, EDA, LLM]
 format:
   html:
     toc: true

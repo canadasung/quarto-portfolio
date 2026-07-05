@@ -1,9 +1,9 @@
 ---
-title: "Species Synonym Search (UBC MDS Capstone Project)"
+title: "⭐️ Species Synonym Search (UBC MDS Capstone Project)"
 code-tools: false
 description: "A full-stack web app that aggregates taxonomic synonyms from 20+ biodiversity databases, built as a UBC MDS capstone for the UBC Beaty Biodiversity Museum."
 date: 2026-07-01
-categories: [Python, FastAPI, React, Next.js, Full-Stack, Docker, Biodiversity, TypeScript]
+categories: [Python, FastAPI, React, Next.js, Full-Stack, Docker, TypeScript]
 format:
   html:
     toc: true

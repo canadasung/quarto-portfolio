@@ -3,7 +3,7 @@ title: "Washrooms in Vancouver Parks"
 code-tools: false
 description: "Predicting the presence of washrooms in Vancouver parks using machine learning models based on park attributes and amenities."
 date: 2025-12-06
-categories: [Python, Scikit-learn, Classification, EDA]
+categories: [Python, Scikit-learn, EDA, Machine Learning, Classification]
 format:
   html:
     toc: true
