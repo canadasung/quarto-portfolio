@@ -1,0 +1,125 @@
+---
+title: "Species Synonym Search (UBC MDS Capstone Project)"
+code-tools: false
+description: "A full-stack web app that aggregates taxonomic synonyms from 20+ biodiversity databases, built as a UBC MDS capstone for the UBC Beaty Biodiversity Museum."
+date: 2026-07-01
+categories: [Python, FastAPI, React, Next.js, Full-Stack, Docker, Biodiversity, TypeScript]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    theme: lux
+---
+
+### The value of this project to me
+
+- **Technical skills**:
+    - building a full-stack application end-to-end: a Next.js frontend, a FastAPI backend, and a Python data pipeline, all wired together and deployed to cloud platforms (Vercel and Hugging Face Spaces).
+    - designing an extensible API abstraction layer (`SpeciesAPI`) that allowed 20+ external biodiversity databases to be integrated using a shared contract, making adding new sources a structured, predictable process.
+    - implementing streaming search via Server-Sent Events (SSE) so the UI shows results as they arrive, rather than waiting for all sources to finish.
+    - containerizing the backend with Docker and setting up CI/CD with GitHub Actions.
+
+- **Collaboration**:
+    - working as a team of 4 across the full stack, coordinating ownership of frontend views, backend routes, and individual pipeline source clients.
+    - partnering with an external stakeholder (the museum's informatics curator) and a faculty mentor, which required translating technical decisions into plain language and aligning the roadmap to real curatorial workflows.
+
+- **Project management**:
+    - scoping and delivering a production-grade system within the capstone timeline, including a test suite with fixture management, API documentation, and a final report.
+
+---
+
+### Overview
+
+The [Beaty Biodiversity Museum](https://beatymuseum.ubc.ca/){target="_blank"} at UBC maintains millions of specimens organized by current scientific taxonomy. Because taxonomic classifications evolve over time, a single species can carry many different names across publications and databases. Museum curators previously had to check each database manually to reconcile synonyms.
+
+This tool queries 20+ biodiversity databases simultaneously, consolidates the returned names and taxonomic data, and presents curators with five linked views to explore the results. The goal is to surface organized evidence while preserving the curator's final decision-making authority.
+
+Developed as part of **UBC Master of Data Science, DSCI 591 Capstone Program (2025-2026)** in partnership with the museum's informatics team. Team members: Molly Kessler, Wendy Frankel, Johnson Chuang, and myself William Song.
+
+### Project repository
+
+**GitHub repo:** [ubc-mds-capstone-project](https://github.com/canadasung/ubc-mds-capstone-project){target="_blank"}
+
+### Live demo
+
+- **Frontend:** [ubc-mds-capstone-project.vercel.app](https://ubc-mds-capstone-project.vercel.app){target="_blank"}
+- **Backend API docs:** [windforce9e4-species-synonym-api.hf.space/docs](https://windforce9e4-species-synonym-api.hf.space/docs){target="_blank"}
+
+---
+
+### Architecture
+
+The system has three layers:
+
+```
+Browser (Next.js)
+      |
+FastAPI Backend
+      |
+Data Pipeline (20+ source clients)
+```
+
+- **Frontend** (`frontend/`): Next.js (App Router) with React, Mantine v7 components, TanStack Query for data fetching, and Zustand for state. Communicates with the backend over HTTP/JSON.
+- **Backend** (`backend_api/`): FastAPI service exposing search, suggest, sources, and taxonomy endpoints. Live search streams results back via Server-Sent Events at `/api/search/stream`.
+- **Pipeline** (`scripts/apis_pipe/`): each biodiversity source is a Python class that extends a shared `SpeciesAPI` abstract base class, implementing five required methods (fetch query data, fetch synonym data, fetch accepted data, compile synonyms, compile accepted name). This contract makes each client independently testable and interchangeable.
+
+---
+
+### Data sources
+
+20+ external biodiversity databases are integrated:
+
+- **Global backbone:** GBIF
+- **Symbiota portals:** MyCoPortal, Lichen, Bryophyte, SERNEC, CCH2, NANSH, and others (11 portals total)
+- **Independent APIs:** Catalogue of Life, Tropicos, Index Fungorum, GenBank, FishBase, ITIS, Mushroom Observer, Paleobiology Database, MycoBank
+
+Each source returns data normalized to a 16-field standardized schema. The pipeline routes queries to relevant sources based on kingdom (Animalia, Plantae, Fungi), so curators are not shown databases that are irrelevant to the specimen they are researching.
+
+---
+
+### Key features
+
+#### Five linked views
+
+1. **Overview**: every synonym returned, alongside which databases recognize each name.
+2. **Relations**: interactive graph of synonyms grouped by genus and species, with links to source records.
+3. **Timeline**: names arranged chronologically by publication year.
+4. **Taxonomy**: classification across ranks with edit-distance shading to highlight spelling variants versus genuine taxonomic disagreements.
+5. **Detail**: complete records from all databases with CSV export.
+
+#### Streaming search
+
+Results stream into the UI via Server-Sent Events as each database responds, so curators see partial results immediately rather than waiting for the slowest source.
+
+#### Fuzzy name suggestions
+
+When a search returns no results, the app queries GBIF for close matches and presents "Did you mean?" suggestions.
+
+---
+
+### Testing and CI
+
+- **Unit tests**: run offline against recorded API fixture files, no live credentials required. Fixtures are generated by `tests/fixtures/regenerate_fixtures.py`, which hits real APIs and stores the responses.
+- **Integration tests**: marked with `@pytest.mark.integration`, run against live APIs.
+- **CI**: GitHub Actions runs the unit test suite on every pull request.
+
+```bash
+pytest -m "not integration" tests/   # unit tests (CI mode)
+pytest -m integration tests/         # live integration tests
+```
+
+---
+
+### Deployment
+
+- **Backend:** Docker image deployed to a Hugging Face Space (port 7860).
+- **Frontend:** Next.js app auto-deployed to Vercel on push to main.
+- The two layers are connected via the `NEXT_PUBLIC_API_BASE_URL` environment variable on the frontend, and CORS is configured on the backend to allow the Vercel domain.
+
+---
+
+### Key takeaways
+
+- **Abstraction pays off at scale**: the `SpeciesAPI` contract meant adding each new source required touching a predictable set of files rather than scattered ad-hoc code, and kept the test surface manageable across 20+ clients.
+- **Streaming UX changes how users experience latency**: showing results as they arrive made the tool feel faster and more transparent than a spinner followed by a full-page result dump.
+- **Working with a real partner sharpens scope decisions**: having a curator as the end user (not a classmate) pushed the team to prioritize features that fit actual museum workflows over technically interesting but less useful ones.
