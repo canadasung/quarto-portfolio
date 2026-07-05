@@ -6,9 +6,9 @@ Personal portfolio showcasing data science projects, and experience. Built with 
 
 ## Contents
 
-- **About Me** - brief introduction about myself
-- **Projects** — projects I did, and more projects to be added in the near future
-- **Certification** - degrees and certifications I earned
+- **About** : brief introduction about myself
+- **Projects** : projects I did, and more projects to be added in the near future
+- **Certification** : degrees and certifications I have earned
 
 ## Stack
 
