@@ -28,12 +28,12 @@ format:
 
 - **Data quality investigation**:
     - finding and quantifying three traps in the source data that would each have silently corrupted results, including a metadata field that is wrong for 73% of rows.
-    - writing validation that asserts corpus invariants *before* a 40-minute indexing step, which caught two real bugs on its first run.
+    - writing validation that asserts corpus invariants *before* a 25-minute indexing step, which caught two real bugs on its first run.
 
 - **Engineering at scale**:
     - scaling from 94k to 231,568 products, which required streaming ingest, schema-aware caching, and memory profiling.
     - building staleness guards so a search index can never be silently used against a corpus it was not built from.
-    - 138 tests, GitHub Actions CI, and root-causing a segfault from a macOS crash report.
+    - 146 tests, GitHub Actions CI, and root-causing a segfault from a macOS crash report.
 
 - **Building LLM systems responsibly**:
     - gating scope on a measured retrieval threshold in code, so off-topic questions are refused before any API call is made.
@@ -121,7 +121,7 @@ Going from 94k to 231,568 products broke naive approaches. What it actually requ
 
 - **Streaming ingest.** DuckDB reads 1.16 GB of gzipped JSONL at roughly 400 MB peak memory; loading it into pandas first would not fit comfortably.
 - **Schema-aware cache invalidation.** Checking that a cached file has the right column *types* as well as the right names. A `price` column silently written as a string broke numeric filtering while every column name stayed correct.
-- **Corpus fingerprinting.** Each index stores `categories@n_products#doc_text_sha` and refuses to load on a mismatch. The content hash catches an edit to document construction, which leaves the category list and product count identical. It costs 1.5 seconds against the 40 minutes it protects.
+- **Corpus fingerprinting.** Each index stores `categories@n_products#doc_text_sha` and refuses to load on a mismatch. The content hash catches an edit to document construction, which leaves the category list and product count identical. It costs 1.5 seconds against the 25 minutes it protects.
 - **Memory profiling.** The BM25 index alone occupies 4.1 GB, which turned out to be the constraint that shapes any deployment plan.
 
 [Thirteen design decisions with the measurement behind each](https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/design-decisions.md){target="_blank"}
@@ -193,7 +193,7 @@ One deliberate choice: the qualitative rating columns are **left blank** by the 
 
 ### Engineering practice
 
-- **138 tests**, running in under 4 seconds with no network and no data files. They target the things that fail *silently*: tokenization, document construction, corpus invariants, fusion arithmetic, the staleness guards, and the safety gates.
+- **146 tests**, running in under 4 seconds with no network and no data files. They target the things that fail *silently*: tokenization, document construction, corpus invariants, fusion arithmetic, the staleness guards, and the safety gates.
 - **GitHub Actions CI** running lint, format check, tests, and a check that every documented CLI still parses. The suite needs no secrets, which is why the workflow stays simple.
 - **Reproducibility treated as a real goal.** The pipeline rebuilds from nothing with three commands, and tests pass on a machine with no NLTK corpus downloaded, verified by simulating one.
 - **Ruff** for lint and formatting, pinned via `pyproject.toml` so results do not depend on whichever version happens to be on `PATH`.
