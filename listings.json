@@ -1,20 +1,20 @@
 [
   {
+    "listing": "/deprecated/blog/index.html",
+    "items": [
+      "/deprecated/blog/duckdb-vs-pandas.html"
+    ]
+  },
+  {
     "listing": "/projects/index.html",
     "items": [
-      "/projects/species-synonym-search.html",
       "/projects/smart-amazon-product-query-assistant.html",
+      "/projects/species-synonym-search.html",
       "/projects/world-education.html",
       "/projects/model-interpretation.html",
       "/projects/washrooms-vancouver-parks.html",
       "/projects/market-basket-analysis.html",
       "/projects/customer-lifetime-value.html"
-    ]
-  },
-  {
-    "listing": "/deprecated/blog/index.html",
-    "items": [
-      "/deprecated/blog/duckdb-vs-pandas.html"
     ]
   }
 ]

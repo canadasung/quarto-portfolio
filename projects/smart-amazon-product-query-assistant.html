@@ -2,22 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-19">
-<meta name="description" content="An AI-powered tool for enhancing the Amazon product search experience with natural language processing and machine learning.">
+<meta name="dcterms.date" content="2026-07-26">
+<meta name="description" content="A retrieval and RAG system over 231,568 Amazon products and 6.75M reviews, rebuilt solo from a course project with measured design decisions, a test suite, and CI.">
 
 <title>Smart Amazon Product Query Assistant – Data with Will</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,10 +80,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a6723a1fe18ba67754569397e6a4e15b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4449642d44e59705cd9d6cbfdbfbdf56.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -182,18 +185,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title">Smart Amazon Product Query Assistant</h1>
   <div class="quarto-categories">
     <div class="quarto-category">NLP</div>
-    <div class="quarto-category">Machine Learning</div>
-    <div class="quarto-category">Python</div>
+    <div class="quarto-category">RAG</div>
+    <div class="quarto-category">LLM</div>
     <div class="quarto-category">BM25</div>
+    <div class="quarto-category">Python</div>
     <div class="quarto-category">Semantic Search</div>
     <div class="quarto-category">FAISS</div>
     <div class="quarto-category">Streamlit</div>
+    <div class="quarto-category">Information Retrieval</div>
+    <div class="quarto-category">DuckDB</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    An AI-powered tool for enhancing the Amazon product search experience with natural language processing and machine learning.
+    A retrieval and RAG system over 231,568 Amazon products and 6.75M reviews, rebuilt solo from a course project with measured design decisions, a test suite, and CI.
   </div>
 </div>
 
@@ -204,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 19, 2026</p>
+      <p class="date">July 26, 2026</p>
     </div>
   </div>
   
@@ -216,90 +222,274 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/amz-query-demo0.png" class="img-fluid figure-img"></p>
+<figcaption>Default view of the Amazon Product Search web app</figcaption>
+</figure>
+</div>
 <section id="the-value-of-this-project-to-me" class="level3">
 <h3 class="anchored" data-anchor-id="the-value-of-this-project-to-me">The value of this project to me</h3>
 <ul>
-<li><strong>Technical skills</strong>:
+<li><strong>Practicing and implementation</strong>:
 <ul>
-<li>implementing and comparing three retrieval approaches (BM25, semantic search, hybrid) on a large real-world product dataset.</li>
-<li>building a full RAG pipeline, from retrieval through context construction to LLM generation, with a Streamlit chat interface.</li>
-<li>working with vector search (FAISS) and sentence embeddings, plus comparing two different LLMs for the generation step.</li>
+<li>information retrieval methods: BM25, Semantic Search, Hybrid</li>
+<li>LLM-based AI Assistant</li>
+<li>RAG (Retrieval-Augmented Generation)</li>
+<li>real-time product recommendation system</li>
 </ul></li>
-<li><strong>Collaboration</strong>:
+<li><strong>Measurement and evaluation</strong>:
 <ul>
-<li>working with a teammate across two milestones, dividing work between retrieval methods and the generation/app layer.</li>
+<li>designing a 10-query evaluation set across difficulty tiers, then building a reproducible harness that regenerates every comparison table on demand.</li>
+<li>quantifying <em>why</em> two retrieval methods disagree instead of asserting it: their top-5 results overlap on only 0.2 of 5 products on average.</li>
+<li>running controlled experiments where one variable moves at a time, including a prompt comparison whose result contradicted my prediction.</li>
 </ul></li>
-<li><strong>Project management</strong>:
+<li><strong>Data quality investigation</strong>:
 <ul>
-<li>structuring the project as incremental milestones, each with its own discussion and evaluation writeup, and documenting setup so the app can be reproduced from a fresh environment.</li>
+<li>finding and quantifying three traps in the source data that would each have silently corrupted results, including a metadata field that is wrong for 73% of rows.</li>
+<li>writing validation that asserts corpus invariants <em>before</em> a 40-minute indexing step, which caught two real bugs on its first run.</li>
+</ul></li>
+<li><strong>Engineering at scale</strong>:
+<ul>
+<li>scaling from 94k to 231,568 products, which required streaming ingest, schema-aware caching, and memory profiling.</li>
+<li>building staleness guards so a search index can never be silently used against a corpus it was not built from.</li>
+<li>138 tests, GitHub Actions CI, and root-causing a segfault from a macOS crash report.</li>
+</ul></li>
+<li><strong>Building LLM systems responsibly</strong>:
+<ul>
+<li>gating scope on a measured retrieval threshold in code, so off-topic questions are refused before any API call is made.</li>
+<li>redacting contact details reviewers volunteered into review text, stripping them in the context builder so the model never receives them.</li>
+<li>auditing the corpus for prompt injection, then declining to build the filter it seemed to call for, because all 40 matches were false positives.</li>
+</ul></li>
+<li><strong>Independent follow-through</strong>:
+<ul>
+<li>taking a graded team project and rebuilding it alone, deliberately, to understand each decision.</li>
 </ul></li>
 </ul>
 <hr>
 </section>
 <section id="overview" class="level3">
 <h3 class="anchored" data-anchor-id="overview">Overview</h3>
-<p>This project is a context-aware product search assistant for Amazon listings. Given a natural language query, it retrieves relevant products and can generate a conversational answer grounded in product metadata and reviews. It was built for <strong>UBC Master of Data Science, DSCI 575 Advanced Machine Learning course</strong>, with teammate Harrison Li.</p>
+<p>A context-aware product search assistant for Amazon listings. Given a natural language query, it retrieves relevant products and generates an answer grounded in what reviewers actually wrote, showing the exact sources used.</p>
+<p>This began as a two-person project for <strong>UBC MDS DSCI 575 (Advanced Machine Learning)</strong>, built with teammate Harrison Li. After the course ended I rebuilt it from scratch, expanding the corpus 2.5x and adding the engineering the original lacked. The goal was to understand every decision well enough to defend it with a measurement.</p>
+<p>Almost every figure below is something I measured on the real corpus.</p>
 </section>
 <section id="project-repository" class="level3">
 <h3 class="anchored" data-anchor-id="project-repository">Project repository</h3>
-<p><strong>GitHub repo:</strong> <a href="https://github.com/canadasung/ubc-dsci575-smart-amazon-product-query-assistant.git" target="_blank">smart-amazon-product-query-assistant</a> (mirrored from school repo because it is not publicly accessible)</p>
+<p><strong>GitHub:</strong> <a href="https://github.com/canadasung/smart-amazon-product-query-assistant" target="_blank">smart-amazon-product-query-assistant</a></p>
 <hr>
+</section>
+<section id="what-i-learned-with-evidence" class="level3">
+<h3 class="anchored" data-anchor-id="what-i-learned-with-evidence">What I learned, with evidence</h3>
+<p>Each item links to the full writeup in the repository.</p>
+<section id="preprocessing-can-silently-destroy-a-query-before-any-model-sees-it" class="level4">
+<h4 class="anchored" data-anchor-id="preprocessing-can-silently-destroy-a-query-before-any-model-sees-it">Preprocessing can silently destroy a query before any model sees it</h4>
+<p>The query <code>quiet dishwasher for a small apartment under $400</code> returned a <strong>400 CFM range hood</strong>. Tracing it:</p>
+<pre><code>'quiet dishwasher for a small apartment under $400'
+   -&gt; ['quiet', 'dishwasher', 'small', 'apartment', '400']
+   dropped: ['for', 'a', 'under']</code></pre>
+<p><code>under</code> is a stopword and <code>$</code> is not alphanumeric, so BM25 searched for the bare number <code>400</code> with no notion of “less than”. The constraint was deleted during tokenization, before ranking began. Semantic search lost the same constraint differently, dissolving it into a 384-dimensional vector where no dimension means “price ceiling”.</p>
+<p>The lesson generalized: when a result looks wrong, inspect what the pipeline actually received before suspecting the algorithm.</p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/query-walkthrough.md" target="_blank">Full trace through all four retrieval modes</a></p>
+</section>
+<section id="three-data-traps-each-found-by-measuring-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="three-data-traps-each-found-by-measuring-the-data">Three data traps, each found by measuring the data</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Trap</th>
+<th>Measured</th>
+<th>Consequence if missed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>price</code> is null</td>
+<td><strong>50.5%</strong> of products</td>
+<td>Formatted naively it renders as the string <code>nan</code>, which BM25 then indexes as an ordinary searchable word across half the corpus</td>
+</tr>
+<tr class="even">
+<td><code>main_category</code> is unreliable</td>
+<td>only <strong>27.1%</strong> of products in the Appliances file are labelled “Appliances”</td>
+<td>Category filtering would be wrong for 73% of rows</td>
+</tr>
+<tr class="odd">
+<td><code>average_rating</code> is not the review mean</td>
+<td>differs by &gt;0.1 for <strong>62,960 of 94,319</strong> products</td>
+<td>It is Amazon’s site-wide figure; a document can show “4.4 stars” above reviews averaging 2.88</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>nan</code> trap was the subtle one. It survives tokenizer cleaning, because <code>nan</code> looks exactly like a real word, so it had to be fixed at document construction instead.</p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/amazon-reviews-2023.md" target="_blank">Dataset reference with all measurements</a></p>
+</section>
+<section id="two-retrieval-methods-that-barely-agree-quantified" class="level4">
+<h4 class="anchored" data-anchor-id="two-retrieval-methods-that-barely-agree-quantified">Two retrieval methods that barely agree, quantified</h4>
+<p>Across the 10-query evaluation set, BM25 and semantic search shared <strong>0.2 of their top 5 results on average</strong>. On most queries the overlap was zero.</p>
+<p>That single number is the empirical case for hybrid retrieval: the methods are not better and worse versions of each other, they are complementary. It also reframed several results, because low overlap does not mean one system is wrong. On <code>something two people can play together on the couch</code> the two returned entirely different games and <strong>both answer sets were correct</strong>.</p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/results/milestone1_retrieval_comparison.md" target="_blank">Per-query retrieval comparison</a></p>
+</section>
+<section id="an-experiment-whose-result-contradicted-my-prediction" class="level4">
+<h4 class="anchored" data-anchor-id="an-experiment-whose-result-contradicted-my-prediction">An experiment whose result contradicted my prediction</h4>
+<p>I compared three prompt variants on identical retrieved context: a lightly-steered control, one with explicit anti-hallucination rules, and one that constrained only the <em>output shape</em>.</p>
+<p>I expected the explicit rules to handle constraints best. The shape-constrained variant was strictest: it alone rejected a $39.99 game as not “under 40 dollars”. Forcing a NOT RECOMMENDED section appears to make the model adjudicate every candidate rather than mention only the easy ones.</p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/results/milestone2_discussion.md" target="_blank">Prompt comparison and RAG evaluation</a></p>
+</section>
+<section id="model-scale-improves-grounding-while-fluency-stays-flat" class="level4">
+<h4 class="anchored" data-anchor-id="model-scale-improves-grounding-while-fluency-stays-flat">Model scale improves grounding while fluency stays flat</h4>
+<p>Running an 8B and a 70B model on byte-identical context, both wrote fluent English. The 8B <strong>fabricated two prices</strong>: it claimed a $370 dishwasher was “above the $400 budget”, and that a $19.99 game was over a $40 budget when the real disqualifier was its platform. Both statements contradicted the context in its own prompt.</p>
+<p>The usual RAG failure is a confident wrong fact. That drove two design decisions: the app shows a sources panel so any claim is checkable, and the context builder writes missing values explicitly as <code>price not listed</code>, because a model shown a gap will fill it.</p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/results/final_model_comparison.md" target="_blank">Model comparison on identical context</a></p>
+</section>
+<section id="scaling-the-corpus-was-an-engineering-problem" class="level4">
+<h4 class="anchored" data-anchor-id="scaling-the-corpus-was-an-engineering-problem">Scaling the corpus was an engineering problem</h4>
+<p>Going from 94k to 231,568 products broke naive approaches. What it actually required:</p>
+<ul>
+<li><strong>Streaming ingest.</strong> DuckDB reads 1.16 GB of gzipped JSONL at roughly 400 MB peak memory; loading it into pandas first would not fit comfortably.</li>
+<li><strong>Schema-aware cache invalidation.</strong> Checking that a cached file has the right column <em>types</em> as well as the right names. A <code>price</code> column silently written as a string broke numeric filtering while every column name stayed correct.</li>
+<li><strong>Corpus fingerprinting.</strong> Each index stores <code>categories@n_products#doc_text_sha</code> and refuses to load on a mismatch. The content hash catches an edit to document construction, which leaves the category list and product count identical. It costs 1.5 seconds against the 40 minutes it protects.</li>
+<li><strong>Memory profiling.</strong> The BM25 index alone occupies 4.1 GB, which turned out to be the constraint that shapes any deployment plan.</li>
+</ul>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/design-decisions.md" target="_blank">Thirteen design decisions with the measurement behind each</a></p>
+</section>
+<section id="deciding-where-a-guardrail-belongs" class="level4">
+<h4 class="anchored" data-anchor-id="deciding-where-a-guardrail-belongs">Deciding where a guardrail belongs</h4>
+<p>The app answered “what’s 1+1?”. Retrieval had returned five arbitrary appliances, because top-k retrieval always returns k results however poor the match, so the emptiness check never fired and the model answered from its own knowledge.</p>
+<p>The obvious fix is a prompt rule telling the model to decline. That rule takes effect only <strong>after the API call is billed</strong>, so I put the gate in Python: a threshold on the top-1 cosine, checked before retrieval runs.</p>
+<p>Choosing the threshold took a measurement. Off-topic queries scored 0.31 to 0.376; the weakest <em>legitimate</em> query in my evaluation set scored 0.437. A threshold of 0.40 sits between them and classified 11 of 11 queries correctly. The margin is only 0.061, which is the honest caveat: vague-but-real questions and off-topic ones genuinely look alike to an embedding model, so I set the threshold low.</p>
+<p>One subtlety made this harder than it looked. The score has to come from the semantic retriever directly, because <strong>neither fusion method preserves absolute scale</strong>: Reciprocal Rank Fusion emits <code>1/(60 + rank)</code>, so its top score is <code>1/61</code> whether a match is perfect or worthless, and weighted fusion min-max normalizes the top result to <code>1.0</code> by construction. Gating on a fused score would have let everything through while looking correct. A test now hands the gate a fused score of 1.0 alongside a cosine of 0.30 and asserts refusal, so a future simplification cannot quietly reintroduce the bug.</p>
+<p>The same reasoning settled a privacy question. Reviewers had typed their own email addresses and phone numbers into review text: 282 and 112 documents respectively. A prompt rule saying “never repeat contact details” asks the model to hold the data and decline to use it. Stripping it in the context builder means the model never receives it, which is the stronger guarantee.</p>
+</section>
+<section id="knowing-which-defence-not-to-build" class="level4">
+<h4 class="anchored" data-anchor-id="knowing-which-defence-not-to-build">Knowing which defence <em>not</em> to build</h4>
+<p>Auditing the same corpus for prompt injection, 40 documents matched instruction-shaped phrases. Reading them, all 40 were ordinary English: “you are now a 4th grader”, “you are now a dryer technician”, and <code>system prompt</code> meaning a shell prompt. Zero were attacks.</p>
+<p>That number argues against the defence it seems to invite. A regex filter shipped against this corpus would have run at a <strong>100% false-positive rate</strong>, silently degrading 40 legitimate products while catching nothing, and any paraphrase defeats it anyway.</p>
+<p>Capability is what bounds injection risk. The model here has no tools, takes no actions, and its output renders as plain text, so the worst an injected review achieves is a bad recommendation. Writing that down changed how I think about agent design generally: the question worth asking is “what can this thing do if the rule fails”.</p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/rag-concepts.md" target="_blank">Prompt injection, and what RAG creates</a></p>
+<hr>
+</section>
 </section>
 <section id="dataset" class="level3">
 <h3 class="anchored" data-anchor-id="dataset">Dataset</h3>
 <ul>
-<li><strong>Source</strong>: <a href="https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023" target="_blank">Amazon Reviews 2023</a> dataset (McAuley-Lab, via Hugging Face), Appliances category.</li>
-<li><strong>Scale</strong>: 94,319 products, 2,128,605 total rows of product metadata (titles, descriptions, features, pricing) and aggregated user reviews.</li>
+<li><strong>Source</strong>: <a href="https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023" target="_blank">Amazon Reviews 2023</a> (McAuley Lab, UCSD)</li>
+<li><strong>Scale</strong>: <strong>231,568 products</strong> from <strong>6,753,220 reviews</strong>, spanning Appliances (94,319) and Video Games (137,249)</li>
+<li><strong>Configurable</strong>: any of the dataset’s 34 categories can be selected at build time. Per-category intermediates are cached, so adding one re-downloads only that category.</li>
 </ul>
 <hr>
 </section>
 <section id="architecture" class="level3">
 <h3 class="anchored" data-anchor-id="architecture">Architecture</h3>
-<p>The project progressed through two milestones, layering generation on top of retrieval.</p>
-<section id="milestone-1-retrieval-methods" class="level4">
-<h4 class="anchored" data-anchor-id="milestone-1-retrieval-methods">Milestone 1: Retrieval methods</h4>
-<ul>
-<li><strong>BM25</strong>: traditional keyword matching, with scores normalized via max scaling.</li>
-<li><strong>Semantic search</strong>: dense embeddings from <code>all-MiniLM-L6-v2</code> (sentence-transformers), indexed in FAISS using <code>IndexFlatIP</code> for L2-normalized inner product (cosine similarity) search.</li>
-<li><strong>Hybrid retrieval</strong>: combines both methods by normalizing each score to [0, 1] and blending them, <code>hybrid_score = alpha * norm_sem + (1 - alpha) * norm_bm25</code>, with alpha defaulting to 0.5.</li>
-</ul>
-</section>
-<section id="milestone-2-rag-pipeline" class="level4">
-<h4 class="anchored" data-anchor-id="milestone-2-rag-pipeline">Milestone 2: RAG pipeline</h4>
-<ul>
-<li><strong>Workflow</strong>: user query, retriever selection, document retrieval, context building, LLM generation, response shown in the chat UI.</li>
-<li><strong>Primary model</strong>: <code>Llama-3.3-70b-versatile</code> via the Groq API, chosen for strong instruction-following and summarization, and for its large context window to handle the “lost in the middle” problem with lengthy product reviews. Groq’s LPU hardware also gives fast inference.</li>
-<li><strong>Alternative model</strong>: <code>gpt-oss-20b</code>, included for side-by-side comparison against the primary model.</li>
-</ul>
+<pre><code>query -&gt; (scope gate) -&gt; retrieve -&gt; build context -&gt; fill prompt -&gt; generate -&gt; answer + sources</code></pre>
+<p>Four modes share one interface, so switching is a single argument:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>BM25</strong></td>
+<td>Keyword matching with IDF, term-frequency saturation, and length normalization</td>
+</tr>
+<tr class="even">
+<td><strong>Semantic</strong></td>
+<td><code>all-MiniLM-L6-v2</code> embeddings, L2-normalized in a FAISS <code>IndexFlatIP</code> so inner product equals cosine similarity</td>
+</tr>
+<tr class="odd">
+<td><strong>Hybrid</strong></td>
+<td>Reciprocal Rank Fusion, <code>1/(60 + rank)</code>, or weighted score normalization</td>
+</tr>
+<tr class="even">
+<td><strong>RAG</strong></td>
+<td>Hybrid retrieval, then an LLM reads the reviews and applies constraints retrieval cannot enforce</td>
+</tr>
+</tbody>
+</table>
+<p>Because all three retrievers return <code>(parent_asin, score)</code>, the RAG pipeline is retriever-agnostic: semantic RAG and hybrid RAG differ by one argument and share the same pipeline.</p>
+<p><strong>Models</strong>: <code>llama-3.3-70b-versatile</code> (primary) and <code>openai/gpt-oss-20b</code> (comparison), both via Groq, plus a local <code>llama3.1:8b</code> through Ollama for iterating without consuming API quota.</p>
+<p><strong>Context is trimmed before it reaches the model.</strong> Whole documents produce 4,000 to 6,000 token contexts; title, metadata, and two truncated reviews produce about 600. An 85% reduction with no loss of answer quality, which moved the free-tier budget from roughly 22 to over 80 calls per day.</p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/rag-concepts.md" target="_blank">How RAG works</a> and <a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/retrieval-concepts.md" target="_blank">how the retrievers work</a>, both written as learning notes.</p>
 <hr>
 </section>
+<section id="evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation">Evaluation</h3>
+<p>Evaluation runs as a script. <code>python src/evaluate.py</code> regenerates every comparison table, so changing a prompt or a retriever and re-running produces updated results automatically.</p>
+<p>One deliberate choice: the qualitative rating columns are <strong>left blank</strong> by the generator. A model grading its own output is not an evaluation, so the script produces the evidence and I supply the verdicts. Each answer is printed alongside the exact sources the model was given, which makes the check concrete: a product named in an answer but absent from its sources is a fabrication.</p>
+<hr>
+</section>
+<section id="engineering-practice" class="level3">
+<h3 class="anchored" data-anchor-id="engineering-practice">Engineering practice</h3>
+<ul>
+<li><strong>138 tests</strong>, running in under 4 seconds with no network and no data files. They target the things that fail <em>silently</em>: tokenization, document construction, corpus invariants, fusion arithmetic, the staleness guards, and the safety gates.</li>
+<li><strong>GitHub Actions CI</strong> running lint, format check, tests, and a check that every documented CLI still parses. The suite needs no secrets, which is why the workflow stays simple.</li>
+<li><strong>Reproducibility treated as a real goal.</strong> The pipeline rebuilds from nothing with three commands, and tests pass on a machine with no NLTK corpus downloaded, verified by simulating one.</li>
+<li><strong>Ruff</strong> for lint and formatting, pinned via <code>pyproject.toml</code> so results do not depend on whichever version happens to be on <code>PATH</code>.</li>
+</ul>
+<hr>
 </section>
 <section id="app" class="level3">
 <h3 class="anchored" data-anchor-id="app">App</h3>
-<p>The assistant runs as a Streamlit chat app (<code>app/app.py</code>). Users pick a retrieval method and LLM, ask a question in natural language, and get back a grounded answer along with the retrieved products. LLM features require a <code>.env</code> file with <code>GROQ_API_KEY</code> and <code>TAVILY_API_KEY</code> (the latter for web search augmentation). A demo video <a href="https://github.com/canadasung/ubc-dsci575-smart-amazon-product-query-assistant/blob/main/app-demo.mp4" target="_blank">app-demo.mp4</a> walks through the app in the repo.</p>
+<p>A Streamlit app with two tabs. <strong>Search</strong> returns ranked products with category and price filters. <strong>RAG</strong> answers a question and displays the answer above the exact sources it was given.</p>
+<section id="search-tab" class="level4">
+<h4 class="anchored" data-anchor-id="search-tab">Search tab</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/amz-query-demo1.png" class="img-fluid figure-img" style="width:100.0%" alt="Streamlit search tab showing five ranked oven products with fused scores, ratings, prices, and review snippets"></p>
+<figcaption>Search tab: ranked results for ‘small and cheap ovens’ using hybrid retrieval, with fusion method, category, and price filters</figcaption>
+</figure>
+</div>
+</section>
+<section id="rag-tab" class="level4">
+<h4 class="anchored" data-anchor-id="rag-tab">RAG tab</h4>
+<p>The answer sits above the exact products the model was given. The caption records the retriever, model, prompt, context size, and stage timings, so any answer can be traced back to how it was produced.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/amz-query-demo2.png" class="img-fluid figure-img" style="width:100.0%" alt="Streamlit RAG tab showing a generated recommendation citing prices and a review quote, above the source products"></p>
+<figcaption>RAG tab answering ‘quiet dishwasher for a small apartment under $400’, with the generated answer above a Sources list of the five products supplied to the model</figcaption>
+</figure>
+</div>
+<p>The line under the web-search checkbox reports the gate’s decision before generating, here <em>“will not search (the corpus can answer this without web results)”</em>.</p>
+<p>Generation is gated behind an explicit submit button. Streamlit re-runs every tab’s body on every interaction, so an ungated LLM call would fire on any widget change and exhaust the daily API quota within minutes.</p>
+<p>An optional web-search tool (Tavily) covers what a fixed 2023 snapshot cannot: current prices and availability. It is gated so it runs only when the question needs it, and results appear in a separate labelled block so web claims stay distinguishable from review evidence.</p>
 <hr>
 </section>
-<section id="installation-usage" class="level3">
-<h3 class="anchored" data-anchor-id="installation-usage">Installation &amp; usage</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/canadasung/DSCI_575_project_hli76_wnsong.git</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> DSCI_575_project_hli76_wnsong</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate <span class="op">&lt;</span>env-name<span class="op">&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/download_data.py</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run app/app.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The data pipeline produces raw parquet files, processed documents and product indices, a BM25 pickle index with tokenized corpus, and a FAISS vector index for semantic search. User feedback collected from the app is logged to CSV.</p>
-<hr>
 </section>
-<section id="results-evaluation" class="level3">
-<h3 class="anchored" data-anchor-id="results-evaluation">Results &amp; evaluation</h3>
-<p>Detailed findings and evaluation discussion for each milestone are documented in the repo under <a href="https://github.com/canadasung/DSCI_575_project_hli76_wnsong/blob/main/results/milestone1_discussion.md" target="_blank">results/milestone1_discussion.md</a> and <a href="https://github.com/canadasung/DSCI_575_project_hli76_wnsong/blob/main/results/milestone2_discussion.md" target="_blank">results/milestone2_discussion.md</a>.</p>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/canadasung/smart-amazon-product-query-assistant.git</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> smart-amazon-product-query-assistant</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate smart-amazon-query-assist</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/download_data.py     <span class="co"># download, merge, build documents</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/bm25.py              <span class="co"># keyword index</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/semantic.py          <span class="co"># FAISS index</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run app/app.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Retrieval needs no API keys. The RAG features need a Groq key in <code>.env</code>; <code>.env.example</code> documents every variable.</p>
 <hr>
 </section>
 <section id="key-takeaways" class="level3">
 <h3 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h3>
 <ul>
-<li><strong>Retrieval choice matters</strong>: BM25, semantic search, and hybrid retrieval each have different strengths, and blending them gave more flexibility than committing to one method.</li>
-<li><strong>Model size versus speed tradeoff</strong>: comparing a 70B and a 20B model surfaced practical tradeoffs between answer quality and inference cost/speed, which Groq’s hardware helped offset.</li>
+<li><strong>Measure before asserting.</strong> Nearly every design decision here is defensible because a number backs it: the 0.2/5 retrieval overlap, the 50.5% null prices, the 85% context reduction, the 4.1 GB index. Each one changed what I built.</li>
+<li><strong>The most expensive bugs are the silent ones.</strong> A <code>nan</code> in half the corpus, a price column typed as a string, a stale index serving confident wrong answers. None of them raised an error. That is why the project has validation, staleness guards, and tests aimed at exactly those paths.</li>
+<li><strong>Be willing to be wrong in public.</strong> The prompt experiment contradicted my prediction, and saying so made the writeup more useful.</li>
+<li><strong>Verification has to match the failure mode.</strong> Checking that a server returns HTTP 200 does not prove a query works. I learned that from a segfault my own testing had missed.</li>
+<li><strong>Put the guarantee where it cannot be argued with.</strong> Leaving data out of the context is stronger than asking a model not to repeat it. The same reasoning moved scope checking into a threshold in code, where it also stops costing API quota.</li>
 </ul>
 
 
