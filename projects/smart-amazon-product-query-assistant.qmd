@@ -16,7 +16,7 @@ format:
 ### The value of this project to me
 
 - **Practicing and implementation**:
-    - information retrieval methods: BM25, Semantic Search, Hybrid
+    - information retrieval algorithm and method: Sparse embedding (BM25), Dense embedding (Semantic Search), Hybrid embedding
     - LLM-based AI Assistant
     - RAG (Retrieval-Augmented Generation)
     - real-time product recommendation system 
