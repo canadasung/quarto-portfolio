@@ -253,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>scaling from 94k to 231,568 products, which required streaming ingest, schema-aware caching, and memory profiling.</li>
 <li>building staleness guards so a search index can never be silently used against a corpus it was not built from.</li>
-<li>146 tests, GitHub Actions CI, and root-causing a segfault from a macOS crash report.</li>
+<li>154 tests, GitHub Actions CI, and root-causing a segfault from a macOS crash report.</li>
 </ul></li>
 <li><strong>Building LLM systems responsibly</strong>:
 <ul>
@@ -355,7 +355,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Corpus fingerprinting.</strong> Each index stores <code>categories@n_products#doc_text_sha</code> and refuses to load on a mismatch. The content hash catches an edit to document construction, which leaves the category list and product count identical. It costs 1.5 seconds against the 25 minutes it protects.</li>
 <li><strong>Memory profiling.</strong> The BM25 index alone occupies 4.1 GB, which turned out to be the constraint that shapes any deployment plan.</li>
 </ul>
-<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/design-decisions.md" target="_blank">Thirteen design decisions with the measurement behind each</a></p>
+<p><a href="https://github.com/canadasung/smart-amazon-product-query-assistant/blob/main/docs/design-decisions.md" target="_blank">Fourteen design decisions with the measurement behind each</a></p>
 </section>
 <section id="deciding-where-a-guardrail-belongs" class="level4">
 <h4 class="anchored" data-anchor-id="deciding-where-a-guardrail-belongs">Deciding where a guardrail belongs</h4>
@@ -432,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="engineering-practice" class="level3">
 <h3 class="anchored" data-anchor-id="engineering-practice">Engineering practice</h3>
 <ul>
-<li><strong>146 tests</strong>, running in under 4 seconds with no network and no data files. They target the things that fail <em>silently</em>: tokenization, document construction, corpus invariants, fusion arithmetic, the staleness guards, and the safety gates.</li>
+<li><strong>154 tests</strong>, running in under 4 seconds with no network and no data files. They target the things that fail <em>silently</em>: tokenization, document construction, corpus invariants, fusion arithmetic, the staleness guards, and the safety gates.</li>
 <li><strong>GitHub Actions CI</strong> running lint, format check, tests, and a check that every documented CLI still parses. The suite needs no secrets, which is why the workflow stays simple.</li>
 <li><strong>Reproducibility treated as a real goal.</strong> The pipeline rebuilds from nothing with three commands, and tests pass on a machine with no NLTK corpus downloaded, verified by simulating one.</li>
 <li><strong>Ruff</strong> for lint and formatting, pinned via <code>pyproject.toml</code> so results do not depend on whichever version happens to be on <code>PATH</code>.</li>
